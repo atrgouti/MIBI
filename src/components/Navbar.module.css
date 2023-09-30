@@ -58,6 +58,38 @@
   }
 }
 
+/* now working on the burgerMenu */
+.burgerMenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80%;
+  background-color: white;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out; /* Add transition property */
+  transform: translateX(-100%); /* Move the sidebar out of the screen */
+  z-index: 50;
+}
+.burgerMenu.active {
+  transform: translateX(0%); /* Move the sidebar out of the screen */
+}
+.burgerXmark {
+  align-items: end;
+  margin: 30px;
+  font-size: 20px;
+}
+.burderMenuLinks {
+  margin: 30px;
+  list-style: none;
+}
+.burderMenuLinks li {
+  margin-top: 30px;
+}
+.burderMenuLinks a {
+  text-decoration: none;
+  color: black;
+}
+
 /* now working on the my card  */
 .MyCart {
   position: fixed;
@@ -94,34 +126,24 @@
   }
 }
 
-/* now working on the burgerMenu */
-.burgerMenu {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 80%;
-  background-color: white;
-  height: 100vh;
-  transition: transform 0.3s ease-in-out; /* Add transition property */
-  transform: translateX(-100%); /* Move the sidebar out of the screen */
-  z-index: 50;
+/* NO ITEMS AVALIABLE ON THE CART  */
+.noItemsAvaliable {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
-.burgerMenu.active {
-  transform: translateX(0%); /* Move the sidebar out of the screen */
+.noItemsAvaliable p {
+  margin: 20px auto;
 }
-.burgerXmark {
-  align-items: end;
-  margin: 30px;
-  font-size: 20px;
+.noItemsAvaliable .icon {
+  font-size: 30px;
 }
-.burderMenuLinks {
-  margin: 30px;
-  list-style: none;
-}
-.burderMenuLinks li {
-  margin-top: 30px;
-}
-.burderMenuLinks a {
-  text-decoration: none;
-  color: black;
+.noItemsAvaliable button {
+  margin: 0px auto;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  width: fit-content;
+  border: none;
 }

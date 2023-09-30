@@ -11,14 +11,13 @@ import {
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
-
 export default function Navbar({ setActiveFilter }) {
   const [sideBarIsActive, setSideBarIsActive] = useState(false);
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
 
   useEffect(
     function () {
-      const handleOutsideClick = (e) => {
+      const handleOutsideCartClick = (e) => {
         // Check if the click event target is not part of the sidebar or the cart icon
         if (
           !e.target.closest(`.${styles.MyCart}`) &&
@@ -28,21 +27,36 @@ export default function Navbar({ setActiveFilter }) {
           setActiveFilter(false);
         }
       };
-
+      //check if the click event target is not part of the burger menu
+      const handleOutsideBurgerMenuClick = (e) => {
+        if (
+          !e.target.closest(`${styles.burgerMenu}`) &&
+          !e.target.closest(`.${styles.icon}`)
+        ) {
+          setBurgerMenuIsActive(false);
+          setActiveFilter(false);
+        }
+      };
       // Attach the event listener when the sidebar is open
       if (sideBarIsActive) {
-        document.addEventListener("click", handleOutsideClick);
+        document.addEventListener("click", handleOutsideCartClick);
       } else {
         // Remove the event listener when the sidebar is closed
-        document.removeEventListener("click", handleOutsideClick);
+        document.removeEventListener("click", handleOutsideCartClick);
       }
-
+      // Attach the event listener when the burger menu is open
+      if (burgerMenuIsActive) {
+        document.addEventListener("click", handleOutsideBurgerMenuClick);
+      } else {
+        document.removeEventListener("click", handleOutsideBurgerMenuClick);
+      }
       // Cleanup the event listener when the component unmounts
       return () => {
-        document.removeEventListener("click", handleOutsideClick);
+        document.removeEventListener("click", handleOutsideCartClick);
+        document.removeEventListener("click", handleOutsideBurgerMenuClick);
       };
     },
-    [sideBarIsActive, setActiveFilter]
+    [sideBarIsActive, setActiveFilter, burgerMenuIsActive]
   );
 
   return (
@@ -151,6 +165,15 @@ export default function Navbar({ setActiveFilter }) {
             }}
           />
         </header>
+        <div className={styles.noItemsAvaliable}>
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            className={styles.icon}
+            style={{ marginTop: "40px" }}
+          />
+          <p>You don't have any items in your cart.</p>
+          <button>CONTINUE SHOPPING</button>
+        </div>
       </div>
     </>
   );

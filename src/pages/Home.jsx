@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Announce from "../components/Announce";
 import HomeSlider from "./homeComponents/HomeSlider";
 import HomeStyles from "./Home.module.css";
+import OurOfferce from "./homeComponents/OurOfferce";
 import { useState } from "react";
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
       <Announce />
       <Navbar setActiveFilter={setActiveFilter} />
       <HomeSlider />
+      <OurOfferce></OurOfferce>
     </>
   );
 }
