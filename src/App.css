@@ -1,0 +1,12 @@
+/* styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Poppins:wght@100;200;400;500;700&family=Roboto&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+}
