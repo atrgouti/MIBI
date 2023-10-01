@@ -1,5 +1,26 @@
-.divo {
-  background-color: white;
-  height: 100vh;
+.section {
   width: 100%;
+  background-color: whitesmoke;
+}
+.offerce {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px auto;
+}
+.ourOffer {
+  margin: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.offericon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 900px) {
+  .section {
+    display: none;
+  }
 }

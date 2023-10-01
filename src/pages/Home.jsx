@@ -3,6 +3,7 @@ import Announce from "../components/Announce";
 import HomeSlider from "./homeComponents/HomeSlider";
 import HomeStyles from "./Home.module.css";
 import OurOfferce from "./homeComponents/OurOfferce";
+import Categories from "./homeComponents/Categories";
 import { useState } from "react";
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
       <Navbar setActiveFilter={setActiveFilter} />
       <HomeSlider />
       <OurOfferce></OurOfferce>
+      <Categories></Categories>
     </>
   );
 }

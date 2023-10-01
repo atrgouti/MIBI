@@ -1,0 +1,58 @@
+.section {
+  width: 100%;
+  background-color: white;
+}
+.categories {
+  width: 80%;
+  margin: 0px auto;
+  padding-bottom: 50px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+.title p {
+  /* margin-top: 50px; */
+  margin-left: 10px;
+  margin-right: 10px;
+
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgb(25, 25, 25);
+}
+.subtitle {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/* working on the catigories grid  */
+.categoriesGrid {
+  display: grid;
+  height: 50vh;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "women men backpack"
+    "women men accessories";
+  grid-gap: 20px;
+}
+.women {
+  grid-area: women;
+  background-color: pink;
+}
+.men {
+  grid-area: men;
+  background-color: black;
+}
+.backpack {
+  grid-area: backpack;
+  background-color: brown;
+}
+.accessories {
+  grid-area: accessories;
+  background-color: yellow;
+}
