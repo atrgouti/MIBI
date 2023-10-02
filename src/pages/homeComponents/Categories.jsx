@@ -19,7 +19,9 @@ function Categories() {
               backgroundSize: "cover",
               width: "100%",
             }}
-          ></div>
+          >
+            <p>Women</p>
+          </div>
           <div
             className={categoriesStyle.men}
             style={{
@@ -27,7 +29,9 @@ function Categories() {
               backgroundSize: "cover",
               width: "100%",
             }}
-          ></div>
+          >
+            <p>Men</p>
+          </div>
           <div
             className={categoriesStyle.backpack}
             style={{
@@ -35,7 +39,9 @@ function Categories() {
               backgroundSize: "cover",
               width: "100%",
             }}
-          ></div>
+          >
+            <p>Backpack</p>
+          </div>
           <div
             className={categoriesStyle.accessories}
             style={{
@@ -43,7 +49,9 @@ function Categories() {
               backgroundSize: "cover",
               width: "100%",
             }}
-          ></div>
+          >
+            <p>Accessories</p>
+          </div>
         </div>
       </div>
     </section>
@@ -53,6 +61,13 @@ function Categories() {
 export default Categories;
 function ShortLine() {
   return (
-    <div style={{ height: "2", width: "70px", backgroundColor: "black" }}></div>
+    <div
+      style={{
+        height: "2px",
+        width: "70px",
+        backgroundColor: "black",
+        zIndex: "90",
+      }}
+    ></div>
   );
 }

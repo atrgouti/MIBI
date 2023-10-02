@@ -6,6 +6,7 @@
   width: 80%;
   margin: 0px auto;
   padding-bottom: 50px;
+  max-width: 1500px;
 }
 .title {
   display: flex;
@@ -15,7 +16,6 @@
   padding-bottom: 10px;
 }
 .title p {
-  /* margin-top: 50px; */
   margin-left: 10px;
   margin-right: 10px;
 
@@ -43,16 +43,72 @@
 .women {
   grid-area: women;
   background-color: pink;
+  position: relative;
+  display: block; /* or inline-block */
+}
+.women p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px 20px;
 }
 .men {
   grid-area: men;
+  position: relative;
   background-color: black;
+}
+.men p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px 20px;
 }
 .backpack {
   grid-area: backpack;
   background-color: brown;
+  position: relative;
+}
+.backpack p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px 20px;
 }
 .accessories {
   grid-area: accessories;
   background-color: yellow;
+  position: relative;
+}
+.accessories p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px 20px;
+}
+@media screen and (max-width: 900px) {
+  .categories {
+    width: 90%;
+  }
+  .categoriesGrid {
+    display: grid;
+    height: 80vh;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+      "women women"
+      "men backpack"
+      "men accessories";
+    grid-gap: 20px;
+  }
+  .men {
+    background-position: center;
+  }
+  .title p {
+    text-align: center;
+    width: 100%;
+  }
 }

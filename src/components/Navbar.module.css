@@ -8,6 +8,11 @@
   right: 0px;
   z-index: 10;
 }
+nav.scrolled {
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
 .nav h1 {
   font-size: 35px;
   letter-spacing: 3px;

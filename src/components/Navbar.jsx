@@ -12,9 +12,13 @@ import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 export default function Navbar({ setActiveFilter }) {
+  const [scrollY, setScrollY] = useState(0);
   const [sideBarIsActive, setSideBarIsActive] = useState(false);
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
 
+  function handleScrollY() {
+    setScrollY(window.scrollY);
+  }
   useEffect(
     function () {
       const handleOutsideCartClick = (e) => {
@@ -58,10 +62,17 @@ export default function Navbar({ setActiveFilter }) {
     },
     [sideBarIsActive, setActiveFilter, burgerMenuIsActive]
   );
+  useEffect(function () {
+    document.addEventListener("scroll", handleScrollY);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollY);
+    };
+  }, []);
 
   return (
     <>
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${scrollY > 200 ? styles.scrolled : ""}`}>
         <div className={styles.burger}>
           <FontAwesomeIcon
             icon={faBars}
@@ -171,7 +182,7 @@ export default function Navbar({ setActiveFilter }) {
             className={styles.icon}
             style={{ marginTop: "40px" }}
           />
-          <p>You don't have any items in your cart.</p>
+          <p>You don`t have any items in your cart.</p>
           <button>CONTINUE SHOPPING</button>
         </div>
       </div>
