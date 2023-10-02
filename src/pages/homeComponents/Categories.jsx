@@ -1,4 +1,5 @@
 import categoriesStyle from "./categories.module.css";
+import { Link } from "react-router-dom";
 function Categories() {
   return (
     <section className={categoriesStyle.section}>
@@ -20,7 +21,9 @@ function Categories() {
               width: "100%",
             }}
           >
-            <p>Women</p>
+            <Link to="women">
+              <p>Women</p>
+            </Link>
           </div>
           <div
             className={categoriesStyle.men}
@@ -30,7 +33,9 @@ function Categories() {
               width: "100%",
             }}
           >
-            <p>Men</p>
+            <Link to="men">
+              <p>men</p>
+            </Link>
           </div>
           <div
             className={categoriesStyle.backpack}
@@ -66,7 +71,7 @@ function ShortLine() {
         height: "2px",
         width: "70px",
         backgroundColor: "black",
-        zIndex: "90",
+        zIndex: "20",
       }}
     ></div>
   );

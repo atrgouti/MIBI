@@ -1,0 +1,116 @@
+{
+  "mibidata": {
+    "men": [
+      {
+        "id": 1,
+        "title": "Men's Shirt",
+        "description": "A stylish shirt for men",
+        "price": 29.99,
+        "available": true,
+        "photos": [
+          "https://example.com/men-shirt-1.jpg",
+          "https://example.com/men-shirt-2.jpg",
+          "https://example.com/men-shirt-3.jpg",
+          "https://example.com/men-shirt-4.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Men's Jeans",
+        "description": "Classic jeans for men",
+        "price": 49.99,
+        "available": true,
+        "photos": [
+          "https://example.com/men-jeans-1.jpg",
+          "https://example.com/men-jeans-2.jpg",
+          "https://example.com/men-jeans-3.jpg",
+          "https://example.com/men-jeans-4.jpg"
+        ]
+      }
+    ],
+    "women": [
+      {
+        "id": 1,
+        "title": "Women's Dress",
+        "description": "A beautiful dress for women",
+        "price": 39.99,
+        "available": true,
+        "photos": [
+          "https://example.com/women-dress-1.jpg",
+          "https://example.com/women-dress-2.jpg",
+          "https://example.com/women-dress-3.jpg",
+          "https://example.com/women-dress-4.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Women's Shoes",
+        "description": "Comfortable shoes for women",
+        "price": 59.99,
+        "available": true,
+        "photos": [
+          "https://example.com/women-shoes-1.jpg",
+          "https://example.com/women-shoes-2.jpg",
+          "https://example.com/women-shoes-3.jpg",
+          "https://example.com/women-shoes-4.jpg"
+        ]
+      }
+    ],
+    "accessories": [
+      {
+        "id": 1,
+        "title": "Leather Wallet",
+        "description": "A stylish leather wallet",
+        "price": 19.99,
+        "available": true,
+        "photos": [
+          "https://example.com/leather-wallet-1.jpg",
+          "https://example.com/leather-wallet-2.jpg",
+          "https://example.com/leather-wallet-3.jpg",
+          "https://example.com/leather-wallet-4.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Sunglasses",
+        "description": "Trendy sunglasses for all occasions",
+        "price": 24.99,
+        "available": true,
+        "photos": [
+          "https://example.com/sunglasses-1.jpg",
+          "https://example.com/sunglasses-2.jpg",
+          "https://example.com/sunglasses-3.jpg",
+          "https://example.com/sunglasses-4.jpg"
+        ]
+      }
+    ],
+    "bags": [
+      {
+        "id": 1,
+        "title": "Travel Backpack",
+        "description": "A durable travel backpack",
+        "price": 59.99,
+        "available": true,
+        "photos": [
+          "https://example.com/backpack-1.jpg",
+          "https://example.com/backpack-2.jpg",
+          "https://example.com/backpack-3.jpg",
+          "https://example.com/backpack-4.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Handbag",
+        "description": "A stylish handbag for women",
+        "price": 34.99,
+        "available": true,
+        "photos": [
+          "https://example.com/handbag-1.jpg",
+          "https://example.com/handbag-2.jpg",
+          "https://example.com/handbag-3.jpg",
+          "https://example.com/handbag-4.jpg"
+        ]
+      }
+    ]
+  }
+}
