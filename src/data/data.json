@@ -7,12 +7,7 @@
         "description": "A stylish shirt for men",
         "price": 29.99,
         "available": true,
-        "photos": [
-          "https://example.com/men-shirt-1.jpg",
-          "https://example.com/men-shirt-2.jpg",
-          "https://example.com/men-shirt-3.jpg",
-          "https://example.com/men-shirt-4.jpg"
-        ]
+        "photos": ["men-shirt-1.jpg", "men-jean-2.jpg"]
       },
       {
         "id": 2,
@@ -20,12 +15,7 @@
         "description": "Classic jeans for men",
         "price": 49.99,
         "available": true,
-        "photos": [
-          "https://example.com/men-jeans-1.jpg",
-          "https://example.com/men-jeans-2.jpg",
-          "https://example.com/men-jeans-3.jpg",
-          "https://example.com/men-jeans-4.jpg"
-        ]
+        "photos": ["men-jean-2.jpg", "men-jean-2.jpg"]
       }
     ],
     "women": [
@@ -35,25 +25,15 @@
         "description": "A beautiful dress for women",
         "price": 39.99,
         "available": true,
-        "photos": [
-          "https://example.com/women-dress-1.jpg",
-          "https://example.com/women-dress-2.jpg",
-          "https://example.com/women-dress-3.jpg",
-          "https://example.com/women-dress-4.jpg"
-        ]
+        "photos": ["women-tshirt-3-1.jpg", "women-tshirt-3-1.jpg"]
       },
       {
         "id": 2,
         "title": "Women's Shoes",
         "description": "Comfortable shoes for women",
-        "price": 59.99,
+        "price": 59.98,
         "available": true,
-        "photos": [
-          "https://example.com/women-shoes-1.jpg",
-          "https://example.com/women-shoes-2.jpg",
-          "https://example.com/women-shoes-3.jpg",
-          "https://example.com/women-shoes-4.jpg"
-        ]
+        "photos": ["women-tshirt-3-4.jpg", "women-tshirt-3-1.jpg"]
       }
     ],
     "accessories": [

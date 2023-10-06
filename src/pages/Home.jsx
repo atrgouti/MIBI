@@ -4,6 +4,7 @@ import HomeSlider from "./homeComponents/HomeSlider";
 import HomeStyles from "./Home.module.css";
 import OurOfferce from "./homeComponents/OurOfferce";
 import Categories from "./homeComponents/Categories";
+import ProductsQuickView from "./homeComponents/ProductsQuickView";
 import { useState } from "react";
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
       <HomeSlider />
       <OurOfferce></OurOfferce>
       <Categories></Categories>
+      <ProductsQuickView />
     </>
   );
 }

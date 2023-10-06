@@ -1,4 +1,5 @@
 import categoriesStyle from "./categories.module.css";
+import ShortLine from "../../components/ShoerLine";
 import { Link } from "react-router-dom";
 function Categories() {
   return (
@@ -64,15 +65,3 @@ function Categories() {
 }
 
 export default Categories;
-function ShortLine() {
-  return (
-    <div
-      style={{
-        height: "2px",
-        width: "70px",
-        backgroundColor: "black",
-        zIndex: "20",
-      }}
-    ></div>
-  );
-}
