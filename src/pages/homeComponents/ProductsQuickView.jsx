@@ -2,9 +2,19 @@ import styles from "./ProductsQuickView.module.css";
 import ShortLine from "../../components/ShoerLine";
 import data from "../../data/data.json";
 import HomeProduct from "./HomeProduct";
-import { useState } from "react";
+import Carousel from "@itseasy21/react-elastic-carousel";
+import { useState, useRef } from "react";
+
 function ProductsQuickView() {
   const [choosedCategory, setChoosedCategory] = useState("women");
+  const carouselRef = useRef(null); // Create a ref for the Carousel component
+
+  const handleScrollToFirst = () => {
+    if (carouselRef.current) {
+      carouselRef.current.goTo(0); // Scroll back to the first product
+    }
+  };
+
   return (
     <div className={styles.productsquickviewsection}>
       <div className={styles.productsquickview}>
@@ -19,13 +29,19 @@ function ProductsQuickView() {
         <div className={styles.chooseCategory}>
           <p
             className={`${choosedCategory === "women" ? styles.active : ""}`}
-            onClick={() => setChoosedCategory("women")}
+            onClick={() => {
+              setChoosedCategory("women");
+              handleScrollToFirst();
+            }}
           >
             Women
           </p>
           <p
             className={`${choosedCategory === "men" ? styles.active : ""}`}
-            onClick={() => setChoosedCategory("men")}
+            onClick={() => {
+              setChoosedCategory("men");
+              handleScrollToFirst();
+            }}
           >
             Men
           </p>
@@ -33,25 +49,30 @@ function ProductsQuickView() {
             className={`${
               choosedCategory === "accessories" ? styles.active : ""
             }`}
-            onClick={() => setChoosedCategory("accessories")}
+            onClick={() => {
+              setChoosedCategory("accessories");
+              handleScrollToFirst();
+            }}
           >
             Accessories
           </p>
         </div>
         <div className={styles.showProducts}>
-          {data.mibidata[choosedCategory].map((product) => (
-            <HomeProduct
-              img={product.photos.at(0)}
-              title={product.title}
-              price={product.price}
-              key={product.id}
-            />
-          ))}
-          {/* <HomeProduct
-            img={"women-tshirt-3-4.jpg"}
-            title={"Blue women kamija"}
-            price={399.99}
-          /> */}
+          <Carousel
+            itemsToShow={3}
+            pagination={false}
+            showArrows={true}
+            ref={carouselRef} // Assign the ref to the Carousel component
+          >
+            {data.mibidata[choosedCategory].map((product) => (
+              <HomeProduct
+                img={product.photos.at(0)}
+                title={product.title}
+                price={product.price}
+                key={product.id}
+              />
+            ))}
+          </Carousel>
         </div>
       </div>
     </div>
