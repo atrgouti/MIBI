@@ -7,47 +7,77 @@
         "description": "A stylish shirt for men",
         "price": 29.99,
         "available": true,
-        "photos": ["men-shirt-1.jpg", "men-jean-2.jpg"]
+        "photos": [
+          "men-tshirt-1-1.jpg",
+          "men-tshirt-1-2.jpg",
+          "men-tshirt-1-3.jpg",
+          "men-tshirt-1-4.jpg"
+        ]
       },
       {
         "id": 2,
-        "title": "Men's Jeans",
-        "description": "Classic jeans for men",
-        "price": 49.99,
+        "title": "Men's Shirt",
+        "description": "A stylish shirt for men",
+        "price": 29.99,
         "available": true,
-        "photos": ["men-jean-2.jpg", "men-jean-2.jpg"]
+        "photos": [
+          "men-shoes-1-1.jpg",
+          "men-shoes-1-2.jpg",
+          "men-shoes-1-3.jpg",
+          "men-shoes-1-4.jpg"
+        ]
       },
       {
         "id": 3,
-        "title": "Men's Jeans",
-        "description": "Classic jeans for men",
-        "price": 49.99,
+        "title": "Men's Shirt",
+        "description": "A stylish shirt for men",
+        "price": 29.99,
         "available": true,
-        "photos": ["men-jean-2.jpg", "men-jean-2.jpg"]
+        "photos": [
+          "men-tshirt-2-1.jpg",
+          "men-tshirt-2-2.jpg",
+          "men-tshirt-2-3.jpg",
+          "men-tshirt-2-4.jpg"
+        ]
       },
       {
         "id": 4,
-        "title": "Men's Jeans",
-        "description": "Classic jeans for men",
-        "price": 49.99,
+        "title": "OXFORD SHIRT",
+        "description": "Regular fit shirt made of cotton. Button-down collar and long sleeves with buttoned cuffs. Chest patch pocket. Button-up front.",
+        "price": 29.99,
         "available": true,
-        "photos": ["men-jean-2.jpg", "men-jean-2.jpg"]
+        "photos": [
+          "men-shirt-1-1.jpg",
+          "men-shirt-1-2.jpg",
+          "men-shirt-1-3.jpg",
+          "men-shirt-1-4.jpg"
+        ]
       },
       {
         "id": 5,
-        "title": "Men's Jeans",
-        "description": "Classic jeans for men",
-        "price": 49.99,
+        "title": "POLO SWEATSHIRT",
+        "description": "Collared polo shirt with a buttoned front hidden by a placket. Long sleeves. Ribbed trims.",
+        "price": 29.99,
         "available": true,
-        "photos": ["men-jean-2.jpg", "men-jean-2.jpg"]
+        "photos": [
+          "men-sweatshirt-1-1.jpg",
+          "men-sweatshirt-1-2.jpg",
+          "men-sweatshirt-1-3.jpg",
+          "men-sweatshirt-1-4.jpg"
+        ]
       },
       {
         "id": 6,
-        "title": "Men's Jeans",
-        "description": "Classic jeans for men",
-        "price": 49.99,
+        "title": "TECHNICAL JACKET",
+        "description": "Jacket with a high neck and an adjustable hood. Long cuffed sleeves with hook-and-loop straps. Zip pockets on the chest and hip. Zip-up front.",
+        "price": 29.99,
         "available": true,
-        "photos": ["men-jean-2.jpg", "men-jean-2.jpg"]
+        "photos": [
+          "men-jacket-1-1.jpg",
+          "men-jacket-1-2.jpg",
+          "men-jacket-1-3.jpg",
+          "men-jacket-1-4.jpg"
+        ]
       }
     ],
     "women": [
@@ -125,51 +155,52 @@
         "price": 19.99,
         "available": true,
         "photos": [
-          "https://example.com/leather-wallet-1.jpg",
-          "https://example.com/leather-wallet-2.jpg",
-          "https://example.com/leather-wallet-3.jpg",
-          "https://example.com/leather-wallet-4.jpg"
+          "accessories-1-1.jpg",
+          "accessories-1-2.jpg",
+          "accessories-1-3.jpg",
+          "accessories-1-4.jpg"
         ]
       },
       {
         "id": 2,
+        "title": "Leather Wallet",
+        "description": "A stylish leather wallet",
+        "price": 19.99,
+        "available": true,
+        "photos": [
+          "bags-1-1.jpg",
+          "bags-1-2.jpg",
+          "bags-1-3.jpg",
+          "bags-1-4.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Sunglasses",
+        "description": "Trendy sunglasses for all occasions",
+        "price": 24.99,
+        "available": true,
+        "photos": ["accessories-2-1.jpg", "accessories-2-2.jpg"]
+      },
+      {
+        "id": 4,
+        "title": "Sunglasses",
+        "description": "Trendy sunglasses for all occasions",
+        "price": 24.99,
+        "available": true,
+        "photos": ["accessories-3-1.jpg", "accessories-3-2.jpg"]
+      },
+      {
+        "id": 5,
         "title": "Sunglasses",
         "description": "Trendy sunglasses for all occasions",
         "price": 24.99,
         "available": true,
         "photos": [
-          "https://example.com/sunglasses-1.jpg",
-          "https://example.com/sunglasses-2.jpg",
-          "https://example.com/sunglasses-3.jpg",
-          "https://example.com/sunglasses-4.jpg"
-        ]
-      }
-    ],
-    "bags": [
-      {
-        "id": 1,
-        "title": "Travel Backpack",
-        "description": "A durable travel backpack",
-        "price": 59.99,
-        "available": true,
-        "photos": [
-          "https://example.com/backpack-1.jpg",
-          "https://example.com/backpack-2.jpg",
-          "https://example.com/backpack-3.jpg",
-          "https://example.com/backpack-4.jpg"
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Handbag",
-        "description": "A stylish handbag for women",
-        "price": 34.99,
-        "available": true,
-        "photos": [
-          "https://example.com/handbag-1.jpg",
-          "https://example.com/handbag-2.jpg",
-          "https://example.com/handbag-3.jpg",
-          "https://example.com/handbag-4.jpg"
+          "bags-2-1.jpg",
+          "bags-2-2.jpg",
+          "bags-2-3.jpg",
+          "bags-2-4.jpg"
         ]
       }
     ]
