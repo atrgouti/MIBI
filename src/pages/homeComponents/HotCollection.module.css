@@ -1,0 +1,63 @@
+.section {
+  height: 90vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}
+.bg {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+  background-size: cover;
+  background-position: right;
+  min-width: 1000px;
+}
+.content {
+  z-index: 10;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+.content h3 {
+  font-weight: 200;
+}
+.content h1 {
+  margin: 10px 0px;
+  font-size: 25px;
+}
+.content p {
+  width: 50%;
+  color: rgb(81, 81, 81);
+  line-height: 25px;
+}
+.content button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  margin-top: 20px;
+}
+@media screen and (min-width: 1000px) {
+  .bg {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .bg {
+    background-position: right;
+  }
+  .content {
+    position: absolute;
+    top: 20%;
+    left: 00%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content p {
+    text-align: center;
+  }
+}

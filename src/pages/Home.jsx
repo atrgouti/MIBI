@@ -5,6 +5,8 @@ import HomeStyles from "./Home.module.css";
 import OurOfferce from "./homeComponents/OurOfferce";
 import Categories from "./homeComponents/Categories";
 import ProductsQuickView from "./homeComponents/ProductsQuickView";
+import HotCollection from "./homeComponents/hotCollection";
+import BestBagsCollection from "./homeComponents/BestBagsCollection";
 import { useState } from "react";
 
 function Home() {
@@ -18,6 +20,8 @@ function Home() {
       <OurOfferce></OurOfferce>
       <Categories></Categories>
       <ProductsQuickView />
+      <HotCollection />
+      <BestBagsCollection />
     </>
   );
 }
