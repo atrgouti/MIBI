@@ -7,6 +7,8 @@ import Categories from "./homeComponents/Categories";
 import ProductsQuickView from "./homeComponents/ProductsQuickView";
 import HotCollection from "./homeComponents/hotCollection";
 import BestBagsCollection from "./homeComponents/BestBagsCollection";
+import DayToNight from "./homeComponents/DayToNight";
+import Testemonials from "./homeComponents/Testemonials";
 import { useState } from "react";
 
 function Home() {
@@ -22,6 +24,8 @@ function Home() {
       <ProductsQuickView />
       <HotCollection />
       <BestBagsCollection />
+      <DayToNight />
+      <Testemonials />
     </>
   );
 }

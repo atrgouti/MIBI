@@ -1,0 +1,74 @@
+.testemonialsSection {
+  width: 100%;
+  background-color: white;
+}
+.testemonials {
+  width: 80%;
+  margin: 0px auto;
+  padding-bottom: 50px;
+  max-width: 1500px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.title p {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgb(25, 25, 25);
+}
+
+/* working on the review box  */
+.reviews {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.boxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.box {
+  cursor: pointer;
+  width: 350px;
+  height: 400px;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box img {
+  width: 30%;
+
+  border-radius: 50%;
+}
+.description {
+  width: 90%;
+  color: grey;
+  text-align: center;
+  margin: 30px 0px;
+}
+.stars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.customArrow {
+  height: fit-content;
+  padding: 0px;
+  margin: 0;
+  margin-top: 15%;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
