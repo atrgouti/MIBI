@@ -72,3 +72,6 @@
   border: none;
   cursor: pointer;
 }
+.star {
+  display: flex;
+}

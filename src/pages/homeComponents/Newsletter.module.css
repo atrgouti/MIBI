@@ -1,0 +1,60 @@
+.newsLetterSection {
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+}
+.newsLetter {
+  width: 80%;
+  margin: 0px auto;
+  padding-bottom: 10px;
+  max-width: 1500px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+.title p {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgb(25, 25, 25);
+}
+.subtitle {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.email {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.email input {
+  width: 30%;
+  padding: 10px;
+  border: none;
+}
+.email button {
+  background-color: black;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .newsLetter {
+    width: 80%;
+  }
+  .title p {
+    text-align: center;
+    margin: 0px auto;
+    width: 100%;
+  }
+  .email input {
+    width: 80%;
+  }
+}

@@ -10,6 +10,7 @@ import BestBagsCollection from "./homeComponents/BestBagsCollection";
 import DayToNight from "./homeComponents/DayToNight";
 import Testemonials from "./homeComponents/Testemonials";
 import { useState } from "react";
+import Newsletter from "./homeComponents/Newsletter";
 
 function Home() {
   const [ActiveFilter, setActiveFilter] = useState(false);
@@ -26,6 +27,7 @@ function Home() {
       <BestBagsCollection />
       <DayToNight />
       <Testemonials />
+      <Newsletter />
     </>
   );
 }
