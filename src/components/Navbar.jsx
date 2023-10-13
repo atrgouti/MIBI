@@ -11,6 +11,9 @@ import {
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
+
+import logo from "/logo.png";
+
 export default function Navbar({ setActiveFilter }) {
   const [scrollY, setScrollY] = useState(0);
   const [sideBarIsActive, setSideBarIsActive] = useState(false);
@@ -85,7 +88,8 @@ export default function Navbar({ setActiveFilter }) {
           <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
         </div>
         <div className="logo">
-          <h1>MIBI</h1>
+          {/* <h1>MIBI</h1> */}
+          <img src={logo} alt="" />
         </div>
         <ul className={styles.myLinks}>
           <li>

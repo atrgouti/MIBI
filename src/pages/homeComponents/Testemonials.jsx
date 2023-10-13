@@ -12,6 +12,11 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
+// importing the images of the testemonials
+import bilal from "/unnamed.jpg";
+import jack from "/jack.jpg";
+import max from "/max.jpg";
+
 function Testemonials() {
   return (
     <section className={styles.testemonialsSection}>
@@ -48,12 +53,51 @@ function Testemonials() {
               { width: 900, itemsToShow: 3, itemsToScroll: 1 }, // Screens wider than 900px
             ]}
           >
-            <Review />
-            <Review />
-            <Review />
-            <Review />
-            <Review />
-            <Review />
+            <Review
+              image={bilal}
+              description={
+                "I deal quite a bit with programming and manage a lot of integration with customer services of different companies, but i must say, the quality of your product and the service you offering is the best i have experienced!!"
+              }
+              numberOfStarts={5}
+              namee={"RICHARD PARKER"}
+              position={"FASHION DESIGNER"}
+            />
+            <Review
+              image={jack}
+              description={
+                "I deal quite a bit with programming and manage a lot of integration with customer services of different companies, but i must say, the quality of your product and the service you offering is the best i have experienced!!"
+              }
+              numberOfStarts={5}
+              namee={"RICHARD PARKER"}
+              position={"FASHION DESIGNER"}
+            />
+            <Review
+              image={max}
+              description={
+                "I deal quite a bit with programming and manage a lot of integration with customer services of different companies, but i must say, the quality of your product and the service you offering is the best i have experienced!!"
+              }
+              numberOfStarts={4}
+              namee={"RICHARD PARKER"}
+              position={"FASHION DESIGNER"}
+            />
+            <Review
+              image={bilal}
+              description={
+                "I deal quite a bit with programming and manage a lot of integration with customer services of different companies, but i must say, the quality of your product and the service you offering is the best i have experienced!!"
+              }
+              numberOfStarts={4}
+              namee={"RICHARD PARKER"}
+              position={"FASHION DESIGNER"}
+            />
+            <Review
+              image={bilal}
+              description={
+                "I deal quite a bit with programming and manage a lot of integration with customer services of different companies, but i must say, the quality of your product and the service you offering is the best i have experienced!!"
+              }
+              numberOfStarts={4}
+              namee={"RICHARD PARKER"}
+              position={"FASHION DESIGNER"}
+            />
           </Carousel>
         </div>
       </div>

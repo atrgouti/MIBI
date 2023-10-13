@@ -1,20 +1,15 @@
-import image from "/unnamed.jpg";
 import styles from "./testemonials.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-function Review() {
+function Review({ image, description, numberOfStarts, namee, position }) {
   return (
     <div className={styles.box}>
       <img src={image} alt="" />
-      <p className={styles.description}>
-        I deal quite a bit with programming and manage a lot of integration with
-        customer services of different companies, but i must say, quality of
-        your product and the service you offering is the best Ihave experienced
-      </p>
+      <p className={styles.description}>{description}</p>
       <div className={styles.stars}>
         <div className={styles.star}>
-          {Array.from({ length: 5 }, (_, i) => (
+          {Array.from({ length: numberOfStarts }, (_, i) => (
             <FontAwesomeIcon
               icon={faStar}
               style={{ color: "orange" }}
@@ -23,9 +18,9 @@ function Review() {
           ))}
         </div>
         <p>
-          <strong>Richared Parker</strong>
+          <strong>{namee}</strong>
         </p>
-        <p>MACCY FOUNDER</p>
+        <p>{position}</p>
       </div>
     </div>
   );

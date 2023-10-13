@@ -11,6 +11,7 @@ import DayToNight from "./homeComponents/DayToNight";
 import Testemonials from "./homeComponents/Testemonials";
 import { useState } from "react";
 import Newsletter from "./homeComponents/Newsletter";
+import Footer from "../components/Footer";
 
 function Home() {
   const [ActiveFilter, setActiveFilter] = useState(false);
@@ -28,6 +29,7 @@ function Home() {
       <DayToNight />
       <Testemonials />
       <Newsletter />
+      <Footer></Footer>
     </>
   );
 }

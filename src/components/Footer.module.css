@@ -1,0 +1,11 @@
+.footer {
+  width: 100%;
+  background-color: black;
+  height: 50vh;
+}
+.footerArea {
+  width: 80%;
+  height: 100%;
+  margin: 0px auto;
+  background-color: red;
+}
