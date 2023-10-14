@@ -8,6 +8,7 @@ import {
   faMagnifyingGlass,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes

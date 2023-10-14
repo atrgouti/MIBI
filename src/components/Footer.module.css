@@ -1,11 +1,76 @@
 .footer {
   width: 100%;
   background-color: black;
-  height: 50vh;
+
+  color: white;
 }
 .footerArea {
   width: 80%;
   height: 100%;
   margin: 0px auto;
-  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+.contacUs {
+  padding-top: 50px;
+}
+.contacUs .location {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.contacUs .adress {
+  margin: 10px;
+}
+/* working on the informations  */
+.informations {
+  padding-top: 50px;
+}
+.informations ul {
+  list-style: none;
+}
+.informations .subLinks {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.informations .subLinks li {
+  padding: 3px;
+}
+/* working on the quickShop  */
+.QuickShop {
+  padding-top: 50px;
+}
+.QuickShop ul {
+  list-style: none;
+}
+.QuickShop .subLinks {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.QuickShop .subLinks li {
+  padding: 3px;
+}
+/* working on the stay connected */
+.stayConnected {
+  padding-top: 50px;
+}
+.stayConnected .SocialMedia {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.stayConnected .icon {
+  margin: 5px;
+}
+
+/* working on the copy right  */
+.copyRight {
+  width: 80%;
+  margin: 0px auto;
+}
+.copyRight p {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 14px;
 }
