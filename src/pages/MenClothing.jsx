@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar";
 import Announce from "../components/Announce";
-function MenClothing() {
+import HomeStyles from "./Home.module.css";
+function MenClothing({ ActiveFilter, setActiveFilter }) {
   return (
-    <>
+    <div className={ActiveFilter ? HomeStyles.filter : ""}>
       <Announce />
-      <Navbar />
-    </>
+      <Navbar setActiveFilter={setActiveFilter} />
+    </div>
   );
 }
 

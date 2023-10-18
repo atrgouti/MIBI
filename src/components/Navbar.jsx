@@ -100,7 +100,7 @@ export default function Navbar({ setActiveFilter }) {
             <Link to="/men">Men</Link>
           </li>
           <li>
-            <Link to="/men">Women</Link>
+            <Link to="/women">Women</Link>
           </li>
           <li>
             <Link to="/men">Accessories</Link>
@@ -150,7 +150,7 @@ export default function Navbar({ setActiveFilter }) {
             <Link to="/men">Men</Link>
           </li>
           <li>
-            <Link to="/men">Women</Link>
+            <Link to="/women">Women</Link>
           </li>
           <li>
             <Link to="/men">Accessories</Link>

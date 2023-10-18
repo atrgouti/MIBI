@@ -9,12 +9,10 @@ import HotCollection from "./homeComponents/hotCollection";
 import BestBagsCollection from "./homeComponents/BestBagsCollection";
 import DayToNight from "./homeComponents/DayToNight";
 import Testemonials from "./homeComponents/Testemonials";
-import { useState } from "react";
 import Newsletter from "./homeComponents/Newsletter";
 import Footer from "../components/Footer";
 
-function Home() {
-  const [ActiveFilter, setActiveFilter] = useState(false);
+function Home({ MibiProductsData, ActiveFilter, setActiveFilter }) {
   return (
     <>
       <div className={ActiveFilter ? HomeStyles.filter : ""}></div>
@@ -23,7 +21,7 @@ function Home() {
       <HomeSlider />
       <OurOfferce></OurOfferce>
       <Categories></Categories>
-      <ProductsQuickView />
+      <ProductsQuickView MibiProductsData={MibiProductsData} />
       <HotCollection />
       <BestBagsCollection />
       <DayToNight />

@@ -14,15 +14,20 @@ import {
 //import hooks
 import { useState, useRef } from "react";
 
-function ProductsQuickView() {
-  const [choosedCategory, setChoosedCategory] = useState("women");
+function ProductsQuickView({ MibiProductsData }) {
   const carouselRef = useRef(null); // Create a ref for the Carousel component
+  const [choosedCategory, setChoosedCategory] = useState("women");
 
   const handleScrollToFirst = () => {
     if (carouselRef.current) {
       carouselRef.current.goTo(0); // Scroll back to the first product
     }
   };
+
+  //filter my data
+  let myData = MibiProductsData.filter(
+    (data) => data.category === `${choosedCategory}`
+  );
 
   return (
     <div className={styles.productsquickviewsection}>
@@ -94,9 +99,9 @@ function ProductsQuickView() {
               { width: 900, itemsToShow: 3, itemsToScroll: 1 }, // Screens wider than 900px
             ]}
           >
-            {data.mibidata[choosedCategory].map((product) => (
+            {myData.map((product) => (
               <HomeProduct
-                img={product.photos.at(0)}
+                img={product.photos.productPhotos.at(0)}
                 title={product.title}
                 price={product.price}
                 key={product.id}

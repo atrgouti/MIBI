@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@itseasy21/react-elastic-carousel": "^0.12.3",
+    "@supabase/supabase-js": "^2.38.1",
     "blurhash": "^2.0.5",
     "font-awesome": "^4.7.0",
     "react": "^18.2.0",
