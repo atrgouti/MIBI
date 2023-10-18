@@ -1,4 +1,5 @@
 import styles from "./BestBagsCollection.module.css";
+
 import bg from "/bestQuality.jpg";
 function BestBagsCollection() {
   return (
