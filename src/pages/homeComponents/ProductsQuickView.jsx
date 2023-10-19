@@ -1,6 +1,6 @@
 import styles from "./ProductsQuickView.module.css";
 import ShortLine from "../../components/ShoerLine";
-import data from "../../data/data.json";
+
 import HomeProduct from "./HomeProduct";
 // react crousal
 import Carousel from "@itseasy21/react-elastic-carousel";

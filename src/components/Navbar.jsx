@@ -15,7 +15,7 @@ import PropTypes from "prop-types"; // Import PropTypes
 
 import logo from "/logo.png";
 
-export default function Navbar({ setActiveFilter }) {
+export default function Navbar({ setActiveFilter, makeItActive = "false" }) {
   const [scrollY, setScrollY] = useState(0);
   const [sideBarIsActive, setSideBarIsActive] = useState(false);
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
@@ -76,7 +76,11 @@ export default function Navbar({ setActiveFilter }) {
 
   return (
     <>
-      <nav className={`${styles.nav} ${scrollY > 200 ? styles.scrolled : ""}`}>
+      <nav
+        className={`${styles.nav} ${scrollY > 200 ? styles.scrolled : ""} ${
+          makeItActive === "true" ? styles.whiteNavBar : ""
+        }`}
+      >
         <div className={styles.burger}>
           <FontAwesomeIcon
             icon={faBars}
@@ -97,7 +101,9 @@ export default function Navbar({ setActiveFilter }) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/men">Men</Link>
+            <Link to="/men" onClick={() => setActiveFilter(false)}>
+              Men
+            </Link>
           </li>
           <li>
             <Link to="/women">Women</Link>
@@ -144,25 +150,39 @@ export default function Navbar({ setActiveFilter }) {
         />
         <ul className={styles.burderMenuLinks}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => setActiveFilter(false)}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/men">Men</Link>
+            <Link to="/men" onClick={() => setActiveFilter(false)}>
+              Men
+            </Link>
           </li>
           <li>
-            <Link to="/women">Women</Link>
+            <Link to="/women" onClick={() => setActiveFilter(false)}>
+              Women
+            </Link>
           </li>
           <li>
-            <Link to="/men">Accessories</Link>
+            <Link to="/men" onClick={() => setActiveFilter(false)}>
+              Accessories
+            </Link>
           </li>
           <li>
-            <Link to="/men">New</Link>
+            <Link to="/men" onClick={() => setActiveFilter(false)}>
+              New
+            </Link>
           </li>
           <li>
-            <Link to="/men">Blog</Link>
+            <Link to="/men" onClick={() => setActiveFilter(false)}>
+              Blog
+            </Link>
           </li>
           <li>
-            <Link to="/men">Contact Us</Link>
+            <Link to="/men" onClick={() => setActiveFilter(false)}>
+              Contact Us
+            </Link>
           </li>
         </ul>
       </div>
