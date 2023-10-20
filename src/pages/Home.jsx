@@ -12,7 +12,7 @@ import Testemonials from "./homeComponents/Testemonials";
 import Newsletter from "./homeComponents/Newsletter";
 import Footer from "../components/Footer";
 
-function Home({ MibiProductsData, ActiveFilter, setActiveFilter }) {
+function Home({ ActiveFilter, setActiveFilter }) {
   return (
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
@@ -21,7 +21,7 @@ function Home({ MibiProductsData, ActiveFilter, setActiveFilter }) {
       <HomeSlider />
       <OurOfferce></OurOfferce>
       <Categories></Categories>
-      <ProductsQuickView MibiProductsData={MibiProductsData} />
+      <ProductsQuickView />
       <HotCollection />
       <BestBagsCollection />
       <DayToNight />

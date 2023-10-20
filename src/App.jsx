@@ -2,21 +2,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import MenClothing from "./pages/MenClothing";
 import WomenClothing from "./pages/WomenClothing";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import "./App.css";
 
-// get fetched object data from API
-import { mibiProducts } from "./components/apiMibiProducts";
-
 function App() {
-  const [MibiProductsData, setMibiProductsData] = useState([]);
   const [ActiveFilter, setActiveFilter] = useState(false);
-
-  // fetch data
-  useEffect(function () {
-    mibiProducts().then((data) => setMibiProductsData(data));
-  }, []);
 
   return (
     <BrowserRouter>
@@ -25,7 +16,6 @@ function App() {
           path="/"
           element={
             <Home
-              MibiProductsData={MibiProductsData}
               ActiveFilter={ActiveFilter}
               setActiveFilter={setActiveFilter}
             />

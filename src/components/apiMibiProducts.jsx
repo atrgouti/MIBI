@@ -5,6 +5,5 @@ export async function mibiProducts() {
     console.error(error);
     throw new Error("error");
   }
-
   return data;
 }

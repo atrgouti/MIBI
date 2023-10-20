@@ -1,9 +1,10 @@
 import styles from "./ProductsQuickView.module.css";
 import ShortLine from "../../components/ShoerLine";
-
 import HomeProduct from "./HomeProduct";
+import HomeProductsIsLoading from "../../components/HomeProductsIsLoading";
 // react crousal
 import Carousel from "@itseasy21/react-elastic-carousel";
+
 // font awsome package
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,23 +12,35 @@ import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-//import hooks
-import { useState, useRef } from "react";
 
-function ProductsQuickView({ MibiProductsData }) {
-  const carouselRef = useRef(null); // Create a ref for the Carousel component
+//import hooks
+import { useState, useRef, useEffect } from "react";
+
+// import api function
+import { apiMenProducts } from "../../components/apiMenProducts";
+
+function ProductsQuickView() {
+  const [mendata, setMenData] = useState([]);
   const [choosedCategory, setChoosedCategory] = useState("women");
+  const [isLoading, setIsLoading] = useState(true);
+
+  // getting the data from the api
+  useEffect(
+    function () {
+      apiMenProducts(choosedCategory, setIsLoading).then((data) =>
+        setMenData(data)
+      );
+    },
+    [choosedCategory]
+  );
+
+  const carouselRef = useRef(null); // Create a ref for the Carousel component
 
   const handleScrollToFirst = () => {
     if (carouselRef.current) {
       carouselRef.current.goTo(0); // Scroll back to the first product
     }
   };
-
-  //filter my data
-  let myData = MibiProductsData.filter(
-    (data) => data.category === `${choosedCategory}`
-  );
 
   return (
     <div className={styles.productsquickviewsection}>
@@ -99,14 +112,18 @@ function ProductsQuickView({ MibiProductsData }) {
               { width: 900, itemsToShow: 3, itemsToScroll: 1 }, // Screens wider than 900px
             ]}
           >
-            {myData.map((product) => (
-              <HomeProduct
-                img={product.photos.productPhotos.at(0)}
-                title={product.title}
-                price={product.price}
-                key={product.id}
-              />
-            ))}
+            {isLoading ? (
+              <HomeProductsIsLoading />
+            ) : (
+              mendata.map((product) => (
+                <HomeProduct
+                  img={product.photos.productPhotos.at(0)}
+                  title={product.title}
+                  price={product.price}
+                  key={product.id}
+                />
+              ))
+            )}
           </Carousel>
         </div>
       </div>
