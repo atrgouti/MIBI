@@ -118,6 +118,7 @@ function ProductsQuickView() {
               mendata.map((product) => (
                 <HomeProduct
                   img={product.photos.productPhotos.at(0)}
+                  hash={product.hash}
                   title={product.title}
                   price={product.price}
                   key={product.id}
