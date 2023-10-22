@@ -1,0 +1,11 @@
+.categoSec {
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+}
+.catego {
+  width: 80%;
+  margin: 0px auto;
+}
+.catego p {
+  padding: 20px 0px;
+}

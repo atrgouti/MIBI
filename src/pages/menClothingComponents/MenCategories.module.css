@@ -1,0 +1,12 @@
+.menCategory {
+  margin: 20px 0px;
+}
+.menCategory h3 {
+  color: rgb(69, 69, 69);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.menCategory p {
+  padding: 5px 0px;
+  color: rgb(69, 69, 69);
+}

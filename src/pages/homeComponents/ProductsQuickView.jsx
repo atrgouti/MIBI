@@ -17,7 +17,7 @@ import {
 import { useState, useRef, useEffect } from "react";
 
 // import api function
-import { apiMenProducts } from "../../components/apiMenProducts";
+import { apiMibiProducts } from "../../components/apiMibiProducts";
 
 function ProductsQuickView() {
   const [mendata, setMenData] = useState([]);
@@ -27,7 +27,7 @@ function ProductsQuickView() {
   // getting the data from the api
   useEffect(
     function () {
-      apiMenProducts(choosedCategory, setIsLoading).then((data) =>
+      apiMibiProducts(choosedCategory, setIsLoading).then((data) =>
         setMenData(data)
       );
     },

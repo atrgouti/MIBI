@@ -1,0 +1,20 @@
+.allArea {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+.AllMenProducts {
+  width: 80%;
+  height: 100%;
+  margin: 0px auto;
+  display: flex;
+}
+.filtringOptions {
+  width: 30%;
+  min-width: 300px;
+  height: 100%;
+}
+.menProducts {
+  width: 80%;
+  height: 100%;
+}

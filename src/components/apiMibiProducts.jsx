@@ -1,9 +1,19 @@
 import supabase from "./supabase";
-export async function mibiProducts() {
-  const { data, error } = await supabase.from("mibiProducts").select("*");
-  if (error) {
-    console.error(error);
-    throw new Error("error");
+
+export async function apiMibiProducts(currentCategory, setIsLoading) {
+  try {
+    setIsLoading(true);
+    const { data, error } = await supabase
+      .from(`${currentCategory}`)
+      .select("*");
+    if (error) {
+      console.error(error);
+      throw new Error("error");
+    }
+    setIsLoading(false);
+    return data;
+  } catch (error) {
+    setIsLoading(false);
+    throw error;
   }
-  return data;
 }
