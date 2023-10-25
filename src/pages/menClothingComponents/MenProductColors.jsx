@@ -20,6 +20,10 @@ function MenProductColors() {
           className={styles.color}
           style={{ backgroundColor: "#4169E1" }}
         ></div>
+        <div
+          className={styles.color}
+          style={{ backgroundColor: "#FF2400" }}
+        ></div>
         <div className={styles.color} style={{ backgroundColor: "pink" }}></div>
       </div>
     </div>

@@ -1,0 +1,37 @@
+.menPageProducts {
+  margin: 20px 0px;
+}
+.menPageProducts h1 {
+  color: rgb(69, 69, 69);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.menPageProducts p {
+  padding: 5px 0px;
+  color: rgb(69, 69, 69);
+}
+.numProducts {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.numProducts select {
+  background-color: none;
+  border: none;
+}
+.numProducts select:focus {
+  border: none;
+}
+
+.numProducts select:active {
+  border: none;
+}
+.numProducts option {
+  padding: 10px;
+}
+.menProductsItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
