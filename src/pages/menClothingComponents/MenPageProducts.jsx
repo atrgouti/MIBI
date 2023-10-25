@@ -1,22 +1,33 @@
 import styles from "./MenPageProducts.module.css";
 import MenProduct from "./MenProduct";
+import MenProductIsLoading from "./MenProductIsLoading";
+
+import { apiMibiProducts } from "../../components/apiMibiProducts";
+import { useEffect, useState } from "react";
 
 function MenPageProducts() {
+  const [menData, setMenData] = useState([]);
+  const [menLoader, setMenLoader] = useState("false");
+
+  useEffect(function () {
+    apiMibiProducts("men", setMenLoader).then((data) => setMenData(data));
+    window.scrollTo({ top: 0, left: 0 });
+  }, []);
+
+  // window.innerHeight = 0;
   return (
     <div className={styles.menPageProducts}>
-      <h1>Women</h1>
+      <h1>Men</h1>
       <p>
         The very latest in globally-recognised clothing brands offers you with
         an exquisite range of Branded Clothes, Artificial Jewelry, Shoes, Beauty
         Products and Accessories for Women, Men & Kids at affordable price
       </p>
       <div className={styles.numProducts}>
-        <p>Showing: 20 Results</p>
+        <p>Showing: {menData.length} Results</p>
         <select name="" id="">
           Featured
-          <option value="" selected>
-            Sort by
-          </option>
+          <option value="">Sort by</option>
           <option value="">Featured</option>
           <option value="">Best selling</option>
           <option value="">A - Z</option>
@@ -28,38 +39,19 @@ function MenPageProducts() {
         </select>
       </div>
       <div className={styles.menProductsItems}>
-        <MenProduct
-          hash={"LcPs;ZWB^,t7t7j[WBay_4ofD$WB"}
-          img={
-            "https://byclccpokszkbxfgiwhw.supabase.co/storage/v1/object/public/ProductImages/men-tshirt-1-1.jpg"
-          }
-          title={"supaaaaa"}
-          price={"29.99"}
-        />
-        <MenProduct
-          hash={"LcPs;ZWB^,t7t7j[WBay_4ofD$WB"}
-          img={
-            "https://byclccpokszkbxfgiwhw.supabase.co/storage/v1/object/public/ProductImages/men-tshirt-1-1.jpg"
-          }
-          title={"supaaaaa"}
-          price={"29.99"}
-        />
-        <MenProduct
-          hash={"LcPs;ZWB^,t7t7j[WBay_4ofD$WB"}
-          img={
-            "https://byclccpokszkbxfgiwhw.supabase.co/storage/v1/object/public/ProductImages/men-tshirt-1-1.jpg"
-          }
-          title={"supaaaaa"}
-          price={"29.99"}
-        />
-        <MenProduct
-          hash={"LcPs;ZWB^,t7t7j[WBay_4ofD$WB"}
-          img={
-            "https://byclccpokszkbxfgiwhw.supabase.co/storage/v1/object/public/ProductImages/men-tshirt-1-1.jpg"
-          }
-          title={"supaaaaa"}
-          price={"29.99"}
-        />
+        {menLoader ? (
+          <MenProductIsLoading />
+        ) : (
+          menData.map((product) => (
+            <MenProduct
+              img={product.photos.productPhotos.at(0)}
+              hash={product.hash}
+              title={product.title}
+              price={product.price}
+              key={product.id}
+            />
+          ))
+        )}
       </div>
     </div>
   );

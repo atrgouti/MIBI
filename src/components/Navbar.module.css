@@ -167,5 +167,5 @@ nav.scrolled {
   box-shadow: 0px 2px 4px rgba(67, 67, 67, 0.2);
   margin-bottom: 35px;
   /* this my couse a bug  */
-  position: relative;
+  /* position: relative; */
 }

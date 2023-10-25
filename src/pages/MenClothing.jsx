@@ -11,8 +11,10 @@ function MenClothing({ ActiveFilter, setActiveFilter }) {
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
       <Announce />
       <Navbar setActiveFilter={setActiveFilter} makeItActive={"true"} />
-      <CurrentCategory category={"Men"} />
-      <MenProductsContent />
+      <div style={{ position: "relative", top: "110px" }}>
+        <CurrentCategory category={"Men"} />
+        <MenProductsContent />
+      </div>
     </>
   );
 }

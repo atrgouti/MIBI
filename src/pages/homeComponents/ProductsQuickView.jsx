@@ -20,7 +20,7 @@ import { useState, useRef, useEffect } from "react";
 import { apiMibiProducts } from "../../components/apiMibiProducts";
 
 function ProductsQuickView() {
-  const [mendata, setMenData] = useState([]);
+  const [myData, setmyData] = useState([]);
   const [choosedCategory, setChoosedCategory] = useState("women");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -28,7 +28,7 @@ function ProductsQuickView() {
   useEffect(
     function () {
       apiMibiProducts(choosedCategory, setIsLoading).then((data) =>
-        setMenData(data)
+        setmyData(data)
       );
     },
     [choosedCategory]
@@ -115,7 +115,7 @@ function ProductsQuickView() {
             {isLoading ? (
               <HomeProductsIsLoading />
             ) : (
-              mendata.map((product) => (
+              myData.map((product) => (
                 <HomeProduct
                   img={product.photos.productPhotos.at(0)}
                   hash={product.hash}

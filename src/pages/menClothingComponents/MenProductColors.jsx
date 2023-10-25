@@ -2,7 +2,7 @@ import styles from "./MenProductColors.module.css";
 function MenProductColors() {
   return (
     <div>
-      <h3>COLOR</h3>
+      <h3 className={styles.h3}>COLOR</h3>
       <div className={styles.colors}>
         <div
           className={styles.color}
