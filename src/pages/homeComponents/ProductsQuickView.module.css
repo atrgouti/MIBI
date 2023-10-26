@@ -55,7 +55,9 @@
   margin: 30px;
   height: 450px;
   width: 250px;
+  cursor: pointer;
   /* background-color: white; */
+  position: relative;
 }
 .productImage {
   width: 100%;
@@ -93,4 +95,23 @@
   color: black;
   border: none;
   cursor: pointer;
+}
+
+/* product actions */
+.productActions {
+  position: absolute;
+  top: 240px;
+  left: 10px;
+}
+.addToFavorite {
+  background-color: black;
+  padding: 6px 10px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.product:hover .addToFavorite {
+  opacity: 1;
 }

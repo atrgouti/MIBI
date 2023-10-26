@@ -2,19 +2,7 @@ import styles from "./MenPageProducts.module.css";
 import MenProduct from "./MenProduct";
 import MenProductIsLoading from "./MenProductIsLoading";
 
-import { apiMibiProducts } from "../../components/apiMibiProducts";
-import { useEffect, useState } from "react";
-
-function MenPageProducts() {
-  const [menData, setMenData] = useState([]);
-  const [menLoader, setMenLoader] = useState("false");
-
-  useEffect(function () {
-    apiMibiProducts("men", setMenLoader).then((data) => setMenData(data));
-    window.scrollTo({ top: 0, left: 0 });
-  }, []);
-
-  // window.innerHeight = 0;
+function MenPageProducts({ menData, menLoader }) {
   return (
     <div className={styles.menPageProducts}>
       <h1>Men</h1>
