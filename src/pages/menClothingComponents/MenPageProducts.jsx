@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./MenPageProducts.module.css";
 import MenProduct from "./MenProduct";
 import MenProductIsLoading from "./MenProductIsLoading";
@@ -31,13 +32,15 @@ function MenPageProducts({ menData, menLoader }) {
           <MenProductIsLoading />
         ) : (
           menData.map((product) => (
-            <MenProduct
-              img={product.photos.productPhotos.at(0)}
-              hash={product.hash}
-              title={product.title}
-              price={product.price}
-              key={product.id}
-            />
+            <Link to={`/product/${product.title}`} key={product.id}>
+              <MenProduct
+                img={product.photos.productPhotos.at(0)}
+                hash={product.hash}
+                title={product.title}
+                price={product.price}
+                key={product.id}
+              />
+            </Link>
           ))
         )}
       </div>
