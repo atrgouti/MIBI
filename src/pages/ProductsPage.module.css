@@ -1,6 +1,203 @@
 .main {
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: white;
   z-index: 10;
+}
+.mainContent {
+  width: 80%;
+  height: 100%;
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  padding: 50px 0px;
+  gap: 30px;
+  max-width: 1200px;
+}
+
+/* work on the images part */
+.mainContent .images {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+.mainContent .images .subImages {
+  width: 15%;
+}
+.mainContent .images .subImages img {
+  width: 100%;
+  cursor: pointer;
+}
+.mainContent .images .Image {
+  width: 85%;
+}
+.mainContent .images .Image img {
+  width: 100%;
+}
+/* work on the infos part */
+.mainContent .infos {
+  width: 50%;
+  height: 100%;
+}
+.mainContent .infos h1 {
+  color: rgb(60, 60, 60);
+}
+.stockandreview {
+  display: flex;
+  align-items: center;
+}
+.actionsToDo {
+  display: flex;
+  margin-top: 30px;
+}
+.actionsToDo p {
+  color: gray;
+  padding: 5px;
+}
+.actionsToDo .addToWishList {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.actionsToDo .enquiry {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.chooseQuantity {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  border: 1px solid rgb(220, 220, 220);
+  width: fit-content;
+  padding: 0px 10px;
+  color: rgb(35, 35, 35);
+}
+.chooseQuantity p {
+  padding: 7px;
+}
+.addToCard {
+  display: flex;
+}
+.addToCard button {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 350px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.addToCard button:hover {
+  background-color: white;
+  color: black;
+}
+.butItNow {
+  width: 453px;
+  padding: 15px 0px;
+  background-color: rgb(233, 70, 10);
+  border: none;
+  color: white;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.butItNow:hover {
+  background-color: black;
+}
+.freeShipping {
+  margin-top: 20px;
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+}
+.freeShipping p {
+  margin-left: 10px;
+}
+.expectedDate {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.expectedDate p {
+  margin-left: 10px;
+}
+
+.guaranteedSafeCheckout {
+  margin-top: 30px;
+}
+.gueranteeIcons {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.imageLeftArrow {
+  display: none;
+}
+.imageRightArrow {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  /* adjusting the images  */
+  .mainContent {
+    flex-direction: column;
+    width: 100%;
+  }
+  .mainContent .images {
+    width: 90%;
+    margin: 0px auto;
+    flex-direction: column-reverse;
+  }
+  .mainContent .images .Image {
+    width: 100%;
+  }
+  .mainContent .images .subImages {
+    display: flex;
+    width: 100%;
+    display: none;
+  }
+  /* adjusting the product infos  */
+
+  .mainContent .infos {
+    width: 90%;
+    margin: 0px auto;
+  }
+  .butItNow {
+    width: 100%;
+  }
+  .addToCard {
+    display: flex;
+    flex-direction: column;
+  }
+  .chooseQuantity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .addToCard button {
+    width: 100%;
+    padding: 15px 0px;
+    margin-left: 0px;
+  }
+  .imageLeftArrow {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+  }
+  .imageRightArrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+  }
 }

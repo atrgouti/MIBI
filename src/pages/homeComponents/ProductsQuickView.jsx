@@ -13,7 +13,7 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
-//import hooks
+//import hooksfa
 import { useState, useRef, useEffect } from "react";
 
 // import api function

@@ -13,10 +13,18 @@ import Newsletter from "./homeComponents/Newsletter";
 import Footer from "../components/Footer";
 
 import GeneralLoader from "../components/GeneralLoader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 function Home({ ActiveFilter, setActiveFilter }) {
   const [someDataIsLoading, setSomeDataIsLoading] = useState(false);
-  window.scrollTo({ top: 0, left: 0 });
+  const { pathname } = useLocation();
+
+  useEffect(
+    function () {
+      window.scrollTo(0, 0);
+    },
+    [pathname]
+  );
   return (
     <div>
       <div

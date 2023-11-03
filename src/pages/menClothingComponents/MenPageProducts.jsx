@@ -32,7 +32,7 @@ function MenPageProducts({ menData, menLoader }) {
           <MenProductIsLoading />
         ) : (
           menData.map((product) => (
-            <Link to={`/product/${product.title}`} key={product.id}>
+            <Link to={`/product/${product.id}`} key={product.id}>
               <MenProduct
                 img={product.photos.productPhotos.at(0)}
                 hash={product.hash}
