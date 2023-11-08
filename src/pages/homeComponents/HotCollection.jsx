@@ -3,7 +3,7 @@ import styles from "./HotCollection.module.css";
 function HotCollection() {
   return (
     <section className={styles.section}>
-      <img src={summerBackground} alt="" className={styles.bg} />
+      <img src={summerBackground} alt="" loading="lazy" className={styles.bg} />
       <div className={styles.content}>
         <h3>HOT COLLECTION</h3>
         <h1>Summer In The City</h1>

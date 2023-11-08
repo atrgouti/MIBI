@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 
 import { apiMibiProducts } from "../components/apiMibiProducts";
-function MenClothing({ ActiveFilter, setActiveFilter }) {
+function MenClothing({ ActiveFilter, setActiveFilter, cartItems }) {
   const [menData, setMenData] = useState([]);
   const [menLoader, setMenLoader] = useState("false");
 
@@ -22,7 +22,11 @@ function MenClothing({ ActiveFilter, setActiveFilter }) {
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
       <Announce />
-      <Navbar setActiveFilter={setActiveFilter} makeItActive={"true"} />
+      <Navbar
+        cartItems={cartItems}
+        setActiveFilter={setActiveFilter}
+        makeItActive={"true"}
+      />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={"Men"} />
         <MenProductsContent menData={menData} menLoader={menLoader} />

@@ -7,18 +7,33 @@ import {
   faBars,
   faMagnifyingGlass,
   faXmark,
+  faGift,
+  faFileInvoice,
+  faTag,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
+import { faTruckFast } from "@fortawesome/free-solid-svg-icons";
+import CartItem from "./CartItem";
+
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 
 import logo from "/logo.png";
 
-export default function Navbar({ setActiveFilter, makeItActive = "false" }) {
+// // import hooks
+// import useLocalStorageState from "../hooks/useLocalStorageState";
+
+export default function Navbar({
+  setActiveFilter,
+  makeItActive = "false",
+  cartItems,
+  handleDeleteMovies,
+}) {
   const [scrollY, setScrollY] = useState(0);
   const [sideBarIsActive, setSideBarIsActive] = useState(false);
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
+  // const [cartItems, setCartItems] = useLocalStorageState([], "cartItems");
 
   function handleScrollY() {
     setScrollY(window.scrollY);
@@ -132,6 +147,7 @@ export default function Navbar({ setActiveFilter, makeItActive = "false" }) {
               setActiveFilter(true);
             }}
           />
+          <p>{cartItems.length > 0 ? cartItems.length : ""}</p>
         </div>
       </nav>
       {/* WORKING ON THE BURGER MENU HERE  */}
@@ -191,7 +207,7 @@ export default function Navbar({ setActiveFilter, makeItActive = "false" }) {
         className={`${styles.MyCart} ${sideBarIsActive ? styles.active : ""}`}
       >
         <header>
-          <p>YOUR CART (0)</p>
+          <p>YOUR CART ({cartItems?.length})</p>
           <FontAwesomeIcon
             icon={faXmark}
             className={styles.xmark}
@@ -201,15 +217,89 @@ export default function Navbar({ setActiveFilter, makeItActive = "false" }) {
             }}
           />
         </header>
-        <div className={styles.noItemsAvaliable}>
-          <FontAwesomeIcon
-            icon={faCartShopping}
-            className={styles.icon}
-            style={{ marginTop: "40px" }}
-          />
-          <p>You don`t have any items in your cart.</p>
-          <button>CONTINUE SHOPPING</button>
-        </div>
+        {cartItems?.length > 0 ? (
+          <div className={styles.itemsAvaliable}>
+            <div className={styles.youHaveFreeShipping}>
+              <FontAwesomeIcon icon={faTruckFast} className={styles.icon} />
+              <p>
+                You have got <strong>FREE SHIPPING</strong>
+              </p>
+            </div>
+            <div className={styles.product}>
+              {/* <div className={styles.productInfos}>
+                <img
+                  src="https://byclccpokszkbxfgiwhw.supabase.co/storage/v1/object/public/ProductImages/bags-2-2.jpg"
+                  alt=""
+                />
+                <div className={styles.titleQuantity}>
+                  <p>men BackPack</p>
+                </div>
+              </div>
+              <div className={styles.productPrice}></div> */}
+              {/* {cartItems.map((item) => {
+                <CartItem
+                  img={item.image}
+                  title={item.title}
+                  quantity={item.quantity}
+                  price={item.price}
+                  key={item.id}
+                />;
+              })} */}
+              {/* <CartItem /> */}
+              {cartItems.map((item) => (
+                <CartItem
+                  handleDeleteMovies={handleDeleteMovies}
+                  img={item.image}
+                  title={item.title}
+                  price={item.price}
+                  quantity={item.quantity}
+                  id={item.id}
+                  category={item.category}
+                  key={item.id}
+                />
+              ))}
+
+              <div className={styles.cartOptions}>
+                <FontAwesomeIcon
+                  icon={faFileInvoice}
+                  className={styles.optionIcon}
+                />
+                <div className={styles.spreadLine}></div>
+                <FontAwesomeIcon icon={faTag} className={styles.optionIcon} />
+                <div className={styles.spreadLine}></div>
+                <FontAwesomeIcon icon={faGift} className={styles.optionIcon} />
+              </div>
+              <div className={styles.subTotal}>
+                <p>SUBTOTAL</p>
+                <p>
+                  ${cartItems.reduce((total, item) => total + item.price, 0)}{" "}
+                  USD
+                </p>
+              </div>
+              <p style={{ fontSize: "13px", color: "black", marginTop: "5px" }}>
+                Taxt inclued and shipping calculated at checkout
+              </p>
+              <div className={styles.agreeTermsConditions}>
+                <input type="checkbox" />
+                <p>I agree with the terms and conditions</p>
+              </div>
+              <button className={styles.Proceedcheckout}>
+                PROCEED TO CHECKOUT
+              </button>
+              <button className={styles.viewCart}>VIEW CART</button>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.noItemsAvaliable}>
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className={styles.icon}
+              style={{ marginTop: "40px" }}
+            />
+            <p>You don`t have any items in your cart.</p>
+            <button>CONTINUE SHOPPING</button>
+          </div>
+        )}
       </div>
     </>
   );

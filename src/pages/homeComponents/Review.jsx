@@ -5,7 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 function Review({ image, description, numberOfStarts, namee, position }) {
   return (
     <div className={styles.box}>
-      <img src={image} alt="" />
+      <img src={image} alt="" loading="lazy" />
       <p className={styles.description}>{description}</p>
       <div className={styles.stars}>
         <div className={styles.star}>

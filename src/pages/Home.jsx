@@ -15,7 +15,13 @@ import Footer from "../components/Footer";
 import GeneralLoader from "../components/GeneralLoader";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-function Home({ ActiveFilter, setActiveFilter }) {
+function Home({
+  ActiveFilter,
+  setActiveFilter,
+  cartItems,
+  addItemToCart,
+  handleDeleteMovies,
+}) {
   const [someDataIsLoading, setSomeDataIsLoading] = useState(false);
   const { pathname } = useLocation();
 
@@ -32,12 +38,16 @@ function Home({ ActiveFilter, setActiveFilter }) {
         className={ActiveFilter ? filtringStyles.filter : ""}
       ></div>
       <Announce />
-      <Navbar setActiveFilter={setActiveFilter} />
+      <Navbar
+        handleDeleteMovies={handleDeleteMovies}
+        setActiveFilter={setActiveFilter}
+        cartItems={cartItems}
+      />
       {someDataIsLoading && <GeneralLoader />}
       <HomeSlider />
       <OurOfferce></OurOfferce>
       <Categories></Categories>
-      <ProductsQuickView />
+      <ProductsQuickView addItemToCart={addItemToCart} />
       <HotCollection />
       <BestBagsCollection />
       <DayToNight />

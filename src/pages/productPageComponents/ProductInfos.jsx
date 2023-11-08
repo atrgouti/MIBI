@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./productInfos.module.css";
-function ProductInfos() {
+function ProductInfos({ productData }) {
   const [selectedInfo, setSelectedInfo] = useState("description");
   return (
     <div className={styles.productInfos}>
@@ -38,7 +38,7 @@ function ProductInfos() {
         <div className={styles.line}></div>
         {selectedInfo === "description" && (
           <div className={styles.description}>
-            <p>
+            {/* <p>
               Avone is a ultimate multipurpose shopify theme that will give you
               and your customers a smooth shopping experience which can be used
               for various kinds of stores such as boutiques, bookstores,
@@ -52,7 +52,8 @@ function ProductInfos() {
               <li>High Performance Delivered</li>
               <li>The powerful theme you can trust</li>
               <li>Affordable solutions for all your creativity needs.</li>
-            </ul>
+            </ul> */}
+            {productData.description}
           </div>
         )}
         {selectedInfo === "reviews" && (

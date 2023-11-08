@@ -6,7 +6,7 @@ function BestBagsCollection() {
     <section className={styles.section}>
       <div className={styles.bags}>
         <div className={styles.bg}>
-          <img src={bg} alt="" />
+          <img src={bg} alt="" loading="lazy" />
         </div>
         <div className={styles.content}>
           <h1>Shop the Best Bags</h1>

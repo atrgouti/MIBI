@@ -34,7 +34,7 @@ import {
 
 import { apiSelectProduct } from "../components/apiSelectProduct";
 
-function ProductsPage({ ActiveFilter, setActiveFilter }) {
+function ProductsPage({ ActiveFilter, setActiveFilter, cartItems }) {
   const [productData, setProductData] = useState([]);
   const [numberOfChoosedImage, setNumberOfChoosedImae] = useState(0);
 
@@ -63,7 +63,11 @@ function ProductsPage({ ActiveFilter, setActiveFilter }) {
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
       <Announce />
-      <NavBar setActiveFilter={setActiveFilter} makeItActive={"true"} />
+      <NavBar
+        cartItems={cartItems}
+        setActiveFilter={setActiveFilter}
+        makeItActive={"true"}
+      />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={`${currentProduct.id}`} />
         <main className={styles.main}>
@@ -95,6 +99,11 @@ function ProductsPage({ ActiveFilter, setActiveFilter }) {
                 <FontAwesomeIcon
                   icon={faChevronLeft}
                   className={styles.imageLeftArrow}
+                  onClick={() =>
+                    numberOfChoosedImage > 0
+                      ? setNumberOfChoosedImae(numberOfChoosedImage - 1)
+                      : setNumberOfChoosedImae(numberOfChoosedImage)
+                  }
                 />
                 <img
                   src={productData.photos?.productPhotos?.at(
@@ -105,6 +114,11 @@ function ProductsPage({ ActiveFilter, setActiveFilter }) {
                 <FontAwesomeIcon
                   icon={faChevronRight}
                   className={styles.imageRightArrow}
+                  onClick={() =>
+                    numberOfChoosedImage < 3
+                      ? setNumberOfChoosedImae(numberOfChoosedImage + 1)
+                      : setNumberOfChoosedImae(numberOfChoosedImage)
+                  }
                 />
               </div>
             </div>
@@ -120,7 +134,9 @@ function ProductsPage({ ActiveFilter, setActiveFilter }) {
                 ))}
                 <p style={{ color: "gray", padding: "5px" }}>NO REVIEWS</p>
               </div>
-              <p style={{ fontSize: "22px", paddingTop: "20px" }}>$200.00</p>
+              <p style={{ fontSize: "22px", paddingTop: "20px" }}>
+                ${productData.price}
+              </p>
               <p style={{ color: "gray" }}>Tax included.</p>
               <div className={styles.actionsToDo}>
                 <div className={styles.addToWishList}>
@@ -185,7 +201,7 @@ function ProductsPage({ ActiveFilter, setActiveFilter }) {
             </div>
           </div>
         </main>
-        <ProductInfos />
+        <ProductInfos productData={productData} />
       </div>
     </>
   );

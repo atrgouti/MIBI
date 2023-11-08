@@ -19,7 +19,7 @@ import { useState, useRef, useEffect } from "react";
 // import api function
 import { apiMibiProducts } from "../../components/apiMibiProducts";
 
-function ProductsQuickView() {
+function ProductsQuickView({ addItemToCart }) {
   const [myData, setmyData] = useState([]);
   const [choosedCategory, setChoosedCategory] = useState("women");
   const [isLoading, setIsLoading] = useState(true);
@@ -117,11 +117,14 @@ function ProductsQuickView() {
             ) : (
               myData.map((product) => (
                 <HomeProduct
+                  addItemToCart={addItemToCart}
+                  id={product.id}
                   img={product.photos.productPhotos.at(0)}
                   hash={product.hash}
                   title={product.title}
                   price={product.price}
-                  key={product.id}
+                  category={product.category}
+                  key={product.title}
                 />
               ))
             )}

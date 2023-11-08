@@ -10,7 +10,7 @@ import {
   faMagnifyingGlassPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-function HomeProduct({ img, title, price, hash }) {
+function HomeProduct({ img, title, price, hash, id, addItemToCart, category }) {
   return (
     <div className={styles.product}>
       {/* <img src={`${img}`} alt="" className={styles.productImage} /> */}
@@ -19,7 +19,11 @@ function HomeProduct({ img, title, price, hash }) {
           <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
         </div>
         <div className={styles.addToFavorite}>
-          <FontAwesomeIcon icon={faCartShopping} className={`${styles.icon}`} />
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            className={`${styles.icon}`}
+            onClick={() => addItemToCart(id, title, img, 1, price, category)}
+          />
         </div>
         <div className={styles.addToFavorite}>
           <FontAwesomeIcon icon={faMagnifyingGlassPlus} />
