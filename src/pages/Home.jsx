@@ -21,6 +21,8 @@ function Home({
   cartItems,
   addItemToCart,
   handleDeleteMovies,
+  setSideBarIsActive,
+  sideBarIsActive,
 }) {
   const [someDataIsLoading, setSomeDataIsLoading] = useState(false);
   const { pathname } = useLocation();
@@ -39,6 +41,8 @@ function Home({
       ></div>
       <Announce />
       <Navbar
+        sideBarIsActive={sideBarIsActive}
+        setSideBarIsActive={setSideBarIsActive}
         handleDeleteMovies={handleDeleteMovies}
         setActiveFilter={setActiveFilter}
         cartItems={cartItems}
@@ -47,7 +51,11 @@ function Home({
       <HomeSlider />
       <OurOfferce></OurOfferce>
       <Categories></Categories>
-      <ProductsQuickView addItemToCart={addItemToCart} />
+      <ProductsQuickView
+        addItemToCart={addItemToCart}
+        setSideBarIsActive={setSideBarIsActive}
+        setActiveFilter={setActiveFilter}
+      />
       <HotCollection />
       <BestBagsCollection />
       <DayToNight />

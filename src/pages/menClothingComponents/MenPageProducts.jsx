@@ -3,7 +3,13 @@ import styles from "./MenPageProducts.module.css";
 import MenProduct from "./MenProduct";
 import MenProductIsLoading from "./MenProductIsLoading";
 
-function MenPageProducts({ menData, menLoader }) {
+function MenPageProducts({
+  menData,
+  menLoader,
+  addItemToCart,
+  setSideBarIsActive,
+  setActiveFilter,
+}) {
   return (
     <div className={styles.menPageProducts}>
       <h1>Men</h1>
@@ -32,13 +38,18 @@ function MenPageProducts({ menData, menLoader }) {
           <MenProductIsLoading />
         ) : (
           menData.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
+            <Link to={`/product/men/${product.id}`} key={product.id}>
               <MenProduct
+                setSideBarIsActive={setSideBarIsActive}
+                setActiveFilter={setActiveFilter}
+                category={product.category}
+                id={product.id}
                 img={product.photos.productPhotos.at(0)}
                 hash={product.hash}
                 title={product.title}
                 price={product.price}
                 key={product.id}
+                addItemToCart={addItemToCart}
               />
             </Link>
           ))

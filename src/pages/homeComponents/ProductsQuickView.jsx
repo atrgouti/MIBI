@@ -18,8 +18,13 @@ import { useState, useRef, useEffect } from "react";
 
 // import api function
 import { apiMibiProducts } from "../../components/apiMibiProducts";
+import { Link } from "react-router-dom";
 
-function ProductsQuickView({ addItemToCart }) {
+function ProductsQuickView({
+  addItemToCart,
+  setSideBarIsActive,
+  setActiveFilter,
+}) {
   const [myData, setmyData] = useState([]);
   const [choosedCategory, setChoosedCategory] = useState("women");
   const [isLoading, setIsLoading] = useState(true);
@@ -116,16 +121,23 @@ function ProductsQuickView({ addItemToCart }) {
               <HomeProductsIsLoading />
             ) : (
               myData.map((product) => (
-                <HomeProduct
-                  addItemToCart={addItemToCart}
-                  id={product.id}
-                  img={product.photos.productPhotos.at(0)}
-                  hash={product.hash}
-                  title={product.title}
-                  price={product.price}
-                  category={product.category}
-                  key={product.title}
-                />
+                <Link
+                  to={`/product/${choosedCategory}/${product.id}`}
+                  key={product.id}
+                >
+                  <HomeProduct
+                    setSideBarIsActive={setSideBarIsActive}
+                    setActiveFilter={setActiveFilter}
+                    addItemToCart={addItemToCart}
+                    id={product.id}
+                    img={product.photos.productPhotos.at(0)}
+                    hash={product.hash}
+                    title={product.title}
+                    price={product.price}
+                    category={product.category}
+                    key={product.title}
+                  />
+                </Link>
               ))
             )}
           </Carousel>

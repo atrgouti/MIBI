@@ -29,9 +29,11 @@ export default function Navbar({
   makeItActive = "false",
   cartItems,
   handleDeleteMovies,
+  sideBarIsActive,
+  setSideBarIsActive,
 }) {
   const [scrollY, setScrollY] = useState(0);
-  const [sideBarIsActive, setSideBarIsActive] = useState(false);
+  // const [sideBarIsActive, setSideBarIsActive] = useState(false);
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
   // const [cartItems, setCartItems] = useLocalStorageState([], "cartItems");
 
@@ -254,6 +256,7 @@ export default function Navbar({
                   price={item.price}
                   quantity={item.quantity}
                   id={item.id}
+                  hash={item.hash}
                   category={item.category}
                   key={item.id}
                 />

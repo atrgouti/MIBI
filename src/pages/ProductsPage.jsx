@@ -34,11 +34,20 @@ import {
 
 import { apiSelectProduct } from "../components/apiSelectProduct";
 
-function ProductsPage({ ActiveFilter, setActiveFilter, cartItems }) {
+function ProductsPage({
+  ActiveFilter,
+  setActiveFilter,
+  cartItems,
+  handleDeleteMovies,
+  category = "women",
+  setSideBarIsActive = { setSideBarIsActive },
+  sideBarIsActive = { sideBarIsActive },
+}) {
   const [productData, setProductData] = useState([]);
   const [numberOfChoosedImage, setNumberOfChoosedImae] = useState(0);
 
   const currentProduct = useParams();
+  console.log(currentProduct);
 
   const { pathname } = useLocation();
 
@@ -52,11 +61,11 @@ function ProductsPage({ ActiveFilter, setActiveFilter, cartItems }) {
 
   useEffect(
     function () {
-      apiSelectProduct(currentProduct.id).then((data) =>
-        setProductData(data.at(0))
+      apiSelectProduct(currentProduct.id, currentProduct.category).then(
+        (data) => setProductData(data.at(0))
       );
     },
-    [currentProduct.id]
+    [currentProduct.id, currentProduct.category]
   );
 
   return (
@@ -67,9 +76,12 @@ function ProductsPage({ ActiveFilter, setActiveFilter, cartItems }) {
         cartItems={cartItems}
         setActiveFilter={setActiveFilter}
         makeItActive={"true"}
+        handleDeleteMovies={handleDeleteMovies}
+        setSideBarIsActive={setSideBarIsActive}
+        sideBarIsActive={sideBarIsActive}
       />
       <div style={{ position: "relative", top: "110px" }}>
-        <CurrentCategory category={`${currentProduct.id}`} />
+        <CurrentCategory category={`${productData.title}`} />
         <main className={styles.main}>
           <div className={styles.mainContent}>
             <div className={styles.images}>

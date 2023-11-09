@@ -13,6 +13,7 @@ import "./App.css";
 function App() {
   const [ActiveFilter, setActiveFilter] = useState(false);
   const [cartItems, setCartItems] = useLocalStorageState([], "cartItems");
+  const [sideBarIsActive, setSideBarIsActive] = useState(false);
 
   // old function
   // function addItemToCart(id, title, image, quantity, price, category) {
@@ -32,10 +33,10 @@ function App() {
   // }
 
   // new function
-  function addItemToCart(id, title, image, quantity, price, category) {
+  function addItemToCart(id, title, image, quantity, price, category, hash) {
     let itemExists = false;
     const updatedCartItems = cartItems.map((item) => {
-      if (item.id === id && item.category === category) {
+      if (item.hash === hash) {
         itemExists = true;
         return {
           ...item,
@@ -55,6 +56,7 @@ function App() {
         quantity,
         price, // store the unit price
         category,
+        hash,
       };
       updatedCartItems.push(newItemObject);
     }
@@ -68,10 +70,8 @@ function App() {
   //   );
   // }
 
-  function handleDeleteMovies(id, type) {
-    setCartItems((items) =>
-      items.filter((item) => !(item.id === id && item.category === type))
-    );
+  function handleDeleteMovies(hash) {
+    setCartItems((items) => items.filter((item) => item.hash !== hash));
   }
 
   const router = createBrowserRouter([
@@ -84,6 +84,8 @@ function App() {
           cartItems={cartItems}
           addItemToCart={addItemToCart}
           handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
         />
       ),
     },
@@ -104,16 +106,22 @@ function App() {
           cartItems={cartItems}
           ActiveFilter={ActiveFilter}
           setActiveFilter={setActiveFilter}
+          handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
         />
       ),
     },
     {
-      path: "/product/:id",
+      path: "/product/:category/:id",
       element: (
         <ProductsPage
           cartItems={cartItems}
           ActiveFilter={ActiveFilter}
           setActiveFilter={setActiveFilter}
+          handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
         />
       ),
     },

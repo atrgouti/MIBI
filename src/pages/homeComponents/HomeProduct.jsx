@@ -10,7 +10,17 @@ import {
   faMagnifyingGlassPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-function HomeProduct({ img, title, price, hash, id, addItemToCart, category }) {
+function HomeProduct({
+  img,
+  title,
+  price,
+  hash,
+  id,
+  addItemToCart,
+  category,
+  setSideBarIsActive,
+  setActiveFilter,
+}) {
   return (
     <div className={styles.product}>
       {/* <img src={`${img}`} alt="" className={styles.productImage} /> */}
@@ -22,7 +32,14 @@ function HomeProduct({ img, title, price, hash, id, addItemToCart, category }) {
           <FontAwesomeIcon
             icon={faCartShopping}
             className={`${styles.icon}`}
-            onClick={() => addItemToCart(id, title, img, 1, price, category)}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+
+              addItemToCart(id, title, img, 1, price, category, hash);
+              setSideBarIsActive(true);
+              setActiveFilter(true);
+            }}
           />
         </div>
         <div className={styles.addToFavorite}>

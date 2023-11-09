@@ -11,6 +11,7 @@ function CartItem({
   price,
   handleDeleteMovies,
   id,
+  hash,
   category,
 }) {
   return (
@@ -32,7 +33,7 @@ function CartItem({
           className={styles.icon}
           onClick={(event) => {
             event.stopPropagation();
-            handleDeleteMovies(id, category);
+            handleDeleteMovies(hash, category);
           }}
         />
         <p>${price}.00</p>
