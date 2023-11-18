@@ -39,15 +39,16 @@ function ProductsPage({
   setActiveFilter,
   cartItems,
   handleDeleteMovies,
-  category = "women",
-  setSideBarIsActive = { setSideBarIsActive },
-  sideBarIsActive = { sideBarIsActive },
+  setSideBarIsActive,
+  sideBarIsActive,
+  addItemToCart,
+  increaseQuantity,
 }) {
   const [productData, setProductData] = useState([]);
   const [numberOfChoosedImage, setNumberOfChoosedImae] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const currentProduct = useParams();
-  console.log(currentProduct);
 
   const { pathname } = useLocation();
 
@@ -79,6 +80,7 @@ function ProductsPage({
         handleDeleteMovies={handleDeleteMovies}
         setSideBarIsActive={setSideBarIsActive}
         sideBarIsActive={sideBarIsActive}
+        increaseQuantity={increaseQuantity}
       />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={`${productData.title}`} />
@@ -162,11 +164,45 @@ function ProductsPage({
               </div>
               <div className={styles.addToCard}>
                 <div className={styles.chooseQuantity}>
-                  <p style={{ cursor: "pointer", fontSize: "20px" }}>-</p>
-                  <p>1</p>
-                  <p style={{ cursor: "pointer", fontSize: "20px" }}>+</p>
+                  <p
+                    style={{ cursor: "pointer", fontSize: "20px" }}
+                    onClick={() => {
+                      if (quantity > 1) {
+                        setQuantity((quan) => quan - 1);
+                      }
+                    }}
+                  >
+                    -
+                  </p>
+                  <p>{quantity}</p>
+                  <p
+                    style={{ cursor: "pointer", fontSize: "20px" }}
+                    onClick={() => setQuantity((quan) => quan + 1)}
+                  >
+                    +
+                  </p>
                 </div>
-                <button>Add to card</button>
+                <button
+                  onClick={(event) => {
+                    // this might cause a bug
+                    event.stopPropagation();
+                    addItemToCart(
+                      productData.id,
+                      productData.title,
+                      productData.photos?.productPhotos?.at(0),
+                      quantity,
+                      productData.price * quantity,
+                      productData.category,
+                      productData.hash,
+                      productData.price
+                    );
+                    setQuantity(1);
+                    setSideBarIsActive(true);
+                    setActiveFilter(true);
+                  }}
+                >
+                  Add to card
+                </button>
               </div>
               <button className={styles.butItNow}>BUT IT NOW</button>
               <div className={styles.freeShipping}>

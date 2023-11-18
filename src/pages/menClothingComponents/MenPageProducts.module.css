@@ -35,3 +35,73 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.menProductsItems a {
+  text-decoration: none;
+  color: black;
+}
+.filtersButton {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .menProductsItems {
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+  }
+  .filtersButton {
+    display: block;
+    padding: 10px;
+    background-color: black;
+    border: none;
+    margin: 20px auto;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+  }
+}
+
+/* side bar filters  */
+.sideBarFilters {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .sideBarFilters {
+    display: block;
+    height: 100vh;
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    top: -110px;
+    left: 0px;
+    z-index: 90;
+    transform: translateX(-100%);
+    transition: 0.3s ease-in;
+  }
+  .sideBarFilters.active {
+    transform: translateX(0%);
+    transition: 0.3s ease-in;
+  }
+
+  .sideBarFilters .closeFiltersIcons {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+  }
+}
+.seeApliedFilters {
+  display: flex;
+  margin-top: 20px;
+}
+.seeApliedFilters p {
+  background-color: black;
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.seeApliedFilters p:not(:first-child) {
+  margin-left: 10px;
+}

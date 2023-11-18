@@ -33,7 +33,16 @@ function App() {
   // }
 
   // new function
-  function addItemToCart(id, title, image, quantity, price, category, hash) {
+  function addItemToCart(
+    id,
+    title,
+    image,
+    quantity,
+    price,
+    category,
+    hash,
+    initialPrice
+  ) {
     let itemExists = false;
     const updatedCartItems = cartItems.map((item) => {
       if (item.hash === hash) {
@@ -57,6 +66,7 @@ function App() {
         price, // store the unit price
         category,
         hash,
+        initialPrice,
       };
       updatedCartItems.push(newItemObject);
     }
@@ -74,6 +84,36 @@ function App() {
     setCartItems((items) => items.filter((item) => item.hash !== hash));
   }
 
+  // Function to increase the quantity of an item in the cart
+  function increaseQuantity(hash) {
+    setCartItems((allItems) =>
+      allItems.map((item) =>
+        item.hash === hash
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              price: (item.quantity + 1) * item.initialPrice,
+            }
+          : item
+      )
+    );
+  }
+
+  function decreaseQuntity(hash) {
+    setCartItems((allItems) =>
+      allItems.map((item) =>
+        item.hash === hash
+          ? item.quantity > 1
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+                price: (item.quantity - 1) * item.initialPrice,
+              }
+            : item
+          : item
+      )
+    );
+  }
   const router = createBrowserRouter([
     {
       path: "/",
@@ -86,6 +126,8 @@ function App() {
           handleDeleteMovies={handleDeleteMovies}
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
         />
       ),
     },
@@ -109,6 +151,7 @@ function App() {
           handleDeleteMovies={handleDeleteMovies}
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
         />
       ),
     },
@@ -116,12 +159,14 @@ function App() {
       path: "/product/:category/:id",
       element: (
         <ProductsPage
+          addItemToCart={addItemToCart}
           cartItems={cartItems}
           ActiveFilter={ActiveFilter}
           setActiveFilter={setActiveFilter}
           handleDeleteMovies={handleDeleteMovies}
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
         />
       ),
     },

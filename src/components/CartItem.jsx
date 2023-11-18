@@ -13,6 +13,8 @@ function CartItem({
   id,
   hash,
   category,
+  increaseQuantity,
+  decreaseQuntity,
 }) {
   return (
     <div className={styles.item}>
@@ -21,9 +23,19 @@ function CartItem({
         <div className={styles.titleQuantity}>
           <p className={styles.title}>{title}</p>
           <div className={styles.quantity}>
-            <p>-</p>
+            <p
+              onClick={() => decreaseQuntity(hash)}
+              style={{ cursor: "pointer" }}
+            >
+              -
+            </p>
             <p style={{ margin: "5px 15px" }}>{quantity}</p>
-            <p>+</p>
+            <p
+              onClick={() => increaseQuantity(hash)}
+              style={{ cursor: "pointer" }}
+            >
+              +
+            </p>
           </div>
         </div>
       </div>
@@ -36,7 +48,7 @@ function CartItem({
             handleDeleteMovies(hash, category);
           }}
         />
-        <p>${price}.00</p>
+        <p>${price.toFixed(2)}</p>
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ function MenClothing({
   addItemToCart,
   sideBarIsActive,
   setSideBarIsActive,
+  increaseQuantity,
 }) {
   const [menData, setMenData] = useState([]);
   const [menLoader, setMenLoader] = useState("false");
@@ -37,6 +38,7 @@ function MenClothing({
         setActiveFilter={setActiveFilter}
         makeItActive={"true"}
         handleDeleteMovies={handleDeleteMovies}
+        increaseQuantity={increaseQuantity}
       />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={"Men"} />

@@ -23,6 +23,8 @@ function Home({
   handleDeleteMovies,
   setSideBarIsActive,
   sideBarIsActive,
+  increaseQuantity,
+  decreaseQuntity,
 }) {
   const [someDataIsLoading, setSomeDataIsLoading] = useState(false);
   const { pathname } = useLocation();
@@ -46,6 +48,8 @@ function Home({
         handleDeleteMovies={handleDeleteMovies}
         setActiveFilter={setActiveFilter}
         cartItems={cartItems}
+        increaseQuantity={increaseQuantity}
+        decreaseQuntity={decreaseQuntity}
       />
       {someDataIsLoading && <GeneralLoader />}
       <HomeSlider />

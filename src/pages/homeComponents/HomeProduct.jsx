@@ -28,19 +28,18 @@ function HomeProduct({
         <div className={styles.addToFavorite}>
           <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
         </div>
-        <div className={styles.addToFavorite}>
-          <FontAwesomeIcon
-            icon={faCartShopping}
-            className={`${styles.icon}`}
-            onClick={(event) => {
-              event.preventDefault();
-              event.stopPropagation();
+        <div
+          className={styles.addToFavorite}
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-              addItemToCart(id, title, img, 1, price, category, hash);
-              setSideBarIsActive(true);
-              setActiveFilter(true);
-            }}
-          />
+            addItemToCart(id, title, img, 1, price, category, hash, price);
+            setSideBarIsActive(true);
+            setActiveFilter(true);
+          }}
+        >
+          <FontAwesomeIcon icon={faCartShopping} className={`${styles.icon}`} />
         </div>
         <div className={styles.addToFavorite}>
           <FontAwesomeIcon icon={faMagnifyingGlassPlus} />

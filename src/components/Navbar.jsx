@@ -31,6 +31,8 @@ export default function Navbar({
   handleDeleteMovies,
   sideBarIsActive,
   setSideBarIsActive,
+  increaseQuantity,
+  decreaseQuntity,
 }) {
   const [scrollY, setScrollY] = useState(0);
   // const [sideBarIsActive, setSideBarIsActive] = useState(false);
@@ -259,6 +261,8 @@ export default function Navbar({
                   hash={item.hash}
                   category={item.category}
                   key={item.id}
+                  increaseQuantity={increaseQuantity}
+                  decreaseQuntity={decreaseQuntity}
                 />
               ))}
 
@@ -275,7 +279,10 @@ export default function Navbar({
               <div className={styles.subTotal}>
                 <p>SUBTOTAL</p>
                 <p>
-                  ${cartItems.reduce((total, item) => total + item.price, 0)}{" "}
+                  $
+                  {cartItems
+                    .reduce((total, item) => total + item.price, 0)
+                    .toFixed(2)}{" "}
                   USD
                 </p>
               </div>
