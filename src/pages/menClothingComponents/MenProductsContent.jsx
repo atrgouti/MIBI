@@ -11,10 +11,12 @@ function MenProductsContent({
   addItemToCart,
   setSideBarIsActive,
   setActiveFilter,
+  filteredColors,
+  setFilteredColors,
+  filteredCategories,
+  setFilteredCategories,
+  categoryType,
 }) {
-  const [filteredColors, setFilteredColors] = useState([]);
-  const [filteredCategories, setFilteredCategories] = useState([]);
-
   // const filteredData = menData.filter((item) => {
   //   // filter colors
   //   if (filteredColors.length > 0 && filteredColors.includes(item.color)) {
@@ -78,6 +80,7 @@ function MenProductsContent({
             filteredColors={filteredColors}
             filteredCategories={filteredCategories}
             setFilteredColors={setFilteredColors}
+            categoryType={categoryType}
           />
         </div>
       </div>

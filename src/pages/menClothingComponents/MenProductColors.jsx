@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import styles from "./MenProductColors.module.css";
-function MenProductColors({ handleColorSelect, menData }) {
-  const originalColorsArray = menData?.map((item) => item.color);
-  const uniqueColors = originalColorsArray?.filter(
-    (color, index) => originalColorsArray.indexOf(color) === index
-  );
-
+function MenProductColors({ handleColorSelect }) {
+  const uniqueColors = ["whitesmoke", "pink", "black", "green"];
   return (
     <div>
       <h3 className={styles.h3}>COLOR</h3>

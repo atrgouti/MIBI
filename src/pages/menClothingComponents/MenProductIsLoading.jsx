@@ -5,7 +5,7 @@ function MenProductIsLoading() {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "20vh",
         width: "80%",
         display: "flex",
         justifyContent: "center",

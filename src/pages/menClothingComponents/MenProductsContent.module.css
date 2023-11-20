@@ -16,7 +16,8 @@
 }
 .menProducts {
   width: 80%;
-  height: 100%;
+  /* height: 100%; */
+  height: auto;
 }
 @media screen and (max-width: 900px) {
   .filtringOptions {

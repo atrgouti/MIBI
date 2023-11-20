@@ -18,14 +18,25 @@ function MenClothing({
   sideBarIsActive,
   setSideBarIsActive,
   increaseQuantity,
+  categoryType,
 }) {
   const [menData, setMenData] = useState([]);
   const [menLoader, setMenLoader] = useState("false");
+  const [filteredColors, setFilteredColors] = useState([]);
+  const [filteredCategories, setFilteredCategories] = useState([]);
 
-  useEffect(function () {
-    apiMibiProducts("men", setMenLoader).then((data) => setMenData(data));
-    window.scrollTo({ top: 0, left: 0 });
-  }, []);
+  useEffect(
+    function () {
+      apiMibiProducts(
+        `${categoryType}`,
+        setMenLoader,
+        filteredColors,
+        filteredCategories
+      ).then((data) => setMenData(data));
+      window.scrollTo({ top: 0, left: 0 });
+    },
+    [filteredColors, filteredCategories, categoryType]
+  );
 
   return (
     <>
@@ -48,6 +59,11 @@ function MenClothing({
           addItemToCart={addItemToCart}
           setSideBarIsActive={setSideBarIsActive}
           setActiveFilter={setActiveFilter}
+          filteredColors={filteredColors}
+          setFilteredColors={setFilteredColors}
+          filteredCategories={filteredCategories}
+          setFilteredCategories={setFilteredCategories}
+          categoryType={categoryType}
         />
         <Footer />
       </div>

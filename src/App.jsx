@@ -134,9 +134,16 @@ function App() {
     {
       path: "/women",
       element: (
-        <WomenClothing
+        <MenClothing
+          addItemToCart={addItemToCart}
+          cartItems={cartItems}
           ActiveFilter={ActiveFilter}
           setActiveFilter={setActiveFilter}
+          handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
+          categoryType={"women"}
         />
       ),
     },
@@ -152,6 +159,7 @@ function App() {
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
           increaseQuantity={increaseQuantity}
+          categoryType={"men"}
         />
       ),
     },

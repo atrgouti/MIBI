@@ -21,6 +21,7 @@ function MenPageProducts({
   filteredColors,
   setFilteredColors,
   filteredCategories,
+  categoryType,
 }) {
   const [sideBarFilters, setSideBarFilters] = useState(false);
 
@@ -99,7 +100,10 @@ function MenPageProducts({
           <MenProductIsLoading />
         ) : (
           menData?.map((product) => (
-            <Link to={`/product/men/${product.id}`} key={product.id}>
+            <Link
+              to={`/product/${categoryType}/${product.id}`}
+              key={product.id}
+            >
               <MenProduct
                 setSideBarIsActive={setSideBarIsActive}
                 setActiveFilter={setActiveFilter}

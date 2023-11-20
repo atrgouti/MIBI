@@ -1,9 +1,12 @@
 import styles from "./MenCategories.module.css";
-function MenCategories({ handleCategorySelect, menData }) {
-  const originalCategoryArray = menData?.map((item) => item.category);
-  const uniqueCategoryArray = originalCategoryArray?.filter(
-    (cate, index) => originalCategoryArray.indexOf(cate) === index
-  );
+function MenCategories({ handleCategorySelect }) {
+  const uniqueCategoryArray = [
+    "sweatshirt",
+    "shoes",
+    "t-shirt",
+    "shirt",
+    "jacket",
+  ];
 
   return (
     <div className={styles.menCategory}>
