@@ -14,17 +14,16 @@ import { useState } from "react";
 
 function MenPageProducts({
   menData,
-  filteredData,
   menLoader,
   addItemToCart,
   setSideBarIsActive,
   setActiveFilter,
   filteredColors,
   setFilteredColors,
+  filteredCategories,
 }) {
   const [sideBarFilters, setSideBarFilters] = useState(false);
 
-  const myData = filteredData.length > 0 ? filteredData : menData;
   return (
     <div className={styles.menPageProducts}>
       <h1>Men</h1>
@@ -64,8 +63,7 @@ function MenPageProducts({
       </div>
       <div className={styles.numProducts}>
         <p>
-          Showing:{" "}
-          {filteredData.length > 0 ? filteredData.length : menData.length}
+          Showing: {menData.length}
           Results
         </p>
         <select name="" id="">
@@ -89,11 +87,18 @@ function MenPageProducts({
           ))}
         </div>
       )}
+      {filteredCategories.length > 0 && (
+        <div className={styles.seeApliedFilters}>
+          {filteredCategories.map((cate) => (
+            <p key={cate}>{cate}</p>
+          ))}
+        </div>
+      )}
       <div className={styles.menProductsItems}>
         {menLoader ? (
           <MenProductIsLoading />
         ) : (
-          myData.map((product) => (
+          menData?.map((product) => (
             <Link to={`/product/men/${product.id}`} key={product.id}>
               <MenProduct
                 setSideBarIsActive={setSideBarIsActive}

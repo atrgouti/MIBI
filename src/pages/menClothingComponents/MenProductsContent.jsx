@@ -13,18 +13,32 @@ function MenProductsContent({
   setActiveFilter,
 }) {
   const [filteredColors, setFilteredColors] = useState([]);
+  const [filteredCategories, setFilteredCategories] = useState([]);
 
-  // console.log(filteredColors);
+  // const filteredData = menData.filter((item) => {
+  //   // filter colors
+  //   if (filteredColors.length > 0 && filteredColors.includes(item.color)) {
+  //     return true;
+  //   }
 
-  const filteredData = menData.filter((item) => {
-    // filter colors
-    if (filteredColors.length > 0 && filteredColors.includes(item.color)) {
-      return true;
-    }
+  //   if (
+  //     filteredCategories.length > 0 &&
+  //     filteredCategories.includes(item.category)
+  //   ) {
+  //     return true;
+  //   }
+  //   // If all filters pass, include the item in the result
+  //   return false;
+  // });
+  // const filteredData = menData.filter((item) => {
+  //   const colorPass =
+  //     filteredColors.length === 0 || filteredColors.includes(item.color);
+  //   const categoryPass =
+  //     filteredCategories.length === 0 ||
+  //     filteredCategories.includes(item.category);
 
-    // If all filters pass, include the item in the result
-    return false;
-  });
+  //   return colorPass && categoryPass;
+  // });
 
   function handleColorSelect(newColor) {
     const newSelectedColors = filteredColors.includes(newColor)
@@ -34,11 +48,20 @@ function MenProductsContent({
     setFilteredColors(newSelectedColors);
   }
 
+  function handleCategorySelect(newCtegory) {
+    const newSelectedCategory = filteredCategories.includes(newCtegory)
+      ? filteredCategories.filter((c) => c !== newCtegory)
+      : [...filteredCategories, newCtegory];
+    setFilteredCategories(newSelectedCategory);
+  }
   return (
     <div className={styles.allArea}>
       <div className={styles.AllMenProducts}>
         <div className={styles.filtringOptions}>
-          <MenCategories />
+          <MenCategories
+            handleCategorySelect={handleCategorySelect}
+            menData={menData}
+          />
           <MenProductColors
             handleColorSelect={handleColorSelect}
             menData={menData}
@@ -50,10 +73,10 @@ function MenProductsContent({
             setSideBarIsActive={setSideBarIsActive}
             setActiveFilter={setActiveFilter}
             menData={menData}
-            filteredData={filteredData}
             menLoader={menLoader}
             addItemToCart={addItemToCart}
             filteredColors={filteredColors}
+            filteredCategories={filteredCategories}
             setFilteredColors={setFilteredColors}
           />
         </div>

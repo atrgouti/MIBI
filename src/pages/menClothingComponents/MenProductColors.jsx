@@ -5,7 +5,6 @@ function MenProductColors({ handleColorSelect, menData }) {
   const uniqueColors = originalColorsArray?.filter(
     (color, index) => originalColorsArray.indexOf(color) === index
   );
-  uniqueColors?.map((color) => console.log(color));
 
   return (
     <div>
