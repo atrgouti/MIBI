@@ -22,12 +22,15 @@ function MenPageProducts({
   setFilteredColors,
   filteredCategories,
   categoryType,
+  setFilteredCategories,
+  handleCategorySelect,
+  handleColorSelect,
 }) {
   const [sideBarFilters, setSideBarFilters] = useState(false);
 
   return (
     <div className={styles.menPageProducts}>
-      <h1>Men</h1>
+      <h1>{categoryType}</h1>
       <p>
         The very latest in globally-recognised clothing brands offers you with
         an exquisite range of Branded Clothes, Artificial Jewelry, Shoes, Beauty
@@ -63,10 +66,7 @@ function MenPageProducts({
         </div>
       </div>
       <div className={styles.numProducts}>
-        <p>
-          Showing: {menData.length}
-          Results
-        </p>
+        <p>Showing: {menData.length} Results</p>
         <select name="" id="">
           Featured
           <option value="">Sort by</option>
@@ -80,21 +80,42 @@ function MenPageProducts({
           <option value="">Old to New</option>
         </select>
       </div>
-      {filteredColors.length > 0 && (
-        <div className={styles.seeApliedFilters}>
-          <p onClick={() => setFilteredColors([])}>CLEAR ALL</p>
-          {filteredColors.map((color) => (
-            <p key={color}>{color}</p>
-          ))}
-        </div>
-      )}
-      {filteredCategories.length > 0 && (
-        <div className={styles.seeApliedFilters}>
-          {filteredCategories.map((cate) => (
-            <p key={cate}>{cate}</p>
-          ))}
-        </div>
-      )}
+      <div className="allFiltersJoined" style={{ display: "flex" }}>
+        {filteredColors.length > 0 && (
+          <div className={styles.seeApliedFilters}>
+            <p
+              onClick={() => {
+                setFilteredColors([]);
+                setFilteredCategories([]);
+              }}
+            >
+              CLEAR ALL
+            </p>
+            {filteredColors.map((color) => (
+              <p
+                onClick={() => handleColorSelect(`${color}`)}
+                style={{ marginLeft: "10PX" }}
+                key={color}
+              >
+                {color}
+              </p>
+            ))}
+          </div>
+        )}
+        {filteredCategories.length > 0 && (
+          <div className={styles.seeApliedFilters}>
+            {filteredCategories.map((cate) => (
+              <p
+                onClick={() => handleCategorySelect(`${cate}`)}
+                style={{ marginLeft: "10PX" }}
+                key={cate}
+              >
+                {cate}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
       <div className={styles.menProductsItems}>
         {menLoader ? (
           <MenProductIsLoading />

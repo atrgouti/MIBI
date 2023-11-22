@@ -15,6 +15,10 @@ function MenProductsContent({
   setFilteredColors,
   filteredCategories,
   setFilteredCategories,
+  setInStock,
+  inStock,
+  outOfStock,
+  setOutOfStock,
   categoryType,
 }) {
   // const filteredData = menData.filter((item) => {
@@ -68,7 +72,12 @@ function MenProductsContent({
             handleColorSelect={handleColorSelect}
             menData={menData}
           />
-          <Availability />
+          <Availability
+            inStock={inStock}
+            setInStock={setInStock}
+            outOfStock={outOfStock}
+            setOutOfStock={setOutOfStock}
+          />
         </div>
         <div className={styles.menProducts}>
           <MenPageProducts
@@ -80,6 +89,9 @@ function MenProductsContent({
             filteredColors={filteredColors}
             filteredCategories={filteredCategories}
             setFilteredColors={setFilteredColors}
+            setFilteredCategories={setFilteredCategories}
+            handleCategorySelect={handleCategorySelect}
+            handleColorSelect={handleColorSelect}
             categoryType={categoryType}
           />
         </div>

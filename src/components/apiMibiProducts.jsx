@@ -4,7 +4,9 @@ export async function apiMibiProducts(
   currentCategory,
   setIsLoading,
   colorArray = ["all"],
-  categoryArray = ["all"]
+  categoryArray = ["all"],
+  instock,
+  outOfStock
 ) {
   try {
     setIsLoading(true);
@@ -13,7 +15,13 @@ export async function apiMibiProducts(
     if (colorArray.at(0) !== "all" && colorArray.length > 0) {
       query.in("color", colorArray);
     }
+    if (instock === true && outOfStock === false) {
+      query.eq("avaliable", "true");
+    }
 
+    if (outOfStock === true && instock === false) {
+      query.eq("avaliable", "false");
+    }
     if (categoryArray.at(0) !== "all" && categoryArray.length > 0) {
       query.in("category", categoryArray);
     }

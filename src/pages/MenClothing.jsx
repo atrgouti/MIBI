@@ -24,6 +24,8 @@ function MenClothing({
   const [menLoader, setMenLoader] = useState("false");
   const [filteredColors, setFilteredColors] = useState([]);
   const [filteredCategories, setFilteredCategories] = useState([]);
+  const [inStock, setInStock] = useState(false);
+  const [outOfStock, setOutOfStock] = useState(false);
 
   useEffect(
     function () {
@@ -31,11 +33,13 @@ function MenClothing({
         `${categoryType}`,
         setMenLoader,
         filteredColors,
-        filteredCategories
+        filteredCategories,
+        inStock,
+        outOfStock
       ).then((data) => setMenData(data));
       window.scrollTo({ top: 0, left: 0 });
     },
-    [filteredColors, filteredCategories, categoryType]
+    [filteredColors, filteredCategories, categoryType, inStock, outOfStock]
   );
 
   return (
@@ -52,7 +56,7 @@ function MenClothing({
         increaseQuantity={increaseQuantity}
       />
       <div style={{ position: "relative", top: "110px" }}>
-        <CurrentCategory category={"Men"} />
+        <CurrentCategory category={categoryType} />
         <MenProductsContent
           menData={menData}
           menLoader={menLoader}
@@ -63,6 +67,10 @@ function MenClothing({
           setFilteredColors={setFilteredColors}
           filteredCategories={filteredCategories}
           setFilteredCategories={setFilteredCategories}
+          setInStock={setInStock}
+          inStock={inStock}
+          outOfStock={outOfStock}
+          setOutOfStock={setOutOfStock}
           categoryType={categoryType}
         />
         <Footer />
