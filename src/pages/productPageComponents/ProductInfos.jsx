@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./productInfos.module.css";
+import ReactMarkdown from "react-markdown";
+
 function ProductInfos({ productData }) {
   const [selectedInfo, setSelectedInfo] = useState("description");
   return (
@@ -37,7 +39,9 @@ function ProductInfos({ productData }) {
         </div>
         <div className={styles.line}></div>
         {selectedInfo === "description" && (
-          <div className={styles.description}>{productData.description}</div>
+          <div className={styles.description}>
+            <ReactMarkdown>{productData.description}</ReactMarkdown>
+          </div>
         )}
         {selectedInfo === "reviews" && (
           <div className={styles.reviews}>

@@ -1,7 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import MenClothing from "./pages/MenClothing";
-import WomenClothing from "./pages/WomenClothing";
+// import WomenClothing from "./pages/WomenClothing";
+import Blog from "./pages/Blog";
 import ProductsPage from "./pages/ProductsPage";
 import { useState } from "react";
 
@@ -169,6 +170,23 @@ function App() {
       path: "/accessories",
       element: (
         <MenClothing
+          addItemToCart={addItemToCart}
+          cartItems={cartItems}
+          ActiveFilter={ActiveFilter}
+          setActiveFilter={setActiveFilter}
+          handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
+          categoryType={"accessories"}
+        />
+      ),
+    },
+    {
+      path: "/blog",
+      element: (
+        <Blog
           addItemToCart={addItemToCart}
           cartItems={cartItems}
           ActiveFilter={ActiveFilter}

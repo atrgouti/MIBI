@@ -1,0 +1,62 @@
+.article {
+  width: 60%;
+  margin: 30px auto;
+}
+.cover {
+  width: 100%;
+}
+.title h1 {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(32, 32, 32);
+}
+.articleInfos {
+  display: flex;
+}
+.articleInfos p {
+  color: rgb(84, 84, 84);
+  font-weight: 500;
+}
+.articleInfos p:not(:first-child) {
+  margin-left: 20px;
+}
+.articleInfos .comments {
+  color: rgb(84, 84, 84);
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.articleInfos .icon {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.articleInfos .comments p {
+  margin-left: 0;
+}
+.description {
+  color: rgb(84, 84, 84);
+}
+.readMore {
+  background-color: rgb(23, 23, 23);
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid rgb(23, 23, 23);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+  font-weight: bold;
+}
+.readMore:hover {
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 900px) {
+  .article {
+    width: 90%;
+  }
+  .articleInfos p {
+    font-size: 11px;
+  }
+}

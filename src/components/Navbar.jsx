@@ -131,10 +131,7 @@ export default function Navbar({
             <Link to="/accessories">Accessories</Link>
           </li>
           <li>
-            <Link to="/men">New</Link>
-          </li>
-          <li>
-            <Link to="/men">Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
             <Link to="/men">Contact Us</Link>
@@ -189,11 +186,7 @@ export default function Navbar({
               Accessories
             </Link>
           </li>
-          <li>
-            <Link to="/men" onClick={() => setActiveFilter(false)}>
-              New
-            </Link>
-          </li>
+
           <li>
             <Link to="/men" onClick={() => setActiveFilter(false)}>
               Blog
