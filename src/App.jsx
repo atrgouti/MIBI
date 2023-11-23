@@ -143,6 +143,7 @@ function App() {
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
           increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
           categoryType={"women"}
         />
       ),
@@ -159,7 +160,25 @@ function App() {
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
           increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
           categoryType={"men"}
+        />
+      ),
+    },
+    {
+      path: "/accessories",
+      element: (
+        <MenClothing
+          addItemToCart={addItemToCart}
+          cartItems={cartItems}
+          ActiveFilter={ActiveFilter}
+          setActiveFilter={setActiveFilter}
+          handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
+          categoryType={"accessories"}
         />
       ),
     },
@@ -175,6 +194,7 @@ function App() {
           sideBarIsActive={sideBarIsActive}
           setSideBarIsActive={setSideBarIsActive}
           increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
         />
       ),
     },

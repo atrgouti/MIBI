@@ -83,7 +83,7 @@ export default function Navbar({
         document.removeEventListener("click", handleOutsideBurgerMenuClick);
       };
     },
-    [sideBarIsActive, setActiveFilter, burgerMenuIsActive]
+    [sideBarIsActive, setActiveFilter, burgerMenuIsActive, setSideBarIsActive]
   );
   useEffect(function () {
     document.addEventListener("scroll", handleScrollY);
@@ -128,7 +128,7 @@ export default function Navbar({
             <Link to="/women">Women</Link>
           </li>
           <li>
-            <Link to="/men">Accessories</Link>
+            <Link to="/accessories">Accessories</Link>
           </li>
           <li>
             <Link to="/men">New</Link>
@@ -185,7 +185,7 @@ export default function Navbar({
             </Link>
           </li>
           <li>
-            <Link to="/men" onClick={() => setActiveFilter(false)}>
+            <Link to="/accessories" onClick={() => setActiveFilter(false)}>
               Accessories
             </Link>
           </li>

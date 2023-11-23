@@ -43,6 +43,7 @@ function ProductsPage({
   sideBarIsActive,
   addItemToCart,
   increaseQuantity,
+  decreaseQuntity,
 }) {
   const [productData, setProductData] = useState([]);
   const [numberOfChoosedImage, setNumberOfChoosedImae] = useState(0);
@@ -81,6 +82,7 @@ function ProductsPage({
         setSideBarIsActive={setSideBarIsActive}
         sideBarIsActive={sideBarIsActive}
         increaseQuantity={increaseQuantity}
+        decreaseQuntity={decreaseQuntity}
       />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={`${productData.title}`} />

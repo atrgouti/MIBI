@@ -37,24 +37,7 @@ function ProductInfos({ productData }) {
         </div>
         <div className={styles.line}></div>
         {selectedInfo === "description" && (
-          <div className={styles.description}>
-            {/* <p>
-              Avone is a ultimate multipurpose shopify theme that will give you
-              and your customers a smooth shopping experience which can be used
-              for various kinds of stores such as boutiques, bookstores,
-              technology stores, jewelries and other types of web shops. It is a
-              beautiful, highly customizable and super fast theme with
-              functionality to increase conversions.
-            </p>
-            <ul>
-              <li>Increase your exposure, customers & sales</li>
-              <li>Smart, intuitive design for brilliant brands</li>
-              <li>High Performance Delivered</li>
-              <li>The powerful theme you can trust</li>
-              <li>Affordable solutions for all your creativity needs.</li>
-            </ul> */}
-            {productData.description}
-          </div>
+          <div className={styles.description}>{productData.description}</div>
         )}
         {selectedInfo === "reviews" && (
           <div className={styles.reviews}>

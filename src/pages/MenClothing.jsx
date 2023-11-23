@@ -18,6 +18,7 @@ function MenClothing({
   sideBarIsActive,
   setSideBarIsActive,
   increaseQuantity,
+  decreaseQuntity,
   categoryType,
 }) {
   const [menData, setMenData] = useState([]);
@@ -26,6 +27,7 @@ function MenClothing({
   const [filteredCategories, setFilteredCategories] = useState([]);
   const [inStock, setInStock] = useState(false);
   const [outOfStock, setOutOfStock] = useState(false);
+  const [sortBy, setSortBy] = useState("initial");
 
   useEffect(
     function () {
@@ -35,11 +37,19 @@ function MenClothing({
         filteredColors,
         filteredCategories,
         inStock,
-        outOfStock
+        outOfStock,
+        sortBy
       ).then((data) => setMenData(data));
       window.scrollTo({ top: 0, left: 0 });
     },
-    [filteredColors, filteredCategories, categoryType, inStock, outOfStock]
+    [
+      filteredColors,
+      filteredCategories,
+      categoryType,
+      inStock,
+      outOfStock,
+      sortBy,
+    ]
   );
 
   return (
@@ -54,6 +64,7 @@ function MenClothing({
         makeItActive={"true"}
         handleDeleteMovies={handleDeleteMovies}
         increaseQuantity={increaseQuantity}
+        decreaseQuntity={decreaseQuntity}
       />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={categoryType} />
@@ -71,6 +82,8 @@ function MenClothing({
           inStock={inStock}
           outOfStock={outOfStock}
           setOutOfStock={setOutOfStock}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
           categoryType={categoryType}
         />
         <Footer />

@@ -19,33 +19,10 @@ function MenProductsContent({
   inStock,
   outOfStock,
   setOutOfStock,
+  sortBy,
+  setSortBy,
   categoryType,
 }) {
-  // const filteredData = menData.filter((item) => {
-  //   // filter colors
-  //   if (filteredColors.length > 0 && filteredColors.includes(item.color)) {
-  //     return true;
-  //   }
-
-  //   if (
-  //     filteredCategories.length > 0 &&
-  //     filteredCategories.includes(item.category)
-  //   ) {
-  //     return true;
-  //   }
-  //   // If all filters pass, include the item in the result
-  //   return false;
-  // });
-  // const filteredData = menData.filter((item) => {
-  //   const colorPass =
-  //     filteredColors.length === 0 || filteredColors.includes(item.color);
-  //   const categoryPass =
-  //     filteredCategories.length === 0 ||
-  //     filteredCategories.includes(item.category);
-
-  //   return colorPass && categoryPass;
-  // });
-
   function handleColorSelect(newColor) {
     const newSelectedColors = filteredColors.includes(newColor)
       ? filteredColors.filter((c) => c !== newColor)
@@ -92,6 +69,8 @@ function MenProductsContent({
             setFilteredCategories={setFilteredCategories}
             handleCategorySelect={handleCategorySelect}
             handleColorSelect={handleColorSelect}
+            sortBy={sortBy}
+            setSortBy={setSortBy}
             categoryType={categoryType}
           />
         </div>
