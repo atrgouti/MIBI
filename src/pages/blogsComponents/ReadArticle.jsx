@@ -146,6 +146,12 @@ function ReadArticle({
             <PopulerProduct />
             <PopulerProduct />
             <PopulerProduct />
+            <h3>Tags</h3>
+            <div className={styles.allTags}>
+              <p>Denim</p>
+              <p>Fashion</p>
+              <p>Design</p>
+            </div>
           </aside>
         </div>
         <Footer />

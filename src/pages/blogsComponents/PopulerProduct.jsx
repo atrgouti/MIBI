@@ -38,7 +38,7 @@ function PopulerProduct() {
         >
           $800.00
         </p>
-        <div className={styles.star}>
+        <div className={styles.star} style={{ marginLeft: "10px" }}>
           {Array.from({ length: 5 }, (_, i) => (
             <FontAwesomeIcon
               icon={faStar}
