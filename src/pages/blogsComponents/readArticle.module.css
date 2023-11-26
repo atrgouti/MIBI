@@ -1,0 +1,77 @@
+.generaleContent {
+  display: flex;
+  width: 80%;
+  margin: 0px auto;
+  gap: 20px;
+}
+
+.generaleContent .main {
+  width: 65%;
+}
+.generaleContent .main h2 {
+  margin-top: 40px;
+  text-align: center;
+  color: rgb(34, 34, 34);
+}
+.articleInfos {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.articleInfos p {
+  color: rgb(84, 84, 84);
+  font-weight: 500;
+}
+.articleInfos p:not(:first-child) {
+  margin-left: 20px;
+}
+.articleInfos .comments {
+  color: rgb(84, 84, 84);
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.articleInfos .icon {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.articleInfos .comments p {
+  margin-left: 0;
+}
+
+/* now start working on the image  */
+.main img {
+  width: 100%;
+}
+.description {
+  text-align: center;
+  color: rgb(103, 103, 103);
+  margin-top: 20px;
+  line-height: 26px;
+  margin-bottom: 40px;
+}
+.shareToSocialMedia {
+  display: flex;
+  justify-content: center;
+}
+.shareToSocialMedia .social {
+  display: flex;
+  align-items: center;
+  color: gray;
+  margin: 0px 10px;
+  transition: 0.3s;
+}
+.shareToSocialMedia .social:hover {
+  color: rgb(70, 70, 255);
+  cursor: pointer;
+}
+.shareToSocialMedia .social p {
+  padding: 5px;
+}
+.generaleContent .aside {
+  width: 35%;
+}
+.generaleContent .aside h3 {
+  margin-top: 40px;
+  color: rgb(128, 128, 128);
+}

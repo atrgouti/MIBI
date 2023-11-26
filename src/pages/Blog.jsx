@@ -4,6 +4,7 @@ import Announce from "../components/Announce";
 import CurrentCategory from "../components/CurrentCategory";
 import filtringStyles from "./filtring.module.css";
 import Article from "./blogsComponents/Article";
+import { Link } from "react-router-dom";
 function Blog({
   ActiveFilter,
   setActiveFilter,
@@ -47,9 +48,10 @@ function Blog({
         >
           News
         </h2>
-        <Article />
-        <Article />
-        <Article />
+        <Link to="/readArticle">
+          <Article />
+        </Link>
+
         <Footer />
       </div>
     </>
