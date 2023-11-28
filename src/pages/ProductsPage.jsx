@@ -51,21 +51,22 @@ function ProductsPage({
 
   const currentProduct = useParams();
 
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
 
-  useEffect(
-    function () {
-      window.scrollTo(0, 0);
-    },
-    [pathname]
-  );
-  // get the fetched product data
+  // useEffect(
+  //   function () {
+  //     window.scrollTo(0, 0);
+  //   },
+  //   [pathname]
+  // );
+  // // get the fetched product data
 
   useEffect(
     function () {
       apiSelectProduct(currentProduct.id, currentProduct.category).then(
         (data) => setProductData(data.at(0))
       );
+      window.scrollTo({ top: 0 });
     },
     [currentProduct.id, currentProduct.category]
   );

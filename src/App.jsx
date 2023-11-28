@@ -218,7 +218,7 @@ function App() {
       ),
     },
     {
-      path: "/readArticle",
+      path: "/readArticle/:id",
       element: (
         <ReadArticle
           addItemToCart={addItemToCart}

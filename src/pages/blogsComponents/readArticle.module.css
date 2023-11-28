@@ -46,9 +46,11 @@
 .description {
   text-align: center;
   color: rgb(103, 103, 103);
-  margin-top: 20px;
+
   line-height: 26px;
   margin-bottom: 40px;
+  width: 90%;
+  margin: 20px auto;
 }
 .shareToSocialMedia {
   display: flex;

@@ -91,7 +91,7 @@ function ProductsQuickView({
         </div>
         <div className={styles.showProducts}>
           <Carousel
-            itemsToShow={3}
+            itemsToShow={4}
             pagination={false}
             showArrows={true}
             ref={carouselRef} // Assign the ref to the Carousel component
@@ -114,7 +114,7 @@ function ProductsQuickView({
                 itemsToScroll: 1,
               }, // Screens less than 600px
               { width: 600, itemsToShow: 2, itemsToScroll: 1 }, // Screens between 600px and 900px
-              { width: 900, itemsToShow: 3, itemsToScroll: 1 }, // Screens wider than 900px
+              { width: 900, itemsToShow: 4, itemsToScroll: 1 }, // Screens wider than 900px
             ]}
           >
             {isLoading ? (

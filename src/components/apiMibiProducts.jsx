@@ -5,9 +5,9 @@ export async function apiMibiProducts(
   setIsLoading,
   colorArray = ["all"],
   categoryArray = ["all"],
-  instock,
-  outOfStock,
-  orderBy
+  instock = "default",
+  outOfStock = "default",
+  orderBy = "default"
 ) {
   try {
     setIsLoading(true);

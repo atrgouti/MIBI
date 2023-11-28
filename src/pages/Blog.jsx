@@ -4,7 +4,9 @@ import Announce from "../components/Announce";
 import CurrentCategory from "../components/CurrentCategory";
 import filtringStyles from "./filtring.module.css";
 import Article from "./blogsComponents/Article";
+import { apiMibiProducts } from "../components/apiMibiProducts";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 function Blog({
   ActiveFilter,
   setActiveFilter,
@@ -15,6 +17,17 @@ function Blog({
   increaseQuantity,
   decreaseQuntity,
 }) {
+  const [articleLoader, setArticleLoader] = useState("false");
+  const [articleData, setArticleData] = useState([]);
+
+  useState(function () {
+    apiMibiProducts("Blogs", setArticleLoader).then((data) =>
+      setArticleData(data)
+    );
+    window.scrollTo({ top: 0, left: 0 });
+  }, []);
+  articleData?.map((data) => console.log(data.title));
+
   return (
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
@@ -48,9 +61,11 @@ function Blog({
         >
           News
         </h2>
-        <Link to="/readArticle">
-          <Article />
-        </Link>
+        {articleData?.map((data) => (
+          <Link to={`/readArticle/${data.id}`} key={data.title}>
+            <Article data={data} />
+          </Link>
+        ))}
 
         <Footer />
       </div>
