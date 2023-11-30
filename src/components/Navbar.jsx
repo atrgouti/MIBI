@@ -188,7 +188,7 @@ export default function Navbar({
           </li>
 
           <li>
-            <Link to="/men" onClick={() => setActiveFilter(false)}>
+            <Link to="/blog" onClick={() => setActiveFilter(false)}>
               Blog
             </Link>
           </li>

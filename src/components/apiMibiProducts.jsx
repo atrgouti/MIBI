@@ -7,10 +7,14 @@ export async function apiMibiProducts(
   categoryArray = ["all"],
   instock = "default",
   outOfStock = "default",
-  orderBy = "default"
+  orderBy = "default",
+  pagination = "notAvaliable"
 ) {
   try {
     setIsLoading(true);
+    let pageSize = 3;
+    const offSet = (pagination - 1) * pageSize;
+
     let query = supabase.from(`${currentCategory}`).select("*");
 
     if (colorArray.at(0) !== "all" && colorArray.length > 0) {
@@ -44,6 +48,9 @@ export async function apiMibiProducts(
     }
     if (orderBy === "date_DESC") {
       query.order("created_at", { ascending: false });
+    }
+    if (pagination !== "notAvaliable") {
+      query.range(offSet, offSet + (pageSize - 1));
     }
     const { data, error } = await query;
     if (error) {

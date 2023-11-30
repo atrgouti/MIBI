@@ -36,6 +36,7 @@ function ReadArticle({
   increaseQuantity,
   decreaseQuntity,
 }) {
+  window.scrollTo({ top: 0 });
   const [currentArticleData, setCurrentArticleData] = useState([]);
   const { id: ArticleId } = useParams();
   useEffect(

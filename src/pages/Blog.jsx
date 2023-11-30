@@ -19,14 +19,20 @@ function Blog({
 }) {
   const [articleLoader, setArticleLoader] = useState("false");
   const [articleData, setArticleData] = useState([]);
-
+  const [pageNumber, setPageNumber] = useState(1);
   useState(function () {
-    apiMibiProducts("Blogs", setArticleLoader).then((data) =>
-      setArticleData(data)
-    );
+    apiMibiProducts(
+      "Blogs",
+      setArticleLoader,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      pageNumber
+    ).then((data) => setArticleData(data));
     window.scrollTo({ top: 0, left: 0 });
   }, []);
-  articleData?.map((data) => console.log(data.title));
 
   return (
     <>
@@ -61,8 +67,13 @@ function Blog({
         >
           News
         </h2>
+
         {articleData?.map((data) => (
-          <Link to={`/readArticle/${data.id}`} key={data.title}>
+          <Link
+            to={`/readArticle/${data.id}`}
+            key={data.title}
+            style={{ textDecoration: "none" }}
+          >
             <Article data={data} />
           </Link>
         ))}
