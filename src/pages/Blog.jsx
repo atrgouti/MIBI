@@ -7,7 +7,7 @@ import Article from "./blogsComponents/Article";
 import styles from "./blog.module.css";
 import { apiMibiProducts } from "../components/apiMibiProducts";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { array } from "prop-types";
 function Blog({
   ActiveFilter,
@@ -22,29 +22,28 @@ function Blog({
   const [articleLoader, setArticleLoader] = useState("false");
   const [articleData, setArticleData] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  // let pageNumber = 1;
+  useEffect(
+    function () {
+      apiMibiProducts(
+        "Blogs",
+        setArticleLoader,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        pageNumber
+      ).then((data) => setArticleData(data));
+      window.scrollTo({ top: 0, left: 0 });
+    },
+    [pageNumber]
+  );
 
-  useState(function () {
-    apiMibiProducts(
-      "Blogs",
-      setArticleLoader,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      pageNumber
-    ).then((data) => setArticleData(data));
-    window.scrollTo({ top: 0, left: 0 });
-  }, []);
-
-  // work on the pagination
-  let nArticles = 4;
-  let pages = 1;
-  while (nArticles > 3) {
-    nArticles = nArticles - 3;
-    pages = pages + 1;
-  }
-  console.log(pages);
+  const totalArticles = 4;
+  const articlePerPage = 3;
+  const totalPages = Math.ceil(totalArticles / articlePerPage);
+  console.log(totalPages);
   return (
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
@@ -91,8 +90,14 @@ function Blog({
         <div className={styles.pagination}>
           {/* <p className={styles.active}>1</p>
           <p>2</p> */}
-          {Array.from({ length: pages }, (_, i) => (
-            <p key={i}>1</p>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <p
+              className={`${i + 1 === pageNumber ? styles.active : ""}`}
+              key={i}
+              onClick={() => setPageNumber(i + 1)}
+            >
+              {i + 1}
+            </p>
           ))}
         </div>
         <Footer />
