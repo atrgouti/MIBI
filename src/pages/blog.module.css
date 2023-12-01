@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.pagination p {
+  margin: 10px;
+  padding: 7px 15px;
+  color: rgb(136, 136, 136);
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination p.active {
+  color: black;
+  border: 1px solid black;
+}

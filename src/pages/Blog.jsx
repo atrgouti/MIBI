@@ -4,9 +4,11 @@ import Announce from "../components/Announce";
 import CurrentCategory from "../components/CurrentCategory";
 import filtringStyles from "./filtring.module.css";
 import Article from "./blogsComponents/Article";
+import styles from "./blog.module.css";
 import { apiMibiProducts } from "../components/apiMibiProducts";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { array } from "prop-types";
 function Blog({
   ActiveFilter,
   setActiveFilter,
@@ -20,6 +22,7 @@ function Blog({
   const [articleLoader, setArticleLoader] = useState("false");
   const [articleData, setArticleData] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+
   useState(function () {
     apiMibiProducts(
       "Blogs",
@@ -34,6 +37,14 @@ function Blog({
     window.scrollTo({ top: 0, left: 0 });
   }, []);
 
+  // work on the pagination
+  let nArticles = 4;
+  let pages = 1;
+  while (nArticles > 3) {
+    nArticles = nArticles - 3;
+    pages = pages + 1;
+  }
+  console.log(pages);
   return (
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>
@@ -77,7 +88,13 @@ function Blog({
             <Article data={data} />
           </Link>
         ))}
-
+        <div className={styles.pagination}>
+          {/* <p className={styles.active}>1</p>
+          <p>2</p> */}
+          {Array.from({ length: pages }, (_, i) => (
+            <p key={i}>1</p>
+          ))}
+        </div>
         <Footer />
       </div>
     </>
