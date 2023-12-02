@@ -80,6 +80,7 @@
 .allTags {
   display: flex;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 .allTags p {
   font-weight: 600;
@@ -89,4 +90,16 @@
 }
 .allTags p:not(:first-child) {
   margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .generaleContent {
+    flex-direction: column;
+  }
+  .generaleContent .main {
+    width: 100%;
+  }
+  .generaleContent .aside {
+    width: 100%;
+  }
 }

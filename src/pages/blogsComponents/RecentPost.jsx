@@ -1,5 +1,5 @@
 import ama from "./ama.jpg";
-function RecentPost() {
+function RecentPost({ img, title, date }) {
   return (
     <div
       style={{
@@ -9,7 +9,7 @@ function RecentPost() {
         margin: "20px 0px",
       }}
     >
-      <img style={{ height: "100px" }} src={ama} alt="" />
+      <img style={{ height: "100px" }} src={img} alt="" />
       <div
         style={{
           display: "flex",
@@ -24,9 +24,9 @@ function RecentPost() {
             marginLeft: "10px",
           }}
         >
-          7 Easy Rules to Write Product Descriptions That Sell
+          {title}
         </p>
-        <p style={{ marginLeft: "10px" }}>July 16, 2022</p>
+        <p style={{ marginLeft: "10px" }}>{date}</p>
       </div>
     </div>
   );

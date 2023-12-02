@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-// import Home from "./pages/Home";
-const Home = lazy(() => import("./pages/Home"));
+import Home from "./pages/Home";
+// const Home = lazy(() => import("./pages/Home"));
 // import MenClothing from "./pages/MenClothing";
 const MenClothing = lazy(() => import("./pages/MenClothing"));
 // import ReadArticle from "./pages/blogsComponents/ReadArticle";
@@ -15,10 +15,12 @@ import { useState } from "react";
 // import hooks
 import useLocalStorageState from "./hooks/useLocalStorageState";
 
-// fontawsoe
+// fontawsome
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+// import general loader
+import GeneralLoader from "./components/GeneralLoader";
 
 import "./App.css";
 
@@ -106,32 +108,17 @@ function App() {
     {
       path: "/",
       element: (
-        <Suspense
-          fallback={
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100vh",
-              }}
-            >
-              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
-            </div>
-          }
-        >
-          <Home
-            ActiveFilter={ActiveFilter}
-            setActiveFilter={setActiveFilter}
-            cartItems={cartItems}
-            addItemToCart={addItemToCart}
-            handleDeleteMovies={handleDeleteMovies}
-            sideBarIsActive={sideBarIsActive}
-            setSideBarIsActive={setSideBarIsActive}
-            increaseQuantity={increaseQuantity}
-            decreaseQuntity={decreaseQuntity}
-          />
-        </Suspense>
+        <Home
+          ActiveFilter={ActiveFilter}
+          setActiveFilter={setActiveFilter}
+          cartItems={cartItems}
+          addItemToCart={addItemToCart}
+          handleDeleteMovies={handleDeleteMovies}
+          sideBarIsActive={sideBarIsActive}
+          setSideBarIsActive={setSideBarIsActive}
+          increaseQuantity={increaseQuantity}
+          decreaseQuntity={decreaseQuntity}
+        />
       ),
     },
     {
@@ -147,7 +134,7 @@ function App() {
                 height: "100vh",
               }}
             >
-              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+              <GeneralLoader />
             </div>
           }
         >

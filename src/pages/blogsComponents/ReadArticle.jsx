@@ -23,6 +23,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useParams } from "react-router-dom";
 import { apiSelectProduct } from "../../components/apiSelectProduct";
+import { apiMibiProducts } from "../../components/apiMibiProducts";
 import { useEffect, useState } from "react";
 
 function ReadArticle({
@@ -38,15 +39,21 @@ function ReadArticle({
 }) {
   window.scrollTo({ top: 0 });
   const [currentArticleData, setCurrentArticleData] = useState([]);
+  const [recentArticles, setRecentArticles] = useState([]);
+  const [ArticleIsLoading, setArticleIsLoading] = useState(false);
   const { id: ArticleId } = useParams();
   useEffect(
     function () {
       apiSelectProduct(ArticleId, "Blogs").then((data) =>
         setCurrentArticleData(data)
       );
+      apiMibiProducts("Blogs", setArticleIsLoading).then((recent) =>
+        setRecentArticles(recent)
+      );
     },
     [ArticleId]
   );
+  // console.log(recentArticles[0].id);
 
   return (
     <>
@@ -118,11 +125,14 @@ function ReadArticle({
           </main>
           <aside className={styles.aside}>
             <h3>RECENT POSTS</h3>
-            <RecentPost />
-            <RecentPost />
-            <RecentPost />
-            <RecentPost />
-            <RecentPost />
+            {recentArticles?.map((article) => (
+              <RecentPost
+                img={article.image}
+                date={article.created_at}
+                title={article.title}
+                key={article.id}
+              />
+            ))}
             <h3>POPULAR PRODUCTS</h3>
             <PopulerProduct />
             <PopulerProduct />
