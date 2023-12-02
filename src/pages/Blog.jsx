@@ -9,6 +9,9 @@ import { apiMibiProducts } from "../components/apiMibiProducts";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { array } from "prop-types";
+import "font-awesome/css/font-awesome.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 function Blog({
   ActiveFilter,
   setActiveFilter,
@@ -78,15 +81,33 @@ function Blog({
           News
         </h2>
 
-        {articleData?.map((data) => (
-          <Link
-            to={`/readArticle/${data.id}`}
-            key={data.title}
-            style={{ textDecoration: "none" }}
+        {articleLoader ? (
+          <div
+            style={{
+              height: "20vh",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <Article data={data} />
-          </Link>
-        ))}
+            <FontAwesomeIcon
+              icon={faSpinner}
+              style={{ fontSize: "30px" }}
+              spin
+            />
+          </div>
+        ) : (
+          articleData?.map((data) => (
+            <Link
+              to={`/readArticle/${data.id}`}
+              key={data.title}
+              style={{ textDecoration: "none" }}
+            >
+              <Article data={data} />
+            </Link>
+          ))
+        )}
         <div className={styles.pagination}>
           {/* <p className={styles.active}>1</p>
           <p>2</p> */}

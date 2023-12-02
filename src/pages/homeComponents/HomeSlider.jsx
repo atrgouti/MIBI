@@ -29,7 +29,7 @@ export default function App() {
         <SwiperSlide
           className="SwiperSlide1"
           style={{
-            backgroundImage: `url(/background.gif)`,
+            backgroundImage: `url(/womenBackground.jpeg)`,
             backgroundSize: "cover",
             // backgroundPosition: "center",
           }}
@@ -42,7 +42,7 @@ export default function App() {
         <SwiperSlide
           className="SwiperSlide2"
           style={{
-            backgroundImage: `url(/background2.jpg)`,
+            backgroundImage: `url(/backgroundmen.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "right",
           }}
