@@ -24,6 +24,7 @@ import {
 import { useParams } from "react-router-dom";
 import { apiSelectProduct } from "../../components/apiSelectProduct";
 import { apiMibiProducts } from "../../components/apiMibiProducts";
+import { apiSelectPopuler } from "../../components/apiSelectPopuler";
 import { useEffect, useState } from "react";
 
 function ReadArticle({
@@ -41,6 +42,7 @@ function ReadArticle({
   const [currentArticleData, setCurrentArticleData] = useState([]);
   const [recentArticles, setRecentArticles] = useState([]);
   const [ArticleIsLoading, setArticleIsLoading] = useState(false);
+  const [populerProducts, setPopulerProducts] = useState([]);
   const { id: ArticleId } = useParams();
   useEffect(
     function () {
@@ -53,7 +55,14 @@ function ReadArticle({
     },
     [ArticleId]
   );
-  // console.log(recentArticles[0].id);
+  useEffect(
+    function () {
+      apiSelectPopuler(`${currentArticleData[0]?.relatedTo}`).then((data) =>
+        setPopulerProducts(data)
+      );
+    },
+    [currentArticleData]
+  );
 
   return (
     <>
@@ -134,11 +143,14 @@ function ReadArticle({
               />
             ))}
             <h3>POPULAR PRODUCTS</h3>
-            <PopulerProduct />
-            <PopulerProduct />
-            <PopulerProduct />
-            <PopulerProduct />
-            <PopulerProduct />
+            {populerProducts?.map((p) => (
+              <PopulerProduct
+                key={p.title}
+                img={p.photos.productPhotos[3]}
+                title={p.title}
+                price={p.price}
+              />
+            ))}
             <h3>Tags</h3>
             <div className={styles.allTags}>
               <p>Denim</p>

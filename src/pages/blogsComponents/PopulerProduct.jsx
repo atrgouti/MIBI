@@ -2,7 +2,7 @@ import hoodie from "./women-jean-1-4.jpg";
 import styles from "../homeComponents/Testemonials.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-function PopulerProduct() {
+function PopulerProduct({ img, title, price }) {
   return (
     <div
       style={{
@@ -12,7 +12,7 @@ function PopulerProduct() {
         margin: "20px 0px",
       }}
     >
-      <img style={{ height: "100px" }} src={hoodie} alt="" />
+      <img style={{ height: "100px" }} src={img} alt="" />
       <div
         style={{
           display: "flex",
@@ -27,7 +27,7 @@ function PopulerProduct() {
             marginLeft: "10px",
           }}
         >
-          High Neck Ribbed Knit
+          {title}
         </p>
         <p
           style={{
@@ -36,7 +36,7 @@ function PopulerProduct() {
             marginLeft: "10px",
           }}
         >
-          $800.00
+          {price}
         </p>
         <div className={styles.star} style={{ marginLeft: "10px" }}>
           {Array.from({ length: 5 }, (_, i) => (
