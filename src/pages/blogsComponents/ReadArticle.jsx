@@ -129,6 +129,7 @@ function ReadArticle({
               setSideBarIsActive={setSideBarIsActive}
               setActiveFilter={setActiveFilter}
               addItemToCart={addItemToCart}
+              related={currentArticleData[0]?.relatedTo}
             />
             <LeaveComment />
           </main>

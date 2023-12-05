@@ -134,10 +134,14 @@ export default function Navbar({
             <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <Link to="/men">Contact Us</Link>
+            <Link to="/contactus">Contact Us</Link>
           </li>
         </ul>
         <div className={styles.iconDiv}>
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className={`${styles.icon}`}
+          />
           <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
           <FontAwesomeIcon icon={faUser} className={styles.icon} />
           <FontAwesomeIcon
@@ -193,7 +197,7 @@ export default function Navbar({
             </Link>
           </li>
           <li>
-            <Link to="/men" onClick={() => setActiveFilter(false)}>
+            <Link to="/contactus" onClick={() => setActiveFilter(false)}>
               Contact Us
             </Link>
           </li>

@@ -1,4 +1,3 @@
-import hoodie from "./women-jean-1-4.jpg";
 import styles from "../homeComponents/Testemonials.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";

@@ -46,7 +46,7 @@ function Blog({
   const totalArticles = 4;
   const articlePerPage = 3;
   const totalPages = Math.ceil(totalArticles / articlePerPage);
-  console.log(totalPages);
+
   return (
     <>
       <div className={ActiveFilter ? filtringStyles.filter : ""}></div>

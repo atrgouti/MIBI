@@ -10,6 +10,8 @@ const ReadArticle = lazy(() => import("./pages/blogsComponents/ReadArticle"));
 const Blog = lazy(() => import("./pages/Blog"));
 // import ProductsPage from "./pages/ProductsPage";
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
+// import contactUs component
+const ContactUs = lazy(() => import("./pages/ContactUs"));
 import { useState } from "react";
 
 // import hooks
@@ -298,6 +300,37 @@ function App() {
           }
         >
           <ReadArticle
+            addItemToCart={addItemToCart}
+            cartItems={cartItems}
+            ActiveFilter={ActiveFilter}
+            setActiveFilter={setActiveFilter}
+            handleDeleteMovies={handleDeleteMovies}
+            sideBarIsActive={sideBarIsActive}
+            setSideBarIsActive={setSideBarIsActive}
+            increaseQuantity={increaseQuantity}
+            decreaseQuntity={decreaseQuntity}
+          />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/contactus",
+      element: (
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+              }}
+            >
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+            </div>
+          }
+        >
+          <ContactUs 
             addItemToCart={addItemToCart}
             cartItems={cartItems}
             ActiveFilter={ActiveFilter}

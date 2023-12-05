@@ -25,28 +25,20 @@ function RelatedProducts({
   setSideBarIsActive,
   setActiveFilter,
   addItemToCart,
+  related,
 }) {
   const [myData, setmyData] = useState([]);
-  const [choosedCategory, setChoosedCategory] = useState("men");
   const [isLoading, setIsLoading] = useState(true);
 
   // getting the data from the api
   useEffect(
     function () {
-      apiMibiProducts(choosedCategory, setIsLoading).then((data) =>
-        setmyData(data)
-      );
+      apiMibiProducts(related, setIsLoading).then((data) => setmyData(data));
     },
-    [choosedCategory]
+    [related]
   );
 
   const carouselRef = useRef(null); // Create a ref for the Carousel component
-
-  const handleScrollToFirst = () => {
-    if (carouselRef.current) {
-      carouselRef.current.goTo(0); // Scroll back to the first product
-    }
-  };
 
   return (
     <div className={styles.showProducts}>
@@ -81,10 +73,7 @@ function RelatedProducts({
           <HomeProductsIsLoading />
         ) : (
           myData.map((product) => (
-            <Link
-              to={`/product/${choosedCategory}/${product.id}`}
-              key={product.id}
-            >
+            <Link to={`/product/${related}/${product.id}`} key={product.id}>
               <HomeProduct
                 setSideBarIsActive={setSideBarIsActive}
                 setActiveFilter={setActiveFilter}
