@@ -1,0 +1,49 @@
+.nameEmail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+.nameEmail input {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.phoneNumber {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+.subject {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+.textArea {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px;
+}
+.submit {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  font-weight: bold;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+@media screen and (max-width: 900px) {
+  .nameEmail {
+    flex-direction: column;
+  }
+}

@@ -2,12 +2,13 @@ import Navbar from "../components/Navbar";
 import Announce from "../components/Announce";
 import filtringStyles from "./filtring.module.css";
 import CurrentCategory from "../components/CurrentCategory";
+import ContactUsForm from "./ContactUsForm";
+import Footer from "../components/Footer";
 
 function ContactUs({
   ActiveFilter,
   setActiveFilter,
   cartItems,
-  addItemToCart,
   handleDeleteMovies,
   setSideBarIsActive,
   sideBarIsActive,
@@ -45,15 +46,19 @@ function ContactUs({
         >
           <div style={{ width: "65%" }}>
             <h2 style={{ textAlign: "center" }}>Contact Us</h2>
-            <p style={{ textAlign: "center" }}>
+            <p
+              style={{ textAlign: "center", color: "gray", marginTop: "10px" }}
+            >
               Get in touch and let us know how we can help. Have a question but
               aren’t sure who to contact? Get in touch and a member of our team
               will reach out to you.
             </p>
+            <ContactUsForm />
           </div>
-          <div style={{ width: "35%" }}>sa</div>
+          <div style={{ width: "35%", backgroundColor: "pink" }}></div>
           <div></div>
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-import ama from "./ama.jpg";
 function RecentPost({ img, title, date }) {
   return (
     <div

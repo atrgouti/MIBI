@@ -1,7 +1,6 @@
 import Navbar from "../../components/Navbar";
 import RelatedProducts from "./RelatedProducts";
 import PopulerProduct from "./PopulerProduct";
-import ama from "./ama.jpg";
 import Footer from "../../components/Footer";
 
 import Announce from "../../components/Announce";
