@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./contactUs.module.css";
+import axios from "axios";
 function ContactUsForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -7,18 +8,22 @@ function ContactUsForm() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  function handleSubmitForm(e) {
+  async function handleSubmitForm(e) {
     e.preventDefault();
-    if (
-      email !== "" ||
-      number !== "" ||
-      name !== "" ||
-      subject !== "" ||
-      message !== ""
-    ) {
-      console.log(name, email, number, message, subject);
-    } else {
-      console.log("3mr kolchi");
+    if (!email || !number || !name || !subject || !message)
+      return console.log("fill all the feilds");
+    console.log(email, name);
+    try {
+      const { data } = await axios.post("http://localhost:4000/api/mail", {
+        name,
+        email,
+        number,
+        subject,
+        message,
+      });
+      console.log("data has been sent succefully", data);
+    } catch (error) {
+      console.log("error:", error);
     }
   }
   return (
