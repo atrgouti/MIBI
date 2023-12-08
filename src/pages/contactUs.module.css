@@ -1,3 +1,10 @@
+.formArea {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  gap: 40px;
+}
+
 .nameEmail {
   display: flex;
   justify-content: space-between;
@@ -45,5 +52,66 @@
 @media screen and (max-width: 900px) {
   .nameEmail {
     flex-direction: column;
+  }
+}
+
+/* working on the formDetails */
+.formDetailsleft {
+  width: 65%;
+}
+
+/* working on the right details  */
+.rightDetails {
+  width: 35%;
+  height: fit-content;
+  background-color: rgb(240, 240, 240);
+}
+.adress {
+  margin: 20px;
+}
+.adress p:not(:first-child) {
+  color: rgb(89, 89, 89);
+  margin-bottom: 10px;
+}
+.line {
+  width: 90%;
+  margin: 20px auto;
+  background-color: rgb(207, 207, 207);
+  height: 1px;
+}
+.opningHours {
+  margin: 20px;
+}
+.opningHours p:not(:first-child) {
+  color: rgb(89, 89, 89);
+  margin-bottom: 10px;
+}
+.stayConnected {
+  margin: 20px;
+}
+.icons {
+  margin-top: 10px;
+}
+.socialIcon {
+  margin: 5px;
+  font-size: 18px;
+  color: rgb(45, 45, 45);
+  cursor: pointer;
+}
+
+/* working on responsivness */
+@media screen and (max-width: 900px) {
+  .formArea {
+    flex-direction: column;
+  }
+  .formDetailsleft {
+    width: 100%;
+  }
+  .rightDetails {
+    width: 100%;
+  }
+  .nameEmail input {
+    width: 100%;
+    margin-top: 10px;
   }
 }
