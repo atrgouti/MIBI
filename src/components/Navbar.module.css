@@ -40,6 +40,11 @@ nav.scrolled {
 .iconDiv {
   margin-right: 40px;
   position: relative;
+  text-decoration: none;
+}
+.iconDiv a {
+  text-decoration: none;
+  color: black;
 }
 .iconDiv p {
   position: absolute;

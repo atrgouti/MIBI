@@ -143,7 +143,9 @@ export default function Navbar({
             className={`${styles.icon}`}
           />
           <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
-          <FontAwesomeIcon icon={faUser} className={styles.icon} />
+          <Link to={"/Account"}>
+            <FontAwesomeIcon icon={faUser} className={styles.icon} />
+          </Link>
           <FontAwesomeIcon
             icon={faCartShopping}
             className={styles.icon}

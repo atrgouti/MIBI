@@ -13,7 +13,10 @@ const ProductsPage = lazy(() => import("./pages/ProductsPage"));
 // import contactUs component
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 import { useState } from "react";
-
+// import login page
+const AccountLogin = lazy(() => import("./pages/AccountLogin"));
+const CreateAccount = lazy(() => import("./pages/CreactAccount"));
+const Profile = lazy(() => import("./pages/Profile"));
 // import hooks
 import useLocalStorageState from "./hooks/useLocalStorageState";
 
@@ -134,9 +137,10 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
-              <GeneralLoader />
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
             </div>
           }
         >
@@ -166,6 +170,7 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
               <FontAwesomeIcon icon={faSpinner} spin size="3x" />
@@ -198,6 +203,7 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
               <FontAwesomeIcon icon={faSpinner} spin size="3x" />
@@ -230,6 +236,7 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
               <FontAwesomeIcon icon={faSpinner} spin size="3x" />
@@ -262,6 +269,7 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
               <FontAwesomeIcon icon={faSpinner} spin size="3x" />
@@ -293,6 +301,7 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
               <FontAwesomeIcon icon={faSpinner} spin size="3x" />
@@ -324,13 +333,110 @@ function App() {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100vh",
+                backgroundColor: "white",
               }}
             >
               <FontAwesomeIcon icon={faSpinner} spin size="3x" />
             </div>
           }
         >
-          <ContactUs 
+          <ContactUs
+            addItemToCart={addItemToCart}
+            cartItems={cartItems}
+            ActiveFilter={ActiveFilter}
+            setActiveFilter={setActiveFilter}
+            handleDeleteMovies={handleDeleteMovies}
+            sideBarIsActive={sideBarIsActive}
+            setSideBarIsActive={setSideBarIsActive}
+            increaseQuantity={increaseQuantity}
+            decreaseQuntity={decreaseQuntity}
+          />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/Account",
+      element: (
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "white",
+              }}
+            >
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+            </div>
+          }
+        >
+          <AccountLogin
+            addItemToCart={addItemToCart}
+            cartItems={cartItems}
+            ActiveFilter={ActiveFilter}
+            setActiveFilter={setActiveFilter}
+            handleDeleteMovies={handleDeleteMovies}
+            sideBarIsActive={sideBarIsActive}
+            setSideBarIsActive={setSideBarIsActive}
+            increaseQuantity={increaseQuantity}
+            decreaseQuntity={decreaseQuntity}
+          />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/CreatAccount",
+      element: (
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "white",
+              }}
+            >
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+            </div>
+          }
+        >
+          <CreateAccount
+            addItemToCart={addItemToCart}
+            cartItems={cartItems}
+            ActiveFilter={ActiveFilter}
+            setActiveFilter={setActiveFilter}
+            handleDeleteMovies={handleDeleteMovies}
+            sideBarIsActive={sideBarIsActive}
+            setSideBarIsActive={setSideBarIsActive}
+            increaseQuantity={increaseQuantity}
+            decreaseQuntity={decreaseQuntity}
+          />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/profile",
+      element: (
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "white",
+              }}
+            >
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+            </div>
+          }
+        >
+          <Profile
             addItemToCart={addItemToCart}
             cartItems={cartItems}
             ActiveFilter={ActiveFilter}
