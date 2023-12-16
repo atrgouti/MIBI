@@ -28,7 +28,7 @@ function AccountLogin({
     if (!email || !password) return console.log("please fill all the feilds");
 
     try {
-      let { data, error } = await supabase.auth.signUp({
+      let { data, error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
       });
