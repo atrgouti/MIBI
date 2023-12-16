@@ -25,7 +25,6 @@ import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 // import general loader
-import GeneralLoader from "./components/GeneralLoader";
 
 import "./App.css";
 

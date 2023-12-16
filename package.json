@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@itseasy21/react-elastic-carousel": "^0.12.3",
+    "@paypal/react-paypal-js": "^8.1.3",
     "@supabase/supabase-js": "^2.38.1",
     "axios": "^1.6.2",
     "blurhash": "^2.0.5",

@@ -65,7 +65,7 @@ function ContactUs({
         theme: "colored",
       });
     try {
-      const { data } = await axios.post("http://localhost:4000/api/mail", {
+      const { data } = await axios.post("http://localhost:3000/api/mail", {
         name,
         email,
         number,

@@ -101,7 +101,7 @@
 .butItNow {
   width: 453px;
   padding: 15px 0px;
-  background-color: rgb(233, 70, 10);
+  /* background-color: rgb(233, 70, 10); */
   border: none;
   color: white;
   margin-top: 10px;
@@ -109,9 +109,7 @@
   cursor: pointer;
   transition: 0.2s;
 }
-.butItNow:hover {
-  background-color: black;
-}
+
 .freeShipping {
   margin-top: 20px;
   display: flex;
