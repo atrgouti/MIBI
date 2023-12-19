@@ -1,11 +1,16 @@
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import styles from "./productsPage.module.css";
+import { string } from "prop-types";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
 
-function PaypalPayment() {
+function PaypalPayment({ price }) {
   const serverUrl = "http://localhost:3000";
 
   const createOrder = (data, actions) => {
     // Order is created on the server, and the order id is returned
+    const productCost = typeof price === "number" ? price.toString() : price;
+
     return fetch(`${serverUrl}/my-server/create-paypal-order`, {
       method: "POST",
       headers: {
@@ -14,7 +19,7 @@ function PaypalPayment() {
       body: JSON.stringify({
         product: {
           description: "wood candy sofa",
-          cost: "10.00",
+          cost: productCost,
         },
       }),
     })
@@ -40,6 +45,7 @@ function PaypalPayment() {
 
   return (
     <PayPalButtons
+      // onClick={(e) => bbb(e)}
       className={styles.butItNow}
       createOrder={(data, actions) => createOrder(data, actions)}
       onApprove={(data, actions) => onApprove(data, actions)}

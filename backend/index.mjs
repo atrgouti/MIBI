@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-// import { sendMail } from "./mailgun.mjs";
 import * as paypal from "./paypal-api.mjs";
 
 const corsOptions = {
@@ -32,7 +31,7 @@ app.post("/my-server/capture-paypal-order", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
-// app.post("/api/mail", sendMail);
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

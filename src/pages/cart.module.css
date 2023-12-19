@@ -1,0 +1,40 @@
+.cartArea {
+  width: 80%;
+  margin: 0px auto;
+}
+.header {
+  text-align: center;
+  margin: 40px 0px;
+  color: rgb(52, 52, 52);
+}
+.infos {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 30px;
+}
+.infos p {
+  font-weight: bold;
+  padding: 10px;
+}
+.infos .titleInfo {
+  width: 50%;
+}
+.product {
+  width: 100%;
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+}
+.titleArea {
+  width: 44%;
+}
+.titleArea img {
+  width: 120px;
+  height: auto;
+}
+.priceArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

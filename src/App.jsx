@@ -17,6 +17,7 @@ import { useState } from "react";
 const AccountLogin = lazy(() => import("./pages/AccountLogin"));
 const CreateAccount = lazy(() => import("./pages/CreactAccount"));
 const Profile = lazy(() => import("./pages/Profile"));
+const Cart = lazy(() => import("./pages/Cart"));
 // import hooks
 import useLocalStorageState from "./hooks/useLocalStorageState";
 
@@ -27,6 +28,14 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 // import general loader
 
 import "./App.css";
+
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+const initialOptions = {
+  clientId:
+    "AcWSm4txKbtLSKFZe3zMkAfAI3dWkIAYNI-GhPqx4UbV5YLTa4hka3iIWL5h6VmwbZ7pvnxkjwA0dfBx",
+  currency: "USD",
+  intent: "capture",
+};
 
 function App() {
   const [ActiveFilter, setActiveFilter] = useState(false);
@@ -275,17 +284,19 @@ function App() {
             </div>
           }
         >
-          <ProductsPage
-            addItemToCart={addItemToCart}
-            cartItems={cartItems}
-            ActiveFilter={ActiveFilter}
-            setActiveFilter={setActiveFilter}
-            handleDeleteMovies={handleDeleteMovies}
-            sideBarIsActive={sideBarIsActive}
-            setSideBarIsActive={setSideBarIsActive}
-            increaseQuantity={increaseQuantity}
-            decreaseQuntity={decreaseQuntity}
-          />
+          <PayPalScriptProvider options={initialOptions}>
+            <ProductsPage
+              addItemToCart={addItemToCart}
+              cartItems={cartItems}
+              ActiveFilter={ActiveFilter}
+              setActiveFilter={setActiveFilter}
+              handleDeleteMovies={handleDeleteMovies}
+              sideBarIsActive={sideBarIsActive}
+              setSideBarIsActive={setSideBarIsActive}
+              increaseQuantity={increaseQuantity}
+              decreaseQuntity={decreaseQuntity}
+            />
+          </PayPalScriptProvider>
         </Suspense>
       ),
     },
@@ -436,6 +447,38 @@ function App() {
           }
         >
           <Profile
+            addItemToCart={addItemToCart}
+            cartItems={cartItems}
+            ActiveFilter={ActiveFilter}
+            setActiveFilter={setActiveFilter}
+            handleDeleteMovies={handleDeleteMovies}
+            sideBarIsActive={sideBarIsActive}
+            setSideBarIsActive={setSideBarIsActive}
+            increaseQuantity={increaseQuantity}
+            decreaseQuntity={decreaseQuntity}
+          />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/Cart",
+      element: (
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "white",
+              }}
+            >
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+            </div>
+          }
+        >
+          <Cart
             addItemToCart={addItemToCart}
             cartItems={cartItems}
             ActiveFilter={ActiveFilter}
