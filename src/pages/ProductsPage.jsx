@@ -2,7 +2,7 @@
 import filtringStyles from "./filtring.module.css";
 
 import { useLocation, useParams } from "react-router-dom";
-import styles from "./productsPage.module.css";
+import styles from "./ProductsPage.module.css";
 import NavBar from "../components/Navbar";
 import Announce from "../components/Announce";
 import CurrentCategory from "../components/CurrentCategory";
