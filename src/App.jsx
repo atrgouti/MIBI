@@ -478,17 +478,19 @@ function App() {
             </div>
           }
         >
-          <Cart
-            addItemToCart={addItemToCart}
-            cartItems={cartItems}
-            ActiveFilter={ActiveFilter}
-            setActiveFilter={setActiveFilter}
-            handleDeleteMovies={handleDeleteMovies}
-            sideBarIsActive={sideBarIsActive}
-            setSideBarIsActive={setSideBarIsActive}
-            increaseQuantity={increaseQuantity}
-            decreaseQuntity={decreaseQuntity}
-          />
+          <PayPalScriptProvider options={initialOptions}>
+            <Cart
+              addItemToCart={addItemToCart}
+              cartItems={cartItems}
+              ActiveFilter={ActiveFilter}
+              setActiveFilter={setActiveFilter}
+              handleDeleteMovies={handleDeleteMovies}
+              sideBarIsActive={sideBarIsActive}
+              setSideBarIsActive={setSideBarIsActive}
+              increaseQuantity={increaseQuantity}
+              decreaseQuntity={decreaseQuntity}
+            />
+          </PayPalScriptProvider>
         </Suspense>
       ),
     },

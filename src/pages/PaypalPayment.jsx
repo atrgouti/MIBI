@@ -1,10 +1,10 @@
 import { PayPalButtons } from "@paypal/react-paypal-js";
-import styles from "./productsPage.module.css";
+// import styles from "./productsPage.module.css";
 import { string } from "prop-types";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 
-function PaypalPayment({ price }) {
+function PaypalPayment({ price, styles }) {
   const serverUrl = "http://localhost:3000";
 
   const createOrder = (data, actions) => {
@@ -46,7 +46,7 @@ function PaypalPayment({ price }) {
   return (
     <PayPalButtons
       // onClick={(e) => bbb(e)}
-      className={styles.butItNow}
+      className={styles}
       createOrder={(data, actions) => createOrder(data, actions)}
       onApprove={(data, actions) => onApprove(data, actions)}
     />

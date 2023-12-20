@@ -214,7 +214,12 @@ function ProductsPage({
                   Add to card
                 </button>
               </div>
-              {productData.price && <PaypalPayment price={productData.price} />}
+              {productData.price && (
+                <PaypalPayment
+                  price={productData.price}
+                  styles={styles.butItNow}
+                />
+              )}
               {/* <button className={styles.butItNow}>BUY IT NOW</button>
                 <button className={styles.butItNow}>BUY IT NOW</button> */}
               <div className={styles.freeShipping}>

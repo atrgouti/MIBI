@@ -1,6 +1,12 @@
-.cartArea {
-  width: 80%;
+.allCart {
+  width: 100%;
   margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.cartArea {
+  width: 50%;
 }
 .header {
   text-align: center;
@@ -10,7 +16,7 @@
 .infos {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(246, 246, 246);
   margin-bottom: 30px;
 }
 .infos p {
@@ -22,12 +28,28 @@
 }
 .product {
   width: 100%;
-  background-color: pink;
   display: flex;
   justify-content: space-between;
 }
 .titleArea {
   width: 44%;
+  display: flex;
+  align-items: center;
+}
+.titleArea p {
+  margin-left: 20px;
+}
+.quantityButtons {
+  display: flex;
+  border: 1px solid black;
+}
+.quantityArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quantityButtons p {
+  margin: 10px;
 }
 .titleArea img {
   width: 120px;
@@ -37,4 +59,61 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.totalArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: rgb(220, 220, 220);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.checkout {
+  width: 30%;
+  background-color: rgb(246, 246, 246);
+}
+.workingArea {
+  width: 90%;
+  margin: 20px auto;
+}
+.workingArea textarea {
+  border: 1px solid rgb(219, 219, 219);
+  width: 100%;
+  margin-top: 10px;
+}
+.workingArea textarea:focus {
+  border: 1px solid red;
+}
+.workingArea .total {
+  display: flex;
+  justify-content: space-between;
+}
+.workingArea .butItNow {
+  background-color: rebeccapurple;
+}
+.checkout .workingArea input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(219, 219, 219);
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .allCart {
+    flex-direction: column;
+  }
+  .cartArea {
+    width: 90%;
+    margin: 0px auto;
+  }
+  .checkout {
+    width: 100%;
+  }
+  .titleArea img {
+    width: 70px;
+  }
 }
