@@ -1,4 +1,4 @@
-import styles from "./testemonials.module.css";
+import styles from "./Testemonials.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
