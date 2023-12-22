@@ -14,6 +14,7 @@ import {
   faPinterest,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+
 function Footer() {
   return (
     <footer className={styles.footer}>

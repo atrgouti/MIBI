@@ -292,10 +292,19 @@ export default function Navbar({
                 <input type="checkbox" />
                 <p>I agree with the terms and conditions</p>
               </div>
-              <button className={styles.Proceedcheckout}>
-                PROCEED TO CHECKOUT
-              </button>
-              <button className={styles.viewCart}>VIEW CART</button>
+              <Link to={"/cart"}>
+                <button
+                  style={{ cursor: "pointer" }}
+                  className={styles.Proceedcheckout}
+                  onClick={() => {
+                    setSideBarIsActive(false);
+                    setActiveFilter(false);
+                  }}
+                >
+                  PROCEED TO CHECKOUT
+                </button>
+              </Link>
+              <button className={styles.viewCart}>VIEW Favorite</button>
             </div>
           </div>
         ) : (

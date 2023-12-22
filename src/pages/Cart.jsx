@@ -19,6 +19,8 @@ function Cart({
   increaseQuantity,
   decreaseQuntity,
 }) {
+  const totalPrice = cartItems.reduce((acc, product) => acc + product.price, 0);
+
   return (
     <>
       <div
@@ -49,51 +51,64 @@ function Cart({
               <p>QUANTITY</p>
               <p>TOTAL</p>
             </div>
-            <div className={styles.product}>
-              <div className={styles.titleArea}>
-                <img src={shirt} alt="" />
-                <p>Stylish Blue Shirt</p>
-              </div>
-              <div className={styles.priceArea}>
-                <p>$220.00</p>
-              </div>
-              <div className={styles.quantityArea}>
-                <div className={styles.quantityButtons}>
-                  <p style={{ cursor: "pointer" }}>-</p>
-                  <p>1</p>
-                  <p style={{ cursor: "pointer" }}>+</p>
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => (
+                <div key={item.id}>
+                  {" "}
+                  <div className={styles.product}>
+                    <div className={styles.titleArea}>
+                      <img src={item.image} alt="" />
+                      <p>{item.title}</p>
+                    </div>
+                    <div className={styles.priceArea}>
+                      <p>${item.initialPrice}</p>
+                    </div>
+                    <div className={styles.quantityArea}>
+                      <div className={styles.quantityButtons}>
+                        <p
+                          onClick={() => decreaseQuntity(item.hash)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          -
+                        </p>
+                        <p>{item.quantity}</p>
+                        <p
+                          onClick={() => increaseQuantity(item.hash)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          +
+                        </p>
+                      </div>
+                      <p
+                        style={{
+                          color: "red",
+                          marginTop: "10px",
+                          cursor: "pointer",
+                        }}
+                        onClick={() =>
+                          handleDeleteMovies(item.hash, item.category)
+                        }
+                      >
+                        Remove
+                      </p>
+                    </div>
+                    <div className={styles.totalArea}>
+                      <p>${item.price}</p>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>{" "}
                 </div>
-              </div>
-              <div className={styles.totalArea}>
-                <p>$220.00</p>
-              </div>
-            </div>
-            <div className={styles.line}></div>
-            <div className={styles.product}>
-              <div className={styles.titleArea}>
-                <img src={shirt} alt="" />
-                <p>Stylish Blue Shirt</p>
-              </div>
-              <div className={styles.priceArea}>
-                <p>$220.00</p>
-              </div>
-              <div className={styles.quantityArea}>
-                <div className={styles.quantityButtons}>
-                  <p style={{ cursor: "pointer" }}>-</p>
-                  <p>1</p>
-                  <p style={{ cursor: "pointer" }}>+</p>
-                </div>
-              </div>
-              <div className={styles.totalArea}>
-                <p>$220.00</p>
-              </div>
-            </div>
-            <div className={styles.line}></div>
-            <p>
-              We processes all orders in USD. While the content of your cart is
-              currently displayed in USD, the checkout will use USD at the most
-              current exchange rate.
-            </p>
+              ))
+            ) : (
+              <p>no items avaliable</p>
+            )}
+            {cartItems.length > 0 && (
+              <p style={{ textAlign: "center" }}>
+                We processes all orders in USD. While the content of your cart
+                is currently displayed in USD, the checkout will use USD at the
+                most current exchange rate.
+              </p>
+            )}
           </div>
           <div className={styles.checkout}>
             <div className={styles.workingArea}>
@@ -138,7 +153,7 @@ function Cart({
               <p style={{ marginTop: "20px", color: "grey" }}>
                 Tax included and shipping calculated at checkout
               </p>
-              <PaypalPayment price={200} />
+              <PaypalPayment price={totalPrice} />
             </div>
           </div>
         </div>
