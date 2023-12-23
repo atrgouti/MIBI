@@ -148,15 +148,17 @@ function Cart({
               ></div>
               <div className={styles.total}>
                 <p style={{ fontWeight: "bold" }}>SUBTOTAL</p>
-                <p style={{ fontWeight: "bold" }}>$1,030.00 USD</p>
+                <p style={{ fontWeight: "bold" }}>${totalPrice} USD</p>
               </div>
               <p style={{ marginTop: "20px", color: "grey" }}>
                 Tax included and shipping calculated at checkout
               </p>
+
               <PaypalPayment price={totalPrice} />
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

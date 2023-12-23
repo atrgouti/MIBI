@@ -18,6 +18,7 @@ const AccountLogin = lazy(() => import("./pages/AccountLogin"));
 const CreateAccount = lazy(() => import("./pages/CreactAccount"));
 const Profile = lazy(() => import("./pages/Profile"));
 const Cart = lazy(() => import("./pages/Cart"));
+const Favourite = lazy(() => import("./pages/Favourite"));
 // import hooks
 import useLocalStorageState from "./hooks/useLocalStorageState";
 
@@ -491,6 +492,38 @@ function App() {
               decreaseQuntity={decreaseQuntity}
             />
           </PayPalScriptProvider>
+        </Suspense>
+      ),
+    },
+    {
+      path: "/Favourite",
+      element: (
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "white",
+              }}
+            >
+              <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+            </div>
+          }
+        >
+          <Favourite
+            addItemToCart={addItemToCart}
+            cartItems={cartItems}
+            ActiveFilter={ActiveFilter}
+            setActiveFilter={setActiveFilter}
+            handleDeleteMovies={handleDeleteMovies}
+            sideBarIsActive={sideBarIsActive}
+            setSideBarIsActive={setSideBarIsActive}
+            increaseQuantity={increaseQuantity}
+            decreaseQuntity={decreaseQuntity}
+          />
         </Suspense>
       ),
     },

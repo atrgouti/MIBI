@@ -34,6 +34,13 @@ export default function Navbar({
   increaseQuantity,
   decreaseQuntity,
 }) {
+  const startInterval = () => {
+    setSideBarIsActive(false);
+    const id = setTimeout(() => {
+      setActiveFilter(false);
+    }, 300);
+  };
+
   const [scrollY, setScrollY] = useState(0);
   // const [sideBarIsActive, setSideBarIsActive] = useState(false);
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
@@ -142,7 +149,12 @@ export default function Navbar({
             icon={faMagnifyingGlass}
             className={`${styles.icon}`}
           />
-          <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
+          <Link to={"/favourite"}>
+            <FontAwesomeIcon
+              icon={faHeart}
+              style={{ fontSize: "18px", margin: "10px", cursor: "pointer" }}
+            />
+          </Link>
           <Link to={"/Account"}>
             <FontAwesomeIcon icon={faUser} className={styles.icon} />
           </Link>
@@ -169,6 +181,7 @@ export default function Navbar({
           onClick={() => {
             setBurgerMenuIsActive(false);
             setActiveFilter(false);
+            console.log("this is the correct");
           }}
         />
         <ul className={styles.burderMenuLinks}>
@@ -214,10 +227,7 @@ export default function Navbar({
           <FontAwesomeIcon
             icon={faXmark}
             className={styles.xmark}
-            onClick={() => {
-              setSideBarIsActive(false);
-              setActiveFilter(false);
-            }}
+            onClick={startInterval}
           />
         </header>
         {cartItems?.length > 0 ? (
@@ -304,7 +314,18 @@ export default function Navbar({
                   PROCEED TO CHECKOUT
                 </button>
               </Link>
-              <button className={styles.viewCart}>VIEW Favorite</button>
+              <Link to={"/favourite"}>
+                <button
+                  style={{ cursor: "pointer" }}
+                  className={styles.viewCart}
+                  onClick={() => {
+                    setSideBarIsActive(false);
+                    setActiveFilter(false);
+                  }}
+                >
+                  VIEW WISHLIST
+                </button>
+              </Link>
             </div>
           </div>
         ) : (

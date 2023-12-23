@@ -76,6 +76,7 @@
 .checkout {
   width: 30%;
   background-color: rgb(246, 246, 246);
+  margin-bottom: 40px;
 }
 .workingArea {
   width: 90%;
