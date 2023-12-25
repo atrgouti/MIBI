@@ -25,6 +25,8 @@ function Home({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  addItemsToWishList,
+  wishList,
 }) {
   const [someDataIsLoading, setSomeDataIsLoading] = useState(false);
   const { pathname } = useLocation();
@@ -50,6 +52,7 @@ function Home({
         cartItems={cartItems}
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
+        wishList={wishList}
       />
       {someDataIsLoading && <GeneralLoader />}
       <HomeSlider />
@@ -57,6 +60,7 @@ function Home({
       <Categories></Categories>
       <ProductsQuickView
         addItemToCart={addItemToCart}
+        addItemsToWishList={addItemsToWishList}
         setSideBarIsActive={setSideBarIsActive}
         setActiveFilter={setActiveFilter}
       />

@@ -15,6 +15,8 @@ function Favourite({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
+  deleteProductWishList,
 }) {
   return (
     <>
@@ -32,6 +34,7 @@ function Favourite({
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
         makeItActive={"true"}
+        wishList={wishList}
       />
       <div
         style={{
@@ -47,34 +50,24 @@ function Favourite({
           <p>Price</p>
         </div>
         <div className={styles.allProducts}>
-          <div className={styles.product}>
-            <div className={styles.title}>
-              <img src={img} alt="" />
-              <p>Button Up Top Jacket</p>
-            </div>
-            <div className={styles.price}>
-              <p>$200.00</p>
-              <p>In Stock</p>
-              <div className={styles.view}>
-                <button>VIEW PRODUCT</button>
-                <button>X</button>
+          {wishList?.map((item) => (
+            <div className={styles.product} key={item.hash}>
+              <div className={styles.title}>
+                <img src={item.image} alt="" />
+                <p>{item.title}</p>
+              </div>
+              <div className={styles.price}>
+                <p>${item.initialPrice}</p>
+                <p>In Stock</p>
+                <div className={styles.view}>
+                  <button>VIEW PRODUCT</button>
+                  <button onClick={() => deleteProductWishList(item.hash)}>
+                    X
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={styles.product}>
-            <div className={styles.title}>
-              <img src={img} alt="" />
-              <p>Button Up Top Jacket</p>
-            </div>
-            <div className={styles.price}>
-              <p>$200.00</p>
-              <p>In Stock</p>
-              <div className={styles.view}>
-                <button>VIEW PRODUCT</button>
-                <button>X</button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         <Footer />
       </div>

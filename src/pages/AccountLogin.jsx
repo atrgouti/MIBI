@@ -18,6 +18,7 @@ function AccountLogin({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -59,6 +60,7 @@ function AccountLogin({
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
         makeItActive={"true"}
+        wishList={wishList}
       />
       <div
         style={{ position: "relative", top: "110px", backgroundColor: "white" }}

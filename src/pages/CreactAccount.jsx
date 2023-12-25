@@ -17,6 +17,7 @@ function CreactAccount({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const [firstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
@@ -59,6 +60,7 @@ function CreactAccount({
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
         makeItActive={"true"}
+        wishList={wishList}
       />
       <div
         style={{ position: "relative", top: "110px", backgroundColor: "white" }}

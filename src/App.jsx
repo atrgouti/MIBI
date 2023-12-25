@@ -41,7 +41,9 @@ const initialOptions = {
 function App() {
   const [ActiveFilter, setActiveFilter] = useState(false);
   const [cartItems, setCartItems] = useLocalStorageState([], "cartItems");
+  const [wishList, setWishList] = useLocalStorageState([], "wishList");
   const [sideBarIsActive, setSideBarIsActive] = useState(false);
+  console.log(wishList);
 
   function addItemToCart(
     id,
@@ -82,6 +84,31 @@ function App() {
     }
 
     setCartItems(updatedCartItems);
+  }
+
+  function addItemsToWishList(id, title, image, initialPrice, hash) {
+    const checkIfExists = wishList.some((item) => item.hash === hash);
+
+    if (checkIfExists) {
+      const updatedList = wishList.filter((item) => item.hash !== hash);
+      setWishList(updatedList);
+    }
+    if (!checkIfExists) {
+      const newItem = {
+        id,
+        title,
+        image,
+        initialPrice,
+        hash,
+      };
+      const updatedWishList = [...wishList, newItem];
+      setWishList(updatedWishList);
+      console.log("zdnah jdid");
+    }
+  }
+
+  function deleteProductWishList(hash) {
+    setWishList((item) => item.filter((item) => item.hash !== hash));
   }
 
   function handleDeleteMovies(hash) {
@@ -132,6 +159,8 @@ function App() {
           setSideBarIsActive={setSideBarIsActive}
           increaseQuantity={increaseQuantity}
           decreaseQuntity={decreaseQuntity}
+          addItemsToWishList={addItemsToWishList}
+          wishList={wishList}
         />
       ),
     },
@@ -164,6 +193,7 @@ function App() {
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
             categoryType={"women"}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -197,6 +227,7 @@ function App() {
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
             categoryType={"men"}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -230,6 +261,7 @@ function App() {
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
             categoryType={"accessories"}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -263,6 +295,7 @@ function App() {
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
             categoryType={"accessories"}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -296,6 +329,7 @@ function App() {
               setSideBarIsActive={setSideBarIsActive}
               increaseQuantity={increaseQuantity}
               decreaseQuntity={decreaseQuntity}
+              wishList={wishList}
             />
           </PayPalScriptProvider>
         </Suspense>
@@ -329,6 +363,7 @@ function App() {
             setSideBarIsActive={setSideBarIsActive}
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -361,6 +396,7 @@ function App() {
             setSideBarIsActive={setSideBarIsActive}
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -393,6 +429,7 @@ function App() {
             setSideBarIsActive={setSideBarIsActive}
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -425,6 +462,7 @@ function App() {
             setSideBarIsActive={setSideBarIsActive}
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -457,6 +495,7 @@ function App() {
             setSideBarIsActive={setSideBarIsActive}
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
+            wishList={wishList}
           />
         </Suspense>
       ),
@@ -490,6 +529,7 @@ function App() {
               setSideBarIsActive={setSideBarIsActive}
               increaseQuantity={increaseQuantity}
               decreaseQuntity={decreaseQuntity}
+              wishList={wishList}
             />
           </PayPalScriptProvider>
         </Suspense>
@@ -514,6 +554,8 @@ function App() {
           }
         >
           <Favourite
+            wishList={wishList}
+            deleteProductWishList={deleteProductWishList}
             addItemToCart={addItemToCart}
             cartItems={cartItems}
             ActiveFilter={ActiveFilter}

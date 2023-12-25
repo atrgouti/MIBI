@@ -17,6 +17,7 @@ function Profile({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const navigate = useNavigate();
 
@@ -55,6 +56,7 @@ function Profile({
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
         makeItActive={"true"}
+        wishList={wishList}
       />
       <div
         style={{

@@ -30,6 +30,7 @@ function ContactUs({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   // window.screenTop({ top: 0 });
   window.scrollTo({ top: 0 });
@@ -104,6 +105,7 @@ function ContactUs({
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
         makeItActive={"true"}
+        wishList={wishList}
       />
       <div
         style={{ position: "relative", top: "110px", backgroundColor: "white" }}

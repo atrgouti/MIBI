@@ -24,6 +24,7 @@ function ProductsQuickView({
   addItemToCart,
   setSideBarIsActive,
   setActiveFilter,
+  addItemsToWishList,
 }) {
   const [myData, setmyData] = useState([]);
   const [choosedCategory, setChoosedCategory] = useState("women");
@@ -123,12 +124,13 @@ function ProductsQuickView({
               myData.map((product) => (
                 <Link
                   to={`/product/${choosedCategory}/${product.id}`}
-                  key={product.id}
+                  key={product.hash}
                 >
                   <HomeProduct
                     setSideBarIsActive={setSideBarIsActive}
                     setActiveFilter={setActiveFilter}
                     addItemToCart={addItemToCart}
+                    addItemsToWishList={addItemsToWishList}
                     id={product.id}
                     img={product.photos.productPhotos.at(0)}
                     hash={product.hash}

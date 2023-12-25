@@ -21,6 +21,7 @@ function Blog({
   setSideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const [articleLoader, setArticleLoader] = useState("false");
   const [articleData, setArticleData] = useState([]);
@@ -60,6 +61,7 @@ function Blog({
         handleDeleteMovies={handleDeleteMovies}
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
+        wishList={wishList}
       />
       <div
         style={{

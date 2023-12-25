@@ -36,6 +36,7 @@ function ReadArticle({
   addItemToCart,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   window.scrollTo({ top: 0 });
   const [currentArticleData, setCurrentArticleData] = useState([]);
@@ -76,6 +77,7 @@ function ReadArticle({
         handleDeleteMovies={handleDeleteMovies}
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
+        wishList={wishList}
       />
       <div
         style={{

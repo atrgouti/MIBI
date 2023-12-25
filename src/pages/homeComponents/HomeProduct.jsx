@@ -20,13 +20,22 @@ function HomeProduct({
   category,
   setSideBarIsActive,
   setActiveFilter,
+  addItemsToWishList,
 }) {
   return (
     <div className={styles.product}>
       {/* <img src={`${img}`} alt="" className={styles.productImage} /> */}
       <div className={styles.productActions}>
         <div className={styles.addToFavorite}>
-          <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
+          <FontAwesomeIcon
+            icon={faHeart}
+            className={`${styles.icon}`}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              addItemsToWishList(id, title, img, price, hash);
+            }}
+          />
         </div>
         <div
           className={styles.addToFavorite}
@@ -35,6 +44,7 @@ function HomeProduct({
             event.stopPropagation();
 
             addItemToCart(id, title, img, 1, price, category, hash, price);
+
             setSideBarIsActive(true);
             setActiveFilter(true);
           }}

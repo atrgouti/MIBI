@@ -18,6 +18,7 @@ function Cart({
   sideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const totalPrice = cartItems.reduce((acc, product) => acc + product.price, 0);
 
@@ -37,6 +38,7 @@ function Cart({
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
         makeItActive={"true"}
+        wishList={wishList}
       />
       <div
         style={{ position: "relative", top: "110px", backgroundColor: "white" }}

@@ -33,6 +33,7 @@ export default function Navbar({
   setSideBarIsActive,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const startInterval = () => {
     setSideBarIsActive(false);
@@ -155,6 +156,9 @@ export default function Navbar({
               style={{ fontSize: "18px", margin: "10px", cursor: "pointer" }}
             />
           </Link>
+          <p style={{ marginRight: "75px", fontSize: "rgb(32, 32, 32)" }}>
+            {wishList.length}
+          </p>
           <Link to={"/Account"}>
             <FontAwesomeIcon icon={faUser} className={styles.icon} />
           </Link>
@@ -269,7 +273,7 @@ export default function Navbar({
                   id={item.id}
                   hash={item.hash}
                   category={item.category}
-                  key={item.id}
+                  key={item.hash}
                   increaseQuantity={increaseQuantity}
                   decreaseQuntity={decreaseQuntity}
                 />

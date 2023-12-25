@@ -20,6 +20,7 @@ function MenClothing({
   increaseQuantity,
   decreaseQuntity,
   categoryType,
+  wishList,
 }) {
   const [menData, setMenData] = useState([]);
   const [menLoader, setMenLoader] = useState("false");
@@ -65,6 +66,7 @@ function MenClothing({
         handleDeleteMovies={handleDeleteMovies}
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
+        wishList={wishList}
       />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={categoryType} />

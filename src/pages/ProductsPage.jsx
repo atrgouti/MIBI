@@ -49,6 +49,7 @@ function ProductsPage({
   addItemToCart,
   increaseQuantity,
   decreaseQuntity,
+  wishList,
 }) {
   const [productData, setProductData] = useState([]);
   const [numberOfChoosedImage, setNumberOfChoosedImae] = useState(0);
@@ -91,6 +92,7 @@ function ProductsPage({
         sideBarIsActive={sideBarIsActive}
         increaseQuantity={increaseQuantity}
         decreaseQuntity={decreaseQuntity}
+        wishList={wishList}
       />
       <div style={{ position: "relative", top: "110px" }}>
         <CurrentCategory category={`${productData.title}`} />
