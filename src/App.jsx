@@ -194,6 +194,7 @@ function App() {
             decreaseQuntity={decreaseQuntity}
             categoryType={"women"}
             wishList={wishList}
+            addItemsToWishList={addItemsToWishList}
           />
         </Suspense>
       ),
@@ -228,6 +229,7 @@ function App() {
             decreaseQuntity={decreaseQuntity}
             categoryType={"men"}
             wishList={wishList}
+            addItemsToWishList={addItemsToWishList}
           />
         </Suspense>
       ),
@@ -262,6 +264,7 @@ function App() {
             decreaseQuntity={decreaseQuntity}
             categoryType={"accessories"}
             wishList={wishList}
+            addItemsToWishList={addItemsToWishList}
           />
         </Suspense>
       ),

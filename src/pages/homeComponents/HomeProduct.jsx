@@ -26,16 +26,15 @@ function HomeProduct({
     <div className={styles.product}>
       {/* <img src={`${img}`} alt="" className={styles.productImage} /> */}
       <div className={styles.productActions}>
-        <div className={styles.addToFavorite}>
-          <FontAwesomeIcon
-            icon={faHeart}
-            className={`${styles.icon}`}
-            onClick={(event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              addItemsToWishList(id, title, img, price, hash);
-            }}
-          />
+        <div
+          className={styles.addToFavorite}
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            addItemsToWishList(id, title, img, price, hash);
+          }}
+        >
+          <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
         </div>
         <div
           className={styles.addToFavorite}

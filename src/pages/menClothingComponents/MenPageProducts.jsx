@@ -27,6 +27,7 @@ function MenPageProducts({
   handleColorSelect,
   sortBy,
   setSortBy,
+  addItemsToWishList,
 }) {
   const [sideBarFilters, setSideBarFilters] = useState(false);
   return (
@@ -140,6 +141,7 @@ function MenPageProducts({
                 price={product.price}
                 key={product.id}
                 addItemToCart={addItemToCart}
+                addItemsToWishList={addItemsToWishList}
               />
             </Link>
           ))

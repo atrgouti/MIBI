@@ -157,7 +157,7 @@ export default function Navbar({
             />
           </Link>
           <p style={{ marginRight: "75px", fontSize: "rgb(32, 32, 32)" }}>
-            {wishList.length}
+            {wishList.length > 0 ? wishList.length : ""}
           </p>
           <Link to={"/Account"}>
             <FontAwesomeIcon icon={faUser} className={styles.icon} />

@@ -22,6 +22,7 @@ function MenProductsContent({
   sortBy,
   setSortBy,
   categoryType,
+  addItemsToWishList,
 }) {
   function handleColorSelect(newColor) {
     const newSelectedColors = filteredColors.includes(newColor)
@@ -72,6 +73,7 @@ function MenProductsContent({
             sortBy={sortBy}
             setSortBy={setSortBy}
             categoryType={categoryType}
+            addItemsToWishList={addItemsToWishList}
           />
         </div>
       </div>

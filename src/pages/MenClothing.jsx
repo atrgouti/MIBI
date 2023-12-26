@@ -21,6 +21,7 @@ function MenClothing({
   decreaseQuntity,
   categoryType,
   wishList,
+  addItemsToWishList,
 }) {
   const [menData, setMenData] = useState([]);
   const [menLoader, setMenLoader] = useState("false");
@@ -87,6 +88,7 @@ function MenClothing({
           sortBy={sortBy}
           setSortBy={setSortBy}
           categoryType={categoryType}
+          addItemsToWishList={addItemsToWishList}
         />
         <Footer />
       </div>

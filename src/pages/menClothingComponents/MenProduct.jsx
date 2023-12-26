@@ -20,12 +20,21 @@ function HomeProduct({
   addItemToCart,
   setSideBarIsActive,
   setActiveFilter,
+  addItemsToWishList,
 }) {
   return (
     <div className={styles.product} style={{ marginLeft: "0px" }}>
       {/* <img src={`${img}`} alt="" className={styles.productImage} /> */}
       <div className={styles.productActions}>
-        <div className={styles.addToFavorite}>
+        <div
+          className={styles.addToFavorite}
+          onClick={(event) => {
+            addItemsToWishList(id, title, img, price, hash);
+
+            event.preventDefault();
+            event.stopPropagation();
+          }}
+        >
           <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />
         </div>
         <div
