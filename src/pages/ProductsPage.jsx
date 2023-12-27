@@ -50,6 +50,7 @@ function ProductsPage({
   increaseQuantity,
   decreaseQuntity,
   wishList,
+  addItemsToWishList,
 }) {
   const [productData, setProductData] = useState([]);
   const [numberOfChoosedImage, setNumberOfChoosedImae] = useState(0);
@@ -165,9 +166,36 @@ function ProductsPage({
               </p>
               <p style={{ color: "gray" }}>Tax included.</p>
               <div className={styles.actionsToDo}>
-                <div className={styles.addToWishList}>
-                  <FontAwesomeIcon icon={faHeart} />
-                  <p>Add to wishlsit</p>
+                <div
+                  className={styles.addToWishList}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    addItemsToWishList(
+                      productData.id,
+                      productData.title,
+                      productData.photos.productPhotos[0],
+                      productData.price,
+                      productData.hash
+                    );
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      color: wishList.some(
+                        (item) => item.hash === productData.hash
+                      )
+                        ? "red"
+                        : "",
+                    }}
+                  />
+                  {wishList.some((item) => item.hash === productData.hash) ? (
+                    <p>Added to wishlist</p>
+                  ) : (
+                    <p>Add to wishlsit</p>
+                  )}
                 </div>
                 <div className={styles.enquiry}>
                   <FontAwesomeIcon icon={faEnvelope} />
