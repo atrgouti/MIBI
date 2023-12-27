@@ -1,4 +1,5 @@
 import summerBackground from "/summer-background.jpg";
+import { Link } from "react-router-dom";
 import styles from "./HotCollection.module.css";
 function HotCollection() {
   return (
@@ -13,7 +14,9 @@ function HotCollection() {
           City’. The collection speaks of fresh summer hues, breezy silhouettes
           and more, available across sizes.
         </p>
-        <button>VIEW COLLECTION</button>
+        <Link to={"/women"}>
+          <button>VIEW COLLECTION</button>
+        </Link>
       </div>
     </section>
   );

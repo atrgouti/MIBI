@@ -133,6 +133,7 @@ function ReadArticle({
               addItemToCart={addItemToCart}
               related={currentArticleData[0]?.relatedTo}
               addItemsToWishList={addItemsToWishList}
+              wishList={wishList}
             />
             <LeaveComment />
           </main>
