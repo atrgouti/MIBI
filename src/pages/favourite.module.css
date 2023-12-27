@@ -55,5 +55,25 @@
   margin-left: 10px;
 }
 .allProducts {
-  height: 60vh;
+  min-height: 60vh;
+}
+.mobileThing {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .infos {
+    display: none;
+  }
+  .product {
+    width: 90%;
+  }
+  .product .price {
+    display: none;
+  }
+  .mobileThing {
+    display: block;
+  }
+  .product .title {
+    width: 100%;
+  }
 }

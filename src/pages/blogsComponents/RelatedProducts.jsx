@@ -26,6 +26,7 @@ function RelatedProducts({
   setActiveFilter,
   addItemToCart,
   related,
+  addItemsToWishList,
 }) {
   const [myData, setmyData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,6 +86,7 @@ function RelatedProducts({
                 price={product.price}
                 category={product.category}
                 key={product.title}
+                addItemsToWishList={addItemsToWishList}
               />
             </Link>
           ))

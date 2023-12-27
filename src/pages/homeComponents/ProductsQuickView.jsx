@@ -25,6 +25,7 @@ function ProductsQuickView({
   setSideBarIsActive,
   setActiveFilter,
   addItemsToWishList,
+  wishList,
 }) {
   const [myData, setmyData] = useState([]);
   const [choosedCategory, setChoosedCategory] = useState("women");
@@ -138,6 +139,7 @@ function ProductsQuickView({
                     price={product.price}
                     category={product.category}
                     key={product.title}
+                    wishList={wishList}
                   />
                 </Link>
               ))

@@ -367,6 +367,7 @@ function App() {
             increaseQuantity={increaseQuantity}
             decreaseQuntity={decreaseQuntity}
             wishList={wishList}
+            addItemsToWishList={addItemsToWishList}
           />
         </Suspense>
       ),

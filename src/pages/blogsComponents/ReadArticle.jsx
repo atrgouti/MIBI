@@ -37,6 +37,7 @@ function ReadArticle({
   increaseQuantity,
   decreaseQuntity,
   wishList,
+  addItemsToWishList,
 }) {
   window.scrollTo({ top: 0 });
   const [currentArticleData, setCurrentArticleData] = useState([]);
@@ -131,6 +132,7 @@ function ReadArticle({
               setActiveFilter={setActiveFilter}
               addItemToCart={addItemToCart}
               related={currentArticleData[0]?.relatedTo}
+              addItemsToWishList={addItemsToWishList}
             />
             <LeaveComment />
           </main>

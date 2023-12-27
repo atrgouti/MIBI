@@ -21,12 +21,18 @@ function HomeProduct({
   setSideBarIsActive,
   setActiveFilter,
   addItemsToWishList,
+  wishList,
 }) {
   return (
     <div className={styles.product}>
       {/* <img src={`${img}`} alt="" className={styles.productImage} /> */}
       <div className={styles.productActions}>
         <div
+          style={{
+            backgroundColor: wishList.some((item) => item.hash === hash)
+              ? "palevioletred"
+              : "",
+          }}
           className={styles.addToFavorite}
           onClick={(event) => {
             event.preventDefault();

@@ -122,3 +122,6 @@
 .addToFavorite:hover {
   background-color: palevioletred;
 }
+.activeWishList {
+  background-color: palevioletred;
+}

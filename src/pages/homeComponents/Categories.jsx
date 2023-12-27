@@ -46,7 +46,9 @@ function Categories() {
               width: "100%",
             }}
           >
-            <p>Backpack</p>
+            <Link to={"/accessories"}>
+              <p>Backpack</p>
+            </Link>
           </div>
           <div
             className={categoriesStyle.accessories}
@@ -56,7 +58,9 @@ function Categories() {
               width: "100%",
             }}
           >
-            <p>Accessories</p>
+            <Link to={"/accessories"}>
+              <p>Accessories</p>
+            </Link>
           </div>
         </div>
       </div>

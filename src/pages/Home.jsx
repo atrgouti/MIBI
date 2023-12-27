@@ -63,6 +63,7 @@ function Home({
         addItemsToWishList={addItemsToWishList}
         setSideBarIsActive={setSideBarIsActive}
         setActiveFilter={setActiveFilter}
+        wishList={wishList}
       />
       <HotCollection />
       <BestBagsCollection />

@@ -54,7 +54,42 @@ function Favourite({
             <div className={styles.product} key={item.hash}>
               <div className={styles.title}>
                 <img src={item.image} alt="" />
-                <p>{item.title}</p>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <p>{item.title}</p>
+                  <p className={styles.mobileThing}>{item.initialPrice}</p>
+                  <p className={styles.mobileThing} style={{ color: "green" }}>
+                    In Stock
+                  </p>
+                  <div style={{ display: "flex" }}>
+                    <button
+                      className={styles.mobileThing}
+                      style={{
+                        backgroundColor: "orange  ",
+                        color: "white",
+                        border: "none",
+                        padding: "10px",
+                        marginLeft: "25px",
+                        marginTop: "10px",
+                      }}
+                    >
+                      VIEW PRODUCT
+                    </button>
+                    <button
+                      onClick={() => deleteProductWishList(item.hash)}
+                      className={styles.mobileThing}
+                      style={{
+                        backgroundColor: "black",
+                        color: "white",
+                        border: "none",
+                        padding: "10px",
+                        marginLeft: "5px",
+                        marginTop: "10px",
+                      }}
+                    >
+                      X
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className={styles.price}>
                 <p>${item.initialPrice}</p>
