@@ -22,6 +22,7 @@ function HomeProduct({
   setActiveFilter,
   addItemsToWishList,
   wishList,
+  productCate,
 }) {
   return (
     <div className={styles.product}>
@@ -37,7 +38,7 @@ function HomeProduct({
           onClick={(event) => {
             event.preventDefault();
             event.stopPropagation();
-            addItemsToWishList(id, title, img, price, hash);
+            addItemsToWishList(id, title, img, price, hash, productCate);
           }}
         >
           <FontAwesomeIcon icon={faHeart} className={`${styles.icon}`} />

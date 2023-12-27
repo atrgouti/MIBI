@@ -50,7 +50,7 @@ function ProductsQuickView({
   };
 
   return (
-    <div className={styles.productsquickviewsection}>
+    <div className={styles.productsquickviewsection} id="products">
       <div className={styles.productsquickview}>
         <div className={styles.title}>
           <ShortLine />
@@ -140,6 +140,7 @@ function ProductsQuickView({
                     category={product.category}
                     key={product.title}
                     wishList={wishList}
+                    productCate={choosedCategory}
                   />
                 </Link>
               ))

@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 
 import "./HomeSlider.css";
 
+import { Link } from "react-scroll";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
@@ -37,7 +38,17 @@ export default function App() {
           <p>
             Every Click Tells a Story <br /> Begin Your Journey Here.
           </p>
-          <button>Shop Now</button>
+          <button>
+            <Link
+              to="products"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Shop Now
+            </Link>
+          </button>
         </SwiperSlide>
         <SwiperSlide
           className="SwiperSlide2"
@@ -50,7 +61,17 @@ export default function App() {
           <p>
             Your Wishlist, Our Reality <br /> Explore and Enjoy!
           </p>
-          <button>Shop Now</button>
+          <button>
+            <Link
+              to="products"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Shop Now
+            </Link>
+          </button>
         </SwiperSlide>
       </Swiper>
     </>

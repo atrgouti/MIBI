@@ -1,5 +1,6 @@
 import styles from "./DayToNight.module.css";
 import bg from "/bestQualitySecend.jpg";
+import { Link } from "react-router-dom";
 function DayToNight() {
   return (
     <section className={styles.section}>
@@ -13,7 +14,9 @@ function DayToNight() {
             Shop our best sellers from emerging and established brands all over
             the globe
           </p>
-          <button>SHOP NOW</button>
+          <Link to={"/women"}>
+            <button>SHOP NOW</button>
+          </Link>
         </div>
       </div>
     </section>

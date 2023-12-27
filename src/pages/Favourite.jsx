@@ -5,6 +5,7 @@ import CurrentCategory from "../components/CurrentCategory";
 import styles from "./favourite.module.css";
 import Footer from "../components/Footer";
 import img from "./men-shirt-1-4.jpg";
+import { Link } from "react-router-dom";
 
 function Favourite({
   ActiveFilter,
@@ -61,19 +62,21 @@ function Favourite({
                     In Stock
                   </p>
                   <div style={{ display: "flex" }}>
-                    <button
-                      className={styles.mobileThing}
-                      style={{
-                        backgroundColor: "orange  ",
-                        color: "white",
-                        border: "none",
-                        padding: "10px",
-                        marginLeft: "25px",
-                        marginTop: "10px",
-                      }}
-                    >
-                      VIEW PRODUCT
-                    </button>
+                    <Link to={`product/${item.category}/${item.id}`}>
+                      <button
+                        className={styles.mobileThing}
+                        style={{
+                          backgroundColor: "orange  ",
+                          color: "white",
+                          border: "none",
+                          padding: "10px",
+                          marginLeft: "25px",
+                          marginTop: "10px",
+                        }}
+                      >
+                        VIEW PRODUCT
+                      </button>
+                    </Link>
                     <button
                       onClick={() => deleteProductWishList(item.hash)}
                       className={styles.mobileThing}
@@ -95,7 +98,9 @@ function Favourite({
                 <p>${item.initialPrice}</p>
                 <p>In Stock</p>
                 <div className={styles.view}>
-                  <button>VIEW PRODUCT</button>
+                  <Link to={`/product/${item.category}/${item.id}`}>
+                    <button>VIEW PRODUCT</button>
+                  </Link>
                   <button onClick={() => deleteProductWishList(item.hash)}>
                     X
                   </button>

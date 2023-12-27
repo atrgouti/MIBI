@@ -86,7 +86,14 @@ function App() {
     setCartItems(updatedCartItems);
   }
 
-  function addItemsToWishList(id, title, image, initialPrice, hash) {
+  function addItemsToWishList(
+    id,
+    title,
+    image,
+    initialPrice,
+    hash,
+    category = "notAvaliable"
+  ) {
     const checkIfExists = wishList.some((item) => item.hash === hash);
 
     if (checkIfExists) {
@@ -100,6 +107,7 @@ function App() {
         image,
         initialPrice,
         hash,
+        category,
       };
       const updatedWishList = [...wishList, newItem];
       setWishList(updatedWishList);

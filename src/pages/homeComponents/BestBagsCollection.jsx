@@ -1,5 +1,5 @@
 import styles from "./BestBagsCollection.module.css";
-
+import { Link } from "react-router-dom";
 import bg from "/bestQuality.jpg";
 function BestBagsCollection() {
   return (
@@ -14,7 +14,9 @@ function BestBagsCollection() {
             Shop our best sellers from emerging and established brands all over
             the globe
           </p>
-          <button>SHOP NOW</button>
+          <Link to={"/women"}>
+            <button>SHOP NOW</button>
+          </Link>
         </div>
       </div>
     </section>
