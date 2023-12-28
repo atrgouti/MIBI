@@ -9,8 +9,10 @@ function Search({ searchIsActive, setSearchIsActive, setActiveFilter, ref }) {
 
   useEffect(() => {
     // Focus on the input when the component mounts
-    if (inputRef.current) {
-      inputRef.current.focus();
+    if (searchIsActive) {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
     }
   }, [searchIsActive]);
 
