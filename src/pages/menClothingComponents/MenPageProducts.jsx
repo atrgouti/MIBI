@@ -142,6 +142,7 @@ function MenPageProducts({
                 key={product.id}
                 addItemToCart={addItemToCart}
                 addItemsToWishList={addItemsToWishList}
+                categoryType={categoryType}
               />
             </Link>
           ))

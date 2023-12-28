@@ -21,6 +21,7 @@ function HomeProduct({
   setSideBarIsActive,
   setActiveFilter,
   addItemsToWishList,
+  categoryType,
 }) {
   return (
     <div className={styles.product} style={{ marginLeft: "0px" }}>
@@ -29,7 +30,7 @@ function HomeProduct({
         <div
           className={styles.addToFavorite}
           onClick={(event) => {
-            addItemsToWishList(id, title, img, price, hash);
+            addItemsToWishList(id, title, img, price, hash, categoryType);
 
             event.preventDefault();
             event.stopPropagation();

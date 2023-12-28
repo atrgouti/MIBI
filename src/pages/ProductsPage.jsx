@@ -177,7 +177,8 @@ function ProductsPage({
                       productData.title,
                       productData.photos.productPhotos[0],
                       productData.price,
-                      productData.hash
+                      productData.hash,
+                      currentProduct.category
                     );
                   }}
                 >
