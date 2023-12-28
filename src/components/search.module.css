@@ -1,0 +1,50 @@
+.search {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  transition: 0.5s;
+  transform: translateY(-100%);
+  min-height: 20vh;
+}
+.active {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  transition: 0.5s;
+  transform: translateY(0%);
+  min-height: 20vh;
+}
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.workingArea {
+  width: 90%;
+  margin: 0px auto;
+}
+.workingArea h2 {
+  margin-top: 40px;
+}
+.workingArea input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+}
+.workingArea input:focus {
+  outline: none;
+}
+
+.examples {
+  color: gray;
+  margin: 20px 0px;
+}

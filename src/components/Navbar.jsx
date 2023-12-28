@@ -1,4 +1,5 @@
 import styles from "./Navbar.module.css";
+import Search from "./Search";
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +17,7 @@ import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
 import { faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./CartItem";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 
 import logo from "/logo.png";
@@ -43,7 +44,11 @@ export default function Navbar({
   };
 
   const [scrollY, setScrollY] = useState(0);
+
+  const [searchIsActive, setSearchIsActive] = useState(false);
+
   // const [sideBarIsActive, setSideBarIsActive] = useState(false);
+
   const [burgerMenuIsActive, setBurgerMenuIsActive] = useState(false);
   // const [cartItems, setCartItems] = useLocalStorageState([], "cartItems");
 
@@ -117,7 +122,14 @@ export default function Navbar({
               setActiveFilter(true);
             }}
           />
-          <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className={styles.icon}
+            onClick={() => {
+              setSearchIsActive(true);
+              setActiveFilter(true);
+            }}
+          />
         </div>
         <div className="logo">
           {/* <h1>MIBI</h1> */}
@@ -151,6 +163,10 @@ export default function Navbar({
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className={`${styles.icon}`}
+            onClick={() => {
+              setSearchIsActive(true);
+              setActiveFilter(true);
+            }}
           />
           <Link to={"/favourite"}>
             <FontAwesomeIcon
@@ -175,6 +191,14 @@ export default function Navbar({
           <p>{cartItems.length > 0 ? cartItems.length : ""}</p>
         </div>
       </nav>
+
+      {/* working on the search  */}
+      <Search
+        searchIsActive={searchIsActive}
+        setSearchIsActive={setSearchIsActive}
+        setActiveFilter={setActiveFilter}
+      />
+
       {/* WORKING ON THE BURGER MENU HERE  */}
       <div
         className={`${styles.burgerMenu} ${
