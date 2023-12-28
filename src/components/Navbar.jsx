@@ -121,7 +121,9 @@ export default function Navbar({
         </div>
         <div className="logo">
           {/* <h1>MIBI</h1> */}
-          <img src={logo} alt="" />
+          <Link to={"/"}>
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <ul className={styles.myLinks}>
           <li>
