@@ -198,10 +198,6 @@ function ProductsPage({
                     <p>Add to wishlsit</p>
                   )}
                 </div>
-                <div className={styles.enquiry}>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <p>Add to wishlsit</p>
-                </div>
               </div>
               <div className={styles.addToCard}>
                 <div className={styles.chooseQuantity}>

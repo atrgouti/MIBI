@@ -62,7 +62,7 @@ function Favourite({
                     In Stock
                   </p>
                   <div style={{ display: "flex" }}>
-                    <Link to={`product/${item.category}/${item.id}`}>
+                    <Link to={`/product/${item.category}/${item.id}`}>
                       <button
                         className={styles.mobileThing}
                         style={{
