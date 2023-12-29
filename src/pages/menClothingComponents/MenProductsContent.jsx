@@ -38,6 +38,7 @@ function MenProductsContent({
       : [...filteredCategories, newCtegory];
     setFilteredCategories(newSelectedCategory);
   }
+
   return (
     <div className={styles.allArea}>
       <div className={styles.AllMenProducts}>

@@ -57,9 +57,9 @@ function HomeProduct({
         >
           <FontAwesomeIcon icon={faCartShopping} className={`${styles.icon}`} />
         </div>
-        <div className={styles.addToFavorite}>
+        {/* <div className={styles.addToFavorite}>
           <FontAwesomeIcon icon={faMagnifyingGlassPlus} />
-        </div>
+        </div> */}
       </div>
       <BlurHashImageComponent src={img} hash={hash} height={380} width={250} />
       <p className={styles.productTitle}>{title}</p>

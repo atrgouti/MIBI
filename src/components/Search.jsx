@@ -62,7 +62,7 @@ function Search({ searchIsActive, setSearchIsActive, setActiveFilter }) {
           {inputValue.length > 0 &&
             searchData.map((item) => (
               <Link
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "black" }}
                 onClick={() => {
                   setActiveFilter(false);
                   setSearchIsActive(false);
