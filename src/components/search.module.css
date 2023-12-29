@@ -48,3 +48,15 @@
   color: gray;
   margin: 20px 0px;
 }
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product {
+  display: flex;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+.product img {
+  height: 100px;
+}
